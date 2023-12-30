@@ -126,10 +126,11 @@ func autocompletion() {
 			print("Copying to \(destination.path)")
 			do {
 				try fileManager.removeItem(at: destination)
-			} catch CocoaError.fileNoSuchFile {
-				// This is fine.
 			} catch {
-				fatalError("Some other error removing file before copying over it: \(error)")
+                // `fileNoSuchFile` is fine; other errors are not.
+                // `catch CocoaError.fileNoSuchFile` doesn’t seem to match on GitHub Actions so check in a different way.
+                let nsError = error as NSError
+                precondition(nsError.domain == NSCocoaErrorDomain && nsError.code == CocoaError.fileNoSuchFile.rawValue, "Some other error removing file before copying over it: \(error)")
 			}
 			try! fileManager.copyItem(at: fileURL, to: destination)
 		} else {
