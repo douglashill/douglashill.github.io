@@ -61,7 +61,9 @@ let author = "Douglas Hill"
 
 func autocompletion() {
 
+#if canImport(CoreFoundation)
 	let startTime = CFAbsoluteTimeGetCurrent()
+#endif
 
 	let fileManager = FileManager.default
 
@@ -137,7 +139,9 @@ func autocompletion() {
 		outputFiles.insert(destination)
 	}
 
+#if canImport(CoreFoundation)
 	print("Enumerated files in \(CFAbsoluteTimeGetCurrent() - startTime)s.")
+#endif
 
 	articlesWithDates.sort {
 		if $0.rawDate! == $1.rawDate! {
@@ -236,7 +240,9 @@ func autocompletion() {
 	// Articles-only feed
     try! outputFiles.insert(writeFeed(fromSortedArticles: articlesWithDates.filter { $0.type == .long }.prefix(3), isMicro: false, toDestinationDirectory: destinationDirectory, filename: "feed.json"))
 
+#if canImport(CoreFoundation)
 	print("Wrote files after \(CFAbsoluteTimeGetCurrent() - startTime)s.")
+#endif
 
 	let outputEnumerator = fileManager.enumerator(at: destinationDirectory, includingPropertiesForKeys: [.isDirectoryKey], options: []) { fileURL, error -> Bool in
 		fatalError("Enumerator had trouble with \(fileURL): \(error)")
@@ -253,7 +259,9 @@ func autocompletion() {
 		print("Deleted item at \(fileURL)")
 	}
 
+#if canImport(CoreFoundation)
 	print("Finished after \(CFAbsoluteTimeGetCurrent() - startTime)s.")
+#endif
 }
 
 func writeFeed(fromSortedArticles articles: ArraySlice<Article>, isMicro isMicroFeed: Bool, toDestinationDirectory destinationDirectory: URL, filename: String) throws -> URL {
