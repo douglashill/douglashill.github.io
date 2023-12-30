@@ -61,7 +61,7 @@ let author = "Douglas Hill"
 
 func autocompletion() {
 
-#if canImport(CoreFoundation)
+#if ENABLE_PERFORMANCE_LOGGING
 	let startTime = CFAbsoluteTimeGetCurrent()
 #endif
 
@@ -69,7 +69,7 @@ func autocompletion() {
 
     // When running using seemingly anything except Xcode, the current directory (.) would be the directory containing the package.
     // With Xcode, the current directory is somewhere in DerivedData, so use `#file` to get what we want.
-    let projectDirectory = URL(filePath: #file, directoryHint: .notDirectory).deletingLastPathComponent()
+    let projectDirectory = URL(fileURLWithPath: #file, isDirectory: false).deletingLastPathComponent()
 
 	let contentDirectory = projectDirectory.appendingPathComponent("Content", isDirectory: true)
 	let destinationDirectory = projectDirectory.appendingPathComponent("Output", isDirectory: true)
@@ -139,7 +139,7 @@ func autocompletion() {
 		outputFiles.insert(destination)
 	}
 
-#if canImport(CoreFoundation)
+#if ENABLE_PERFORMANCE_LOGGING
 	print("Enumerated files in \(CFAbsoluteTimeGetCurrent() - startTime)s.")
 #endif
 
@@ -240,7 +240,7 @@ func autocompletion() {
 	// Articles-only feed
     try! outputFiles.insert(writeFeed(fromSortedArticles: articlesWithDates.filter { $0.type == .long }.prefix(3), isMicro: false, toDestinationDirectory: destinationDirectory, filename: "feed.json"))
 
-#if canImport(CoreFoundation)
+#if ENABLE_PERFORMANCE_LOGGING
 	print("Wrote files after \(CFAbsoluteTimeGetCurrent() - startTime)s.")
 #endif
 
@@ -259,7 +259,7 @@ func autocompletion() {
 		print("Deleted item at \(fileURL)")
 	}
 
-#if canImport(CoreFoundation)
+#if ENABLE_PERFORMANCE_LOGGING
 	print("Finished after \(CFAbsoluteTimeGetCurrent() - startTime)s.")
 #endif
 }
