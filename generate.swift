@@ -97,16 +97,17 @@ func autocompletion() {
 
 		if fileURL.pathExtension == "md" {
 			let relativePath = fileURL.deletingPathExtension().pathRelative(toBase: contentDirectory)
+			let isFrontPage = relativePath == "-front-page"
 			let fileContents = try! String(contentsOf: fileURL, encoding: .utf8)
 
-			let article = Article(relativePath: relativePath, fileContents: fileContents)
+			let article = Article(relativePath: isFrontPage ? "" : relativePath, fileContents: fileContents)
 
 			if article.rawDate != nil {
 				articlesWithDates.append(article)
 			}
 
 			if article.externalURL == nil {
-				let dir = fileURL.lastPathComponent == "-front-page.md" ? destinationDirectory : destinationDirectory.appendingPathComponent(relativePath, isDirectory: true)
+				let dir = isFrontPage ? destinationDirectory : destinationDirectory.appendingPathComponent(relativePath, isDirectory: true)
 				let indexFileURL = try! article.writeAsIndexFile(inDirectory: dir, fileManager: fileManager)
 				outputFiles.insert(indexFileURL)
 			}
@@ -312,7 +313,7 @@ func writeFeed(fromSortedArticles articles: ArraySlice<Article>, isMicro isMicro
 		"version": "https://jsonfeed.org/version/1",
 		"title": author,
 		"home_page_url": publishedSiteRoot,
-		"feed_url": publishedSiteRoot + filename,
+		"feed_url": "\(publishedSiteRoot)\(filename)",
 		"author": feedAuthor,
 		"items": feedItems,
 	]
@@ -526,11 +527,11 @@ struct Article {
 	}
 
 	var relativeURL: String {
-		externalURL ?? "/\(relativePath)/"
+		externalURL ?? (relativePath.isEmpty ? "/" : "/\(relativePath)/")
 	}
 
 	var publishedURLString: String {
-		externalURL ?? publishedSiteRoot + relativePath + "/"
+		externalURL ?? (relativePath.isEmpty ? publishedSiteRoot : "\(publishedSiteRoot)\(relativePath)/")
 	}
 
 	var dateComponents: DateComponents? {
