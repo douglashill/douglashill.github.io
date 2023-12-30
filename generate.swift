@@ -589,6 +589,7 @@ struct Article {
 			<link href="https://micro.blog/douglas" rel="me" />
 			<link rel="stylesheet" type="text/css" href="/post-style.css" />
 			<link rel="alternate" type="application/json" href="/feed.json" />
+			<link rel="canonical" href="\(publishedURLString)">
 		</head>
 		<body>
 			<article>
@@ -626,7 +627,7 @@ struct Article {
 			<meta charset="utf-8">
 			<title>Redirecting…</title>
 			<meta http-equiv="refresh" content="0; URL=\(relativeURL)">
-			<link rel="canonical" href="\(relativeURL)">
+			<link rel="canonical" href="\(publishedURLString)">
 		</head>
 		<body>
 			<p>Redirecting to <a href="\(relativeURL)">\(externalURL ?? relativePath)</a></p>
