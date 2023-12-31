@@ -65,4 +65,5 @@ while(x=eval(x));
 //]]>
 </script>
 <li>he/him</li>
+<li>This site is deployed with GitHub Pages.</li>
 </ul>
