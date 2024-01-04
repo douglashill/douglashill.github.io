@@ -345,6 +345,8 @@ func writeArchive(fromSortedArticles articles: [Article], years: ClosedRange<Int
 	title: \(title)
 	skipByline: true
 	%%%
+
+	This page lists my longer, more considered articles. Use the year heading links to see all posts in each year.
 	"""
 
 	for year in years.reversed() {
