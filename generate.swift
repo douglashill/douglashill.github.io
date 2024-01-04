@@ -213,7 +213,7 @@ func autocompletion() {
                     let endingsWithInlinePermalinks = ["</p>\n", "</li>\n</ul>\n", "</li>\n</ol>\n", "</p>\n</blockquote>\n"]
                     for ending in endingsWithInlinePermalinks {
                         // Hacky way to not put the permalink inline after a video (which would make it not be visible).
-                        if partialHTML.hasSuffix(ending) && partialHTML.hasSuffix("controls preload=\"none\" /></p>\n") == false {
+                        if partialHTML.hasSuffix(ending) && partialHTML.hasSuffix("controls preload=\"none\" /></p>\n") == false && partialHTML.hasSuffix("controls width=\"100%\" /></p>\n") == false {
                             partialHTML = String(partialHTML.dropLast(ending.count))
                             // The newline before the a was to minimise the diff when adding this. It’s not needed.
                             return """
