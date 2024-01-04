@@ -172,32 +172,34 @@ func autocompletion() {
 		}
 	}
 
-	// Generate archive page.
-    let archiveOutputFileURL = try! writeArchive(fromSortedArticles: articlesWithDates.filter { $0.type != .short }, title: "[\(author)](/)’s archive", toDestinationDirectory: destinationDirectory, filename: "archive", fileManager: fileManager) {
-		// This will break if the title Markdown has a link in it, but long articles should not be link posts.
-		var string = "[\($0.title!.markdown)](\($0.relativeURL))"
+	if let firstYear = articlesWithDates.last?.dateComponents!.year!, let lastYear = articlesWithDates.first?.dateComponents!.year! {
+		let allYears = firstYear...lastYear
 
-		if let description = $0.description {
-			if CharacterSet.punctuationCharacters.contains($0.title!.plainText.unicodeScalars.last!) == false {
-				string.append(":")
+		// Generate archive page.
+    	let archiveOutputFileURL = try! writeArchive(fromSortedArticles: articlesWithDates.filter { $0.type != .short }, years: allYears, title: "[\(author)](/)’s archive", toDestinationDirectory: destinationDirectory, filename: "archive", fileManager: fileManager) {
+			// This will break if the title Markdown has a link in it, but long articles should not be link posts.
+			var string = "[\($0.title!.markdown)](\($0.relativeURL))"
+
+			if let description = $0.description {
+				if CharacterSet.punctuationCharacters.contains($0.title!.plainText.unicodeScalars.last!) == false {
+					string.append(":")
+				}
+				string.append(" \(description.markdown)")
 			}
-			string.append(" \(description.markdown)")
+
+			return string
 		}
+		outputFiles.insert(archiveOutputFileURL)
 
-		return string
-	}
-	outputFiles.insert(archiveOutputFileURL)
-
-	// Generate micro archive pages for each year.
-	var articlesByYear: [Int: [Article]] = [:]
-	for article in articlesWithDates {
-		let year = article.dateComponents!.year!
-		var articlesForThisYear = articlesByYear[year] ?? []
-		articlesForThisYear.append(article)
-		articlesByYear[year] = articlesForThisYear
-	}
-    if let firstYear = articlesWithDates.last?.dateComponents!.year!, let lastYear = articlesWithDates.first?.dateComponents!.year! {
-        for year in firstYear...lastYear {
+		// Generate micro archive pages for each year.
+		var articlesByYear: [Int: [Article]] = [:]
+		for article in articlesWithDates {
+			let year = article.dateComponents!.year!
+			var articlesForThisYear = articlesByYear[year] ?? []
+			articlesForThisYear.append(article)
+			articlesByYear[year] = articlesForThisYear
+		}
+        for year in allYears {
             logDebug("Number of posts in \(year): \(articlesByYear[year]!.count)")
             let outputFileURL = try! writeMicroArchive(fromSortedArticles: articlesByYear[year]!.reversed(), sectionGranularity: [.year, .month, .day], title: "[\(author)](/)’s posts in \(year)", toDestinationDirectory: destinationDirectory, filename: "\(year)", fileManager: fileManager) {
                 // TODO: Maybe share with micro feed by adding a method on Article.
@@ -330,25 +332,27 @@ func writeFeed(fromSortedArticles articles: ArraySlice<Article>, isMicro isMicro
 	return outputFileURL
 }
 
-func writeArchive(fromSortedArticles articles: [Article], title: String, toDestinationDirectory destinationDirectory: URL, filename: String, fileManager: FileManager, articleFormatter: (Article) -> String) throws -> URL {
+func writeArchive(fromSortedArticles articles: [Article], years: ClosedRange<Int>, title: String, toDestinationDirectory destinationDirectory: URL, filename: String, fileManager: FileManager, articleFormatter: (Article) -> String) throws -> URL {
+	var articlesByYear: [Int: [Article]] = [:]
+	for article in articles {
+		let year = article.dateComponents!.year!
+		var articlesForThisYear = articlesByYear[year] ?? []
+		articlesForThisYear.append(article)
+		articlesByYear[year] = articlesForThisYear
+	}
+
 	var archiveBody = """
 	title: \(title)
 	skipByline: true
 	%%%
 	"""
 
-    // Lazy to avoid crash if there are no articles.
-	lazy var sectionYear = articles.first!.dateComponents!.year! + 1
+	for year in years.reversed() {
+		archiveBody.append("\n\n## [\(year)](/\(year)/)")
 
-	for article in articles {
-		let yearForThisArticle = article.dateComponents!.year!
-
-		while sectionYear != yearForThisArticle {
-			sectionYear -= 1
-			archiveBody.append("\n\n## [\(sectionYear)](/\(sectionYear)/)")
+		for article in articlesByYear[year] ?? [] {
+			archiveBody.append("\n\n\(articleFormatter(article))")
 		}
-
-		archiveBody.append("\n\n\(articleFormatter(article))")
 	}
 
 	let archiveArticle = Article(relativePath: filename, fileContents: archiveBody)
