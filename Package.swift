@@ -17,7 +17,7 @@ let package = Package(
 			name: "generate",
 			dependencies: [.product(name: "Markdown", package: "swift-markdown")],
 			path: "",
-			exclude: ["Content"]
+			exclude: ["Content", "Output"]
 		),
 	]
 )
