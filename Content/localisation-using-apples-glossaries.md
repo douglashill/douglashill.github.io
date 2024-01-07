@@ -155,7 +155,7 @@ With the glossaries mounted in the filesystem, I ran the second script to extrac
 
 ## Manual editing
 
-The next step was to manually audit the generated translations. My main reference was putting a device in the language being translated and seeing what text was used by the system and Apple‘s apps. The new Voice Control accessibility feature with the setting enabled to always show names was really useful to see button labels. It’s a bit like having the Accessibility Inspector on your device.
+The next step was to manually audit the generated translations. My main reference was putting a device in the language being translated and seeing what text was used by the system and Apple’s apps. The new Voice Control accessibility feature with the setting enabled to always show names was really useful to see button labels. It’s a bit like having the Accessibility Inspector on your device.
 
 ![Screenshot of the Mail app on iPad showing labels in Finnish.](Voice-Control.png)
 
