@@ -663,6 +663,9 @@ private func writeIndexHTML(_ htmlString: String, inDirectory dir: URL, fileMana
 	return indexFileURL
 }
 
+// Creating this Regex once instead of every time we need it cut the time spent creating and using it from 900 ms to 300 ms.
+let htmlEntityRegex = try! Regex("&\\w+;")
+
 /// Basic count of user-facing text. HTML collapses whitespace into a single space except in pre tags. That’s not implemented.
 private func numberOfTextCharactersInHTMLString(_ htmlString: String) -> Int {
 	var count = 0
@@ -673,8 +676,7 @@ private func numberOfTextCharactersInHTMLString(_ htmlString: String) -> Int {
 	while true {
 		if var newText = scanner.scanUpToString("<") {
 			// Just replace all entities with a single character.
-			let regex = try! Regex("&\\w+;")
-			newText.replace(regex) { match in
+			newText.replace(htmlEntityRegex) { match in
 				"x"
 			}
 
