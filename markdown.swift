@@ -4,13 +4,13 @@
 extension Markdown.Document {
     var html: String {
         var htmlFormatter = HTMLFormatter()
-		htmlFormatter.visit(self)
+        htmlFormatter.visit(self)
         return htmlFormatter.output.trimmingCharacters(in: .whitespacesAndNewlines)
     }
 
     var plainText: String {
         var plainTextFormatter = PlainTextFormatter()
-		plainTextFormatter.visit(self)
+        plainTextFormatter.visit(self)
         return plainTextFormatter.output
     }
 }

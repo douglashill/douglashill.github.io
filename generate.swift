@@ -67,9 +67,9 @@ func autocompletion() {
 
 	let fileManager = FileManager.default
 
-    // When running using seemingly anything except Xcode, the current directory (.) would be the directory containing the package.
-    // With Xcode, the current directory is somewhere in DerivedData, so use `#file` to get what we want.
-    let projectDirectory = URL(fileURLWithPath: #file, isDirectory: false).deletingLastPathComponent()
+	// When running using seemingly anything except Xcode, the current directory (.) would be the directory containing the package.
+	// With Xcode, the current directory is somewhere in DerivedData, so use `#file` to get what we want.
+	let projectDirectory = URL(fileURLWithPath: #file, isDirectory: false).deletingLastPathComponent()
 
 	let contentDirectory = projectDirectory.appendingPathComponent("Content", isDirectory: true)
 	let destinationDirectory = projectDirectory.appendingPathComponent("Output", isDirectory: true)
@@ -128,10 +128,10 @@ func autocompletion() {
 			do {
 				try fileManager.removeItem(at: destination)
 			} catch {
-                // `fileNoSuchFile` is fine; other errors are not.
-                // `catch CocoaError.fileNoSuchFile` doesn’t seem to match on GitHub Actions so check in a different way.
-                let nsError = error as NSError
-                precondition(nsError.domain == NSCocoaErrorDomain && nsError.code == CocoaError.fileNoSuchFile.rawValue, "Some other error removing file before copying over it: \(error)")
+				// `fileNoSuchFile` is fine; other errors are not.
+				// `catch CocoaError.fileNoSuchFile` doesn’t seem to match on GitHub Actions so check in a different way.
+				let nsError = error as NSError
+				precondition(nsError.domain == NSCocoaErrorDomain && nsError.code == CocoaError.fileNoSuchFile.rawValue, "Some other error removing file before copying over it: \(error)")
 			}
 			try! fileManager.copyItem(at: fileURL, to: destination)
 		} else {
@@ -176,7 +176,7 @@ func autocompletion() {
 		let allYears = firstYear...lastYear
 
 		// Generate archive page.
-    	let archiveOutputFileURL = try! writeArchive(fromSortedArticles: articlesWithDates.filter { $0.type != .short }, years: allYears, title: "[\(author)](/)’s archive", toDestinationDirectory: destinationDirectory, filename: "archive", fileManager: fileManager) {
+		let archiveOutputFileURL = try! writeArchive(fromSortedArticles: articlesWithDates.filter { $0.type != .short }, years: allYears, title: "[\(author)](/)’s archive", toDestinationDirectory: destinationDirectory, filename: "archive", fileManager: fileManager) {
 			// This will break if the title Markdown has a link in it, but long articles should not be link posts.
 			var string = "[\($0.title!.markdown)](\($0.relativeURL))"
 
@@ -199,40 +199,40 @@ func autocompletion() {
 			articlesForThisYear.append(article)
 			articlesByYear[year] = articlesForThisYear
 		}
-        for year in allYears {
-            logDebug("Number of posts in \(year): \(articlesByYear[year]!.count)")
-            let outputFileURL = try! writeMicroArchive(fromSortedArticles: articlesByYear[year]!.reversed(), sectionGranularity: [.year, .month, .day], title: "[\(author)](/)’s posts in \(year)", toDestinationDirectory: destinationDirectory, filename: "\(year)", fileManager: fileManager) {
-                // TODO: Maybe share with micro feed by adding a method on Article.
-                let explicitShortText = $0.microPost?.markdown ?? $0.description?.markdown
-                if explicitShortText != nil || ($0.title != nil && $0.characterCount + ($0.title?.plainText.count ?? 0) > 290) {
-                    let microPost = (explicitShortText ?? $0.title!.markdown).markdownWithLinksRelativeTo($0.relativeURL, mustBeAbsolute: false)
-                    return "\(microPost) <a href=\"\($0.relativeURL)\" title=\"\($0.title?.plainText ?? "")\">Read more »</a>"
-                } else {
-                    var partialHTML = $0.partialHTML.htmlWithLinksRelativeTo($0.relativeURL, mustBeAbsolute: false)
-                    if let title = $0.title {
-                        partialHTML = "\(title.markdown.markdownWithLinksRelativeTo($0.relativeURL, mustBeAbsolute: false))\n\n\(partialHTML)"
-                    }
-                    let endingsWithInlinePermalinks = ["</p>\n", "</li>\n</ul>\n", "</li>\n</ol>\n", "</p>\n</blockquote>\n"]
-                    for ending in endingsWithInlinePermalinks {
-                        // Hacky way to not put the permalink inline after a video (which would make it not be visible).
-                        if partialHTML.hasSuffix(ending) && partialHTML.hasSuffix("controls preload=\"none\" /></p>\n") == false && partialHTML.hasSuffix("controls width=\"100%\" /></p>\n") == false {
-                            partialHTML = String(partialHTML.dropLast(ending.count))
-                            // The newline before the a was to minimise the diff when adding this. It’s not needed.
-                            return """
-      \(partialHTML)
-      <a href="\($0.relativeURL)" title="Permanent link to this post">»</a>\(ending)
-      """
-                        }
-                    }
-                    return """
-    \(partialHTML)
-    <p><a href="\($0.relativeURL)" title="Permanent link to this post">»</a></p>
-    """
-                }
-            }
-            outputFiles.insert(outputFileURL)
-        }
-    }
+		for year in allYears {
+			logDebug("Number of posts in \(year): \(articlesByYear[year]!.count)")
+			let outputFileURL = try! writeMicroArchive(fromSortedArticles: articlesByYear[year]!.reversed(), sectionGranularity: [.year, .month, .day], title: "[\(author)](/)’s posts in \(year)", toDestinationDirectory: destinationDirectory, filename: "\(year)", fileManager: fileManager) {
+				// TODO: Maybe share with micro feed by adding a method on Article.
+				let explicitShortText = $0.microPost?.markdown ?? $0.description?.markdown
+				if explicitShortText != nil || ($0.title != nil && $0.characterCount + ($0.title?.plainText.count ?? 0) > 290) {
+					let microPost = (explicitShortText ?? $0.title!.markdown).markdownWithLinksRelativeTo($0.relativeURL, mustBeAbsolute: false)
+					return "\(microPost) <a href=\"\($0.relativeURL)\" title=\"\($0.title?.plainText ?? "")\">Read more »</a>"
+				} else {
+					var partialHTML = $0.partialHTML.htmlWithLinksRelativeTo($0.relativeURL, mustBeAbsolute: false)
+					if let title = $0.title {
+						partialHTML = "\(title.markdown.markdownWithLinksRelativeTo($0.relativeURL, mustBeAbsolute: false))\n\n\(partialHTML)"
+					}
+					let endingsWithInlinePermalinks = ["</p>\n", "</li>\n</ul>\n", "</li>\n</ol>\n", "</p>\n</blockquote>\n"]
+					for ending in endingsWithInlinePermalinks {
+						// Hacky way to not put the permalink inline after a video (which would make it not be visible).
+						if partialHTML.hasSuffix(ending) && partialHTML.hasSuffix("controls preload=\"none\" /></p>\n") == false && partialHTML.hasSuffix("controls width=\"100%\" /></p>\n") == false {
+							partialHTML = String(partialHTML.dropLast(ending.count))
+							// The newline before the a was to minimise the diff when adding this. It’s not needed.
+							return """
+	  \(partialHTML)
+	  <a href="\($0.relativeURL)" title="Permanent link to this post">»</a>\(ending)
+	  """
+						}
+					}
+					return """
+	\(partialHTML)
+	<p><a href="\($0.relativeURL)" title="Permanent link to this post">»</a></p>
+	"""
+				}
+			}
+			outputFiles.insert(outputFileURL)
+		}
+	}
 
 	// Generate the JSON feeds.
 	// TODO: Increase the number of items in the feeds as I add more, especially the articles feed.
@@ -242,7 +242,7 @@ func autocompletion() {
 	// Full feed
 	try! outputFiles.insert(writeFeed(fromSortedArticles: articlesWithDates.prefix(12), isMicro: false, toDestinationDirectory: destinationDirectory, filename: "full-feed.json"))
 	// Articles-only feed
-    try! outputFiles.insert(writeFeed(fromSortedArticles: articlesWithDates.filter { $0.type == .long }.prefix(3), isMicro: false, toDestinationDirectory: destinationDirectory, filename: "feed.json"))
+	try! outputFiles.insert(writeFeed(fromSortedArticles: articlesWithDates.filter { $0.type == .long }.prefix(3), isMicro: false, toDestinationDirectory: destinationDirectory, filename: "feed.json"))
 
 #if ENABLE_PERFORMANCE_LOGGING
 	print("Wrote files after \(CFAbsoluteTimeGetCurrent() - startTime)s.")
@@ -459,11 +459,11 @@ struct Article {
 		}
 	}
 
-    enum ArticleType {
-        case short
-        case long
-        case external
-    }
+	enum ArticleType {
+		case short
+		case long
+		case external
+	}
 
 	let relativePath: String
 	let title: Title?
@@ -477,7 +477,7 @@ struct Article {
 	let characterCount: Int
 	let tweetIDs: [String]?
 	let tumblrIDs: [String]?
-    let type: ArticleType
+	let type: ArticleType
 
 	init(relativePath: String, fileContents: String) {
 		let components = fileContents.components(separatedBy: "%%%")
@@ -515,21 +515,21 @@ struct Article {
 		tweetIDs = info["tweet"]?.components(separatedBy: ",").map { $0.trimmingCharacters(in: .whitespaces) }
 		tumblrIDs = info["tumblr"]?.components(separatedBy: ",").map { $0.trimmingCharacters(in: .whitespaces) }
 
-        if externalURL != nil {
-            if title != nil {
-                type = .external
-            } else {
-                fatalError("External article has no title.")
-            }
-        } else if title != nil {
-            if characterCount > 2480 {
-                type = .long
-            } else {
-                type = .short
-            }
-        } else {
-            type = .short
-        }
+		if externalURL != nil {
+			if title != nil {
+				type = .external
+			} else {
+				fatalError("External article has no title.")
+			}
+		} else if title != nil {
+			if characterCount > 2480 {
+				type = .long
+			} else {
+				type = .short
+			}
+		} else {
+			type = .short
+		}
 	}
 
 	var relativeURL: String {
@@ -667,37 +667,37 @@ private func writeIndexHTML(_ htmlString: String, inDirectory dir: URL, fileMana
 private func numberOfTextCharactersInHTMLString(_ htmlString: String) -> Int {
 	var count = 0
 
-    let scanner = Scanner(string: htmlString)
-    scanner.charactersToBeSkipped = CharacterSet()
+	let scanner = Scanner(string: htmlString)
+	scanner.charactersToBeSkipped = CharacterSet()
 
-    while true {
-        if var newText = scanner.scanUpToString("<") {
+	while true {
+		if var newText = scanner.scanUpToString("<") {
 			// Just replace all entities with a single character.
 			let regex = try! Regex("&\\w+;")
-    		newText.replace(regex) { match in
-        		"x"
-    		}
+			newText.replace(regex) { match in
+				"x"
+			}
 
 			count += newText.count
-        }
+		}
 
-        if scanner.scanPastString(">") == nil {
-            break
-        }
-    }
+		if scanner.scanPastString(">") == nil {
+			break
+		}
+	}
 
-    logDebug("Number of text characters is \(count).")
-    return count
+	logDebug("Number of text characters is \(count).")
+	return count
 }
 
 private extension Scanner {
-    func scanPastString(_ substring: String) -> String? {
-        if let result = scanUpToString(substring) {
-            let scanned = scanString(substring)
-            precondition(scanned == substring)
-            return result + scanned!
-        } else {
-            return nil
-        }
-    }
+	func scanPastString(_ substring: String) -> String? {
+		if let result = scanUpToString(substring) {
+			let scanned = scanString(substring)
+			precondition(scanned == substring)
+			return result + scanned!
+		} else {
+			return nil
+		}
+	}
 }
