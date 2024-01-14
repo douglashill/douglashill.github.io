@@ -58,7 +58,8 @@ extension DateComponents {
 	}
 }
 
-let publishedSiteRoot = "https://douglashill.co/"
+let publishedSiteDomain = "https://douglashill.co"
+let publishedSiteRoot = "\(publishedSiteDomain)/"
 let author = "Douglas Hill"
 
 func autocompletion() {
@@ -294,7 +295,7 @@ func writeFeed(fromSortedArticles articles: ArraySlice<Article>, isMicro isMicro
 				// TODO: I think this needs to count the plain characters after processing into HTML.
 				// precondition(article.markdownLength <= characterLimit, "Article without microPost or title is longer than \(characterLimit) characters. HTML is: \(article.partialHTML)")
 				// Micro.blog doesn’t work with relative image URLs, so make them absolute.
-				item["content_html"] = article.partialHTML.htmlWithLinksRelativeTo(article.publishedURLString, mustBeAbsolute: true)
+				item["content_html"] = article.partialHTML.htmlWithLinksRelativeTo(article.relativeURL, mustBeAbsolute: true)
 			}
 		} else {
 			// TODO: Include a `summary` from the `description` if one is set on the article.
@@ -404,19 +405,74 @@ extension String {
 
 	func htmlWithLinksRelativeTo(_ path: String, mustBeAbsolute: Bool) -> String {
 		let startTime = CFAbsoluteTimeGetCurrent()
-		// This is really silly (inefficient) way to not change external URLs and URLs relative to root already. (Replace them then replace them back.)
-		// Limitation: This requires no spaces around the `=` which is not required by HTML.
-		let result = replacing("src=\"", with: "src=\"\(path)")
-		.replacing("href=\"", with: "href=\"\(path)")
-		.replacing("src=\"\(path)http", with: "src=\"http")
-		.replacing("href=\"\(path)http", with: "href=\"http")
-		.replacing("src=\"\(path)/", with: "src=\"\(prefixForLinksRelativeToRoot(mustBeAbsolute: mustBeAbsolute))")
-		.replacing("href=\"\(path)/", with: "href=\"\(prefixForLinksRelativeToRoot(mustBeAbsolute: mustBeAbsolute))")
+		var output = ""
+
+		let scanner = Scanner(string: self)
+		scanner.charactersToBeSkipped = nil
+
+		// TODO: Only match src or href that are actual attributes. E.g. not text in a pre or code element. Need to scan < etc.
+		// Really it might be a lot easier to use a proper HTML parser like HTMLTidy. It might not even be slower as
+		// it has to look at every character anyway, whether it ends up knowing what to do with that character or not.
+
+		while true {
+			if let scanned = scanner.scanUpToCharacters(from: CharacterSet(["s", "h"])) {
+				output.append(scanned)
+			}
+
+			if scanner.isAtEnd {
+				break
+			}
+
+			if let scanned = scanner.scanString("src") ?? scanner.scanString("href") {
+				output.append(scanned)
+				if let scanned = scanner.scanString("=") {
+					output.append(scanned)
+					if let scanned = scanner.scanString("\"") {
+						output.append(scanned)
+						// TODO: Handle escaped quotation marks, which would be treated as quotation marks as part of the URL.
+						if let url = scanner.scanUpToString("\"") {
+							if scanner.isAtEnd {
+								fatalError("Found end of string in middle of URL.")
+							}
+							if url.hasPrefix("/") {
+								if mustBeAbsolute {
+									output.append("\(publishedSiteDomain)\(url)")
+								} else {
+									output.append(url)
+								}
+							} else if url.hasPrefix("http") {
+								// TODO: This will break if a path component starts with http so it’s really a relative URL.
+								output.append(url)
+							} else {
+								if mustBeAbsolute {
+									output.append(publishedSiteDomain)
+								}
+								output.append(path)
+								output.append(url)
+							}
+						} else {
+							fatalError("URL is empty.")
+						}
+						output.append(scanner.scanString("\"")!)
+					}
+				}
+			} else if scanner.scanString("s") != nil {
+				// An h that’s not the start of href. Just continue.
+				output.append("s")
+			} else if scanner.scanString("h") != nil {
+				// An s that’s not the start of src. Just continue.
+				output.append("h")
+			} else {
+				fatalError("Scanned up to an s or h but then couldn’t scan either an s or h.")
+			}
+		}
+
 		timeReplacingRelativeLinks += CFAbsoluteTimeGetCurrent() - startTime
-		return result
+		return output
 	}
 
 	func markdownWithLinksRelativeTo(_ path: String, mustBeAbsolute: Bool) -> String {
+		// TODO: Use Scanner here to be faster.
 		replacing("](", with: "](\(path)")
 		.replacing("](\(path)http", with: "](http")
 		.replacing("](\(path)/", with: "](\(prefixForLinksRelativeToRoot(mustBeAbsolute: mustBeAbsolute))")
