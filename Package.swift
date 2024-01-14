@@ -5,19 +5,19 @@
 import PackageDescription
 
 let package = Package(
-	name: "generate",
-	platforms: [
+	name: "generate"
+	, platforms: [
 		.macOS(.v13),
-	],
-	dependencies: [
+	]
+	, dependencies: [
 		.package(url: "https://github.com/apple/swift-markdown.git", branch: "main"),
- ],
-	targets: [
+	]
+	, targets: [
 		.executableTarget(
-			name: "generate",
-			dependencies: [.product(name: "Markdown", package: "swift-markdown")],
-			path: "",
-			exclude: ["Content", "Output"]
+			name: "generate"
+			, dependencies: [.product(name: "Markdown", package: "swift-markdown")]
+			, path: ""
+			, exclude: ["Content", "Output"]
 		),
 	]
 )
