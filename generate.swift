@@ -3,8 +3,6 @@
 import Foundation
 import Markdown
 
-var timeReplacingRelativeLinksInMarkdown: CFTimeInterval = 0
-
 @main
 public struct Whatever {
 	public static func main() {
@@ -268,7 +266,6 @@ func autocompletion() {
 
 #if ENABLE_PERFORMANCE_LOGGING
 	print("Finished after \(CFAbsoluteTimeGetCurrent() - startTime)s.")
-	print("Time replacing relative links in Markdown: \(timeReplacingRelativeLinksInMarkdown)s")
 #endif
 }
 
@@ -471,17 +468,13 @@ extension String {
 	}
 
 	func markdownWithLinksRelativeTo(_ path: String, mustBeAbsolute: Bool) -> String {
-		let startTime = CFAbsoluteTimeGetCurrent()
 		// Replacing then replace back is an inefficient way to not change external URLs and URLs relative to root already.
 		// This would be faster using `Scanner` like the method for HTML above, but this function is under 4% of the execution time, so this wouldn’t be a big saving.
 		// It’s OK for this to only handle inline links, not Markdown reference links, because this is only used for the title, description and micro properties, not for post bodies.
-		let result = replacing("](", with: "](\(path)")
+		replacing("](", with: "](\(path)")
 		.replacing("](\(path)http", with: "](http")
 		.replacing("](\(path)/", with: "](\(prefixForLinksRelativeToRoot(mustBeAbsolute: mustBeAbsolute))")
-
-		timeReplacingRelativeLinksInMarkdown += CFAbsoluteTimeGetCurrent() - startTime
-
-		return result.htmlWithLinksRelativeTo(path, mustBeAbsolute: mustBeAbsolute)
+		.htmlWithLinksRelativeTo(path, mustBeAbsolute: mustBeAbsolute)
 	}
 }
 
