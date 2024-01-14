@@ -3,6 +3,8 @@
 import Foundation
 import Markdown
 
+var timeReplacingRelativeLinks: CFTimeInterval = 0
+
 @main
 public struct Whatever {
 	public static func main() {
@@ -265,6 +267,7 @@ func autocompletion() {
 
 #if ENABLE_PERFORMANCE_LOGGING
 	print("Finished after \(CFAbsoluteTimeGetCurrent() - startTime)s.")
+	print("Time replacing relative links: \(timeReplacingRelativeLinks)s")
 #endif
 }
 
@@ -400,14 +403,17 @@ extension String {
 	}
 
 	func htmlWithLinksRelativeTo(_ path: String, mustBeAbsolute: Bool) -> String {
+		let startTime = CFAbsoluteTimeGetCurrent()
 		// This is really silly (inefficient) way to not change external URLs and URLs relative to root already. (Replace them then replace them back.)
 		// Limitation: This requires no spaces around the `=` which is not required by HTML.
-		replacing("src=\"", with: "src=\"\(path)")
+		let result = replacing("src=\"", with: "src=\"\(path)")
 		.replacing("href=\"", with: "href=\"\(path)")
 		.replacing("src=\"\(path)http", with: "src=\"http")
 		.replacing("href=\"\(path)http", with: "href=\"http")
 		.replacing("src=\"\(path)/", with: "src=\"\(prefixForLinksRelativeToRoot(mustBeAbsolute: mustBeAbsolute))")
 		.replacing("href=\"\(path)/", with: "href=\"\(prefixForLinksRelativeToRoot(mustBeAbsolute: mustBeAbsolute))")
+		timeReplacingRelativeLinks += CFAbsoluteTimeGetCurrent() - startTime
+		return result
 	}
 
 	func markdownWithLinksRelativeTo(_ path: String, mustBeAbsolute: Bool) -> String {
