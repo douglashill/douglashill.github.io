@@ -403,6 +403,8 @@ extension String {
 		mustBeAbsolute ? publishedSiteRoot : "/"
 	}
 
+	private static let shCharacterSet = CharacterSet(["s", "h"])
+
 	func htmlWithLinksRelativeTo(_ path: String, mustBeAbsolute: Bool) -> String {
 		let startTime = CFAbsoluteTimeGetCurrent()
 		var output = ""
@@ -411,11 +413,10 @@ extension String {
 		scanner.charactersToBeSkipped = nil
 
 		// TODO: Only match src or href that are actual attributes. E.g. not text in a pre or code element. Need to scan < etc.
-		// Really it might be a lot easier to use a proper HTML parser like HTMLTidy. It might not even be slower as
-		// it has to look at every character anyway, whether it ends up knowing what to do with that character or not.
+		// This would be a lot nicer with a proper HTML parser like HTML Tidy.
 
 		while true {
-			if let scanned = scanner.scanUpToCharacters(from: CharacterSet(["s", "h"])) {
+			if let scanned = scanner.scanUpToCharacters(from: Self.shCharacterSet) {
 				output.append(scanned)
 			}
 
