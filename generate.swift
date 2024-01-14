@@ -3,7 +3,7 @@
 import Foundation
 import Markdown
 
-var timeReplacingRelativeLinks: CFTimeInterval = 0
+var timeReplacingRelativeLinksInMarkdown: CFTimeInterval = 0
 
 @main
 public struct Whatever {
@@ -268,7 +268,7 @@ func autocompletion() {
 
 #if ENABLE_PERFORMANCE_LOGGING
 	print("Finished after \(CFAbsoluteTimeGetCurrent() - startTime)s.")
-	print("Time replacing relative links: \(timeReplacingRelativeLinks)s")
+	print("Time replacing relative links in Markdown: \(timeReplacingRelativeLinksInMarkdown)s")
 #endif
 }
 
@@ -406,7 +406,6 @@ extension String {
 	private static let shCharacterSet = CharacterSet(["s", "h"])
 
 	func htmlWithLinksRelativeTo(_ path: String, mustBeAbsolute: Bool) -> String {
-		let startTime = CFAbsoluteTimeGetCurrent()
 		var output = ""
 
 		let scanner = Scanner(string: self)
@@ -468,16 +467,19 @@ extension String {
 			}
 		}
 
-		timeReplacingRelativeLinks += CFAbsoluteTimeGetCurrent() - startTime
 		return output
 	}
 
 	func markdownWithLinksRelativeTo(_ path: String, mustBeAbsolute: Bool) -> String {
+		let startTime = CFAbsoluteTimeGetCurrent()
 		// TODO: Use Scanner here to be faster.
-		replacing("](", with: "](\(path)")
+		let result = replacing("](", with: "](\(path)")
 		.replacing("](\(path)http", with: "](http")
 		.replacing("](\(path)/", with: "](\(prefixForLinksRelativeToRoot(mustBeAbsolute: mustBeAbsolute))")
-		.htmlWithLinksRelativeTo(path, mustBeAbsolute: mustBeAbsolute)
+
+		timeReplacingRelativeLinksInMarkdown += CFAbsoluteTimeGetCurrent() - startTime
+
+		return result.htmlWithLinksRelativeTo(path, mustBeAbsolute: mustBeAbsolute)
 	}
 }
 
