@@ -18,6 +18,9 @@ let package = Package(
 			, dependencies: [.product(name: "Markdown", package: "swift-markdown")]
 			, path: ""
 			, exclude: ["Content", "Output"]
+//			, swiftSettings: [
+//				.define("ENABLE_PERFORMANCE_LOGGING")
+//			]
 		),
 	]
 )
