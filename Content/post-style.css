@@ -62,14 +62,14 @@ blockquote, h1, h2, h3, h4, h5, h6, input, p, small {
 	line-height: 1.4em;
 }
 body, blockquote, div, h1, h2, h3, h4,
-h5, h6, img, nav, ol, p, pre, table, ul, iframe {
+h5, h6, img, nav, ol, p, pre, table, ul, iframe, figure {
 	margin: 0.8em auto;
 }
 hr {
 	margin: 2em auto;
 }
 p, nav, div.quotebox, div.source,
-ul, ol, pre, h3, h4, h5, h6, div.videoembed {
+ul, ol, pre, h3, h4, h5, h6, div.videoembed, figure {
 	max-width: 32em;
 }
 hr {max-width: 20em}
@@ -136,6 +136,10 @@ article {
 header {
 	text-align: center;
 	margin-bottom: 2.2em;
+}
+figcaption {
+	text-align: center;
+	font-style: italic;
 }
 code {
 	font-size: 0.85em;
