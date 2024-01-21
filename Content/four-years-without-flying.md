@@ -48,7 +48,7 @@ That said, as a nomad, I sometimes felt like I was moving without purpose. I was
 
 ## Moving again
 
-As the public health situation in the UK became better towards the end of 2021, and we were allowed to go out and do things, I started lessons in ice skating and kitesurfing. These were effectively replacements for travelling as a hobby. But with the travel restrictions lifting, I missed the mountains and what I really wanted to do was go skiing.
+As the public health situation in the UK became better towards the end of 2021, and we were allowed to go out and do things, I started lessons in ice skating and kitesurfing (and later on, wakeboarding). These were effectively replacements for travelling as a hobby. But with the travel restrictions lifting, I missed the mountains and what I really wanted to do was go skiing.
 
 My base is a rural area close to London where avoiding using a car is not particularly practical. I put my lockdown savings into buying myself an [electric car](https://www.tesla.com/referral/douglas802262), and soon after set off in it for the mountains. In early 2022, I was back in Innsbruck for a couple of months, and it was fabulous.
 
@@ -57,11 +57,11 @@ My base is a rural area close to London where avoiding using a car is not partic
   <figcaption>‎⁨View above Hopfgarten im Brixental.⁩</figcaption>
 </figure>
 
-Later in 2022, I resumed train travel within Europe. It was a delight to catch up with friends across the continent who I hadn’t seen for nearly three years. New family members had appeared!
+Later in 2022, I resumed occasional train travel within Europe. It was a delight to catch up with friends across the continent who I hadn’t seen for nearly three years. New family members had appeared!
 
 I’m not sure when I decided I was on a deliberate no flying streak. At first, I was anxious about going on a plane because of covid. However with no [WWDC](https://developer.apple.com/wwdc/) or any other [iOS development](https://www.tryswift.co/tokyo/en/) [conferences](https://www.iosconf.sg), there wasn’t a strong push to fly for a specific reason.
 
-I’m pleased to see these conferences are back (except WWDC only partially) but I’ve found I’m OK without intercontinental travel. I want to see how long I can make my no-flying streak.
+I’m pleased to see these conferences are back (except WWDC only partially), but I’ve found I’m OK without intercontinental travel. I like my newfound hobbies and want to see how long I can make my no-flying streak.
 
 ## The overland travel mindset
 
@@ -70,6 +70,8 @@ The main concerns about overland travel compared to flying are usually cost and 
 ### Cost
 
 Trains are usually more expensive than flying. I assume this is still true, but I wouldn’t know because I don’t look at the prices of flights. Given I decided not to fly, reminding myself of the difference isn’t going to be helpful. I’m an obsessive planner and optimiser, so I book in advance to help keep the price down, but in the end I just acknowledge the overland cost as the cost of travel.
+
+I hope that a societal shift can move the economies of scale away from flying towards lower-carbon forms of transport, but we’re not on right track for this so far.
 
 Coming from the UK, [Eurostar][] is unavoidable and is especially expensive. I’m going to Berlin this July, and the cheapest Eurostar tickets were already taken at popular weekend times when booking in November: eight months in advance!
 
@@ -87,13 +89,13 @@ I love feeling connected to the ground. On a plane you can get the sense that th
 
 Below are more details about a couple of my trips. If you want to learn more about train travel, the ultimate resource is [The Man in Seat Sixty-One](https://www.seat61.com).
 
-### London to Berlin
+### London to Berlin (930 km)
 
 Low-cost flights have made going on a weekend city trip in Europe very practical. If you work Monday to Friday, this is a way to see friends and cities across the continent while taking no time off work (or perhaps a minimal amount). You might think this kind of trip is impossible by train, but if you can work remotely, you can probably work on a train.
 
 Recently, I planned to trip to Berlin with friends to meet a new baby in the group. Some time-constrained friends who live in London went by plane and needed to take Friday afternoon off work for this. Setting off from the same place, I took the [Eurostar][] Friday morning, followed by [Deutsche Bahn](https://bahn.de/). I did a full day of work on the trains and arrived in Berlin an hour or two after my friends. I’d say I came out ahead though.
 
-### London to Budapest
+### London to Budapest (1500 km)
 
 Last summer, our [PSPDFKit](https://pspdfkit.com/) retreat was in Budapest. This is too far to reach from London in one day, so I thought about the nicest way to split the journey.
 
@@ -125,7 +127,7 @@ Environmental impact aside, I believe a more connected world is a better world. 
 
 Some friends are getting married in Greece this spring, which I’m taking as a challenge to push my no-flying boundaries. [The route](https://www.seat61.com/Greece.htm) looks very doable. The minimum journey time is three days, but I’m going to spread this over ten days on the way out and five on the way back because it’s about the journey as well as the destination. I’ll see a few towns along the Adriatic coast of Italy and wake up on a ferry seeing the shores of Greece. I’ve booked most of my tickets already on [Trainline](https://www.thetrainline.com).
 
-Life is full of surprises, and perhaps sometime a situation will arise that leads me to fly somewhere, but for now I have no intention to end my no flying streak. I still have adventures, but they’re closer to home in Europe. The slowmads were right: It’s nice to focus your life on a smaller number of places. I really enjoy having a firmer base with actual hobbies like ice skating and wakeboarding (like a more typical person) instead of travelling as a hobby.
+Life is full of surprises, and perhaps sometime a situation will arise that leads me to fly somewhere, but for now I have no intention to end my no-flying streak. Looking at the last couple of years and my plans for 2024, my years are spent with 8–9 months at home in the UK, two months in Innsbruck, and around a month elsewhere. I still have adventures, but they’re closer to home in Europe. The slowmads were right: It’s nice to focus your life on a smaller number of places. I really enjoy having a firmer base with actual hobbies like ice skating and wakeboarding (like a more typical person) instead of travelling as a hobby.
 
 ## Choices
 
