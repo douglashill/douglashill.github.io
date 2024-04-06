@@ -59,6 +59,7 @@ extension DateComponents {
 let publishedSiteDomain = "https://douglashill.co"
 let publishedSiteRoot = "\(publishedSiteDomain)/"
 let author = "Douglas Hill"
+let iso8601DateFormatter = ISO8601DateFormatter()
 
 func autocompletion() {
 
@@ -147,13 +148,10 @@ func autocompletion() {
 #endif
 
 	articlesWithDates.sort {
-		if $0.rawDate! == $1.rawDate! {
-			if $0.rawTime == nil || $1.rawTime == nil {
-				fatalError("Missing time for articles on same day: \($0.relativePath) and \($1.relativePath)")
-			}
-			return $0.rawTime! > $1.rawTime! // Time must be explicit for articles published on the same day.
+		if $0.date! == $1.date! {
+            fatalError("Articles have same date/time: \($0.relativePath) and \($1.relativePath)")
 		} else {
-			return $0.rawDate! > $1.rawDate!
+			return $0.date! > $1.date!
 		}
 	}
 
@@ -274,7 +272,7 @@ func writeFeed(fromSortedArticles articles: ArraySlice<Article>, isMicro isMicro
 		var item = [
 			"id": article.publishedURLString,
 			"url": article.publishedURLString,
-			"date_published": article.rawDate! + "T\(article.rawTime ?? "12:00:00+00:00")",
+			"date_published": article.rawDate!,
 		]
 
 		// TODO: Support link posts in feeds. That is, where the title contains a Markdown link. It might be better to have a separate field for the link.
@@ -530,7 +528,6 @@ struct Article {
 	let description: MarkdownText?
 	let microPost: MarkdownText?
 	let rawDate: String?
-	let rawTime: String?
 	let skipByline: Bool
 	let externalURL: String?
 	let partialHTML: String
@@ -566,7 +563,6 @@ struct Article {
 		description = MarkdownText(info["description"])
 		microPost = MarkdownText(info["micro"])
 		rawDate = info["date"]
-		rawTime = info["time"]
 		skipByline = info["skipByline"] == "true"
 		externalURL = info["externalURL"]
 		partialHTML = markdownDocument.html.appending("\n")
@@ -590,6 +586,12 @@ struct Article {
 		} else {
 			type = .short
 		}
+
+        if let rawDate {
+            date = iso8601DateFormatter.date(from: rawDate)!
+        } else {
+            date = nil
+        }
 	}
 
 	var relativeURL: String {
@@ -600,12 +602,15 @@ struct Article {
 		externalURL ?? (relativePath.isEmpty ? publishedSiteRoot : "\(publishedSiteRoot)\(relativePath)/")
 	}
 
+    var date: Date?
+
 	var dateComponents: DateComponents? {
 		guard let rawDate = rawDate else {
 			return nil
 		}
 
-		let dateComponentsArray = rawDate.components(separatedBy: "-")
+        let rawDateWithoutTime = rawDate[..<(rawDate.firstIndex(of: "T") ?? rawDate.endIndex)]
+		let dateComponentsArray = rawDateWithoutTime.components(separatedBy: "-")
 		precondition(dateComponentsArray.count == 3, "Bad date format \(rawDate)")
 
 		var dateComponents = DateComponents()
