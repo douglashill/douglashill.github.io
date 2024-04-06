@@ -1,6 +1,6 @@
 title: Beyond size classes
 subtitle: Making better use of large screens
-date: 2019-09-01
+date: 2019-09-01T12:00:00+00:00
 %%%
 
 Talk at [iOSDevUK](https://www.iosdevuk.com/) 2019.
