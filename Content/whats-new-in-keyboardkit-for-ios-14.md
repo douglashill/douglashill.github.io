@@ -1,7 +1,6 @@
 title: What’s new in KeyboardKit for iOS 14?
 description: Some details about KeyboardKit’s new support for Swift Package Manager, sidebars and lists with `UICollectionView`.
-date: 2020-10-08
-time: 07:50:08+0000
+date: 2020-10-08T07:50:08+0000
 %%%
 
 [KeyboardKit][] is my open source framework that makes it easy to add [full keyboard control](/keyboard-control/) to UIKit apps. In this post, I’d like to share some details of KeyboardKit’s new support for Swift Package Manager and sidebars, and then I’ll end with a little about what might be next for KeyboardKit.

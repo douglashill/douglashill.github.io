@@ -1,6 +1,5 @@
 title: Torch apps for iPhone 4
-date: 2011-07-27
-time: 17:09:37+0000
+date: 2011-07-27T17:09:37+0000
 tumblr: 8133635915
 %%%
 

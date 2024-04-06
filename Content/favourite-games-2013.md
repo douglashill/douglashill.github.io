@@ -1,6 +1,5 @@
 title: My favourite games of 2013
-date: 2014-01-13
-time: 23:52:00+0000
+date: 2014-01-13T23:52:00+0000
 tumblr: 73248762257
 %%%
 

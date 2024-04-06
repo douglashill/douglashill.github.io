@@ -1,8 +1,7 @@
 title: Tweets on my website
 description: My past tweets are now available on my website. No sign in required. In the URL, replace “twitter.com/qdoug” with “douglashill.co”.
 micro: My past tweets are now available on my website. No sign in required. In the URL, replace “twitter.com/qdoug” with “douglashill.co”.
-date: 2023-07-04
-time: 16:10:00+01:00
+date: 2023-07-04T16:10:00+01:00
 %%%
 
 My past tweets are now available on my website. No sign in required. In the URL, replace “twitter.com/qdoug” with “douglashill.co”.

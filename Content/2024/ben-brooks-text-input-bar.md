@@ -1,5 +1,4 @@
-date: 2024-01-07
-time: 09:07:01+0000
+date: 2024-01-07T09:07:01+0000
 %%%
 
 [Ben Brooks on iPad](https://brooksreview.net/2024/01/still-full-time-ipad-only-eight-years-running/):

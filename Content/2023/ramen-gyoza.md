@@ -1,5 +1,4 @@
-date: 2023-11-30
-time: 23:47:00+00:00
+date: 2023-11-30T23:47:00+00:00
 %%%
 
 Started a long weekend with a day at cookery school making ramen and gyoza. Learned a lot, and it was very tasty. Went as not vegetarian for the day.

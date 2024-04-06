@@ -1,6 +1,5 @@
 title: iOS keyboard sounds
-date: 2011-02-27
-time: 14:35:00+0000
+date: 2011-02-27T14:35:00+0000
 tumblr: 3545036624
 %%%
 

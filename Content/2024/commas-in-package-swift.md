@@ -1,7 +1,6 @@
 title: Commas in `Package.swift`
 description: Is anyone else putting commas before argument labels in `Package.swift`, like [this](https://github.com/douglashill/douglashill.github.io/blob/main/Package.swift), for nicer diffs and so lines can be commented out easily?
-date: 2024-01-14
-time: 11:01:06+0000
+date: 2024-01-14T11:01:06+0000
 %%%
 
 Is anyone else putting commas before argument labels in `Package.swift`, like [this](https://github.com/douglashill/douglashill.github.io/blob/main/Package.swift), for nicer diffs and so lines can be commented out easily?

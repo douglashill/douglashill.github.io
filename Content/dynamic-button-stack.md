@@ -1,7 +1,6 @@
 title: DynamicButtonStack
 subtitle: Motivation and design details
-date: 2020-04-12
-time: 12:15:10+0000
+date: 2020-04-12T12:15:10+0000
 %%%
 
 In this article, I’ll discuss the problems solved by, and the design principles behind, my small open source project [DynamicButtonStack](https://github.com/douglashill/DynamicButtonStack).

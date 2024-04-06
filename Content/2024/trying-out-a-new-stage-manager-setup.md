@@ -1,5 +1,4 @@
-date: 2024-02-21
-time: 12:32:32+0000
+date: 2024-02-21T12:32:32+0000
 %%%
 
 Trying out a new Stage Manager setup on iPad for better focus.

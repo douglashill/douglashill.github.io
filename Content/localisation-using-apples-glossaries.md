@@ -1,7 +1,6 @@
 title: Localisation using Apple’s glossaries
 description: How I localised KeyboardKit into 39 languages without needing translators.
-date: 2020-03-28
-time: 21:10:48+0000
+date: 2020-03-28T21:10:48+0000
 %%%
 
 Users of Apple platforms benefit when apps and the system use consistent terminology. However Apple’s SDKs do not provide a convenient way to access user interface text from the system at runtime. Therefore apps typically provide their own UI text for common action names, and if the app is localised then this text is translated from scratch. Translation is likely to be expensive, and translators need to take care to match the Apple system text otherwise the terminology used may end up being inconsistent.

@@ -1,8 +1,7 @@
 title: Page Up, Page Down, Home and End in Catalyst apps
 description: Apple didn’t add support for scrolling with Page Up and Page Down in UIKit: They added this in WebKit/Safari.
 micro: I know a bit about the Home and End keys in Catalyst apps so I wrote a response. Summary: UIKit doesn’t do this; use KeyboardKit. 👍
-date: 2019-12-20
-time: 11:06:33+0000
+date: 2019-12-20T11:06:33+0000
 tweet: 1207980601770496000
 %%%
 

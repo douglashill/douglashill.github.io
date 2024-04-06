@@ -1,6 +1,5 @@
 title: Wikipedia style
-date: 2011-01-08
-time: 15:14:00+0000
+date: 2011-01-08T15:14:00+0000
 tumblr: 2652342310
 %%%
 

@@ -1,7 +1,6 @@
 title: My lab report process
 description: I’ve developed a somewhat unusual process for writing university lab experiment reports.
-date: 2011-02-13
-time: 14:58:00+0000
+date: 2011-02-13T14:58:00+0000
 tumblr: 3272400046
 %%%
 

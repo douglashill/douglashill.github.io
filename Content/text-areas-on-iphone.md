@@ -1,6 +1,5 @@
 title: Text areas on iPhone
-date: 2011-04-30
-time: 13:11:40+0000
+date: 2011-04-30T13:11:40+0000
 tumblr: 5068438799
 %%%
 

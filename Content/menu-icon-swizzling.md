@@ -1,7 +1,6 @@
 title: Improving iOS menus by putting icons on the left with swizzling
 description: How I improved the usability of iOS contextual menus and the share sheet with some swizzling fun.
-date: 2020-04-05
-time: 11:22:31+0000
+date: 2020-04-05T11:22:31+0000
 %%%
 
 <script>

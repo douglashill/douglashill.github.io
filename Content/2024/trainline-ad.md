@@ -1,5 +1,4 @@
-date: 2024-01-18
-time: 08:40:30+0000
+date: 2024-01-18T08:40:30+0000
 %%%
 
 [Speaking of Trainline](/2024/spaces-filling-nslondon-trainline/), Google are scamming them here selling ads for their own service doing what I’m already doing. 🇮🇹

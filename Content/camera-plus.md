@@ -1,7 +1,6 @@
 title: Camera Plus
 description: A review of TapTapTap’s Camera Plus app.
-date: 2011-05-30
-time: 17:33:00+0000
+date: 2011-05-30T17:33:00+0000
 tumblr: 5164323921
 %%%
 

@@ -1,5 +1,4 @@
-date: 2024-01-08
-time: 21:18:00+0000
+date: 2024-01-08T21:18:00+0000
 %%%
 
 Style guides are hard ([source](https://developer.apple.com/visionos/submit/))

@@ -1,6 +1,5 @@
 title: Improving user experience with Apple Pencil
-date: 2018-06-07
-time: 18:03:54+0000
+date: 2018-06-07T18:03:54+0000
 %%%
 
 Talk at [AltConf](http://altconf.com/) San Jose 2018.

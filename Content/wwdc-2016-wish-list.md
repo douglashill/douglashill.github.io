@@ -1,8 +1,7 @@
 title: iOS 10 and OS X 10.12 wish list
 description: Here are some changes I would like to see in the next versions of Apple’s major platforms.
 micro: I wrote up my wish list for iOS 10 and OS X 10.12. Synchronised notifications, tones, faster share sheet, and more.
-date: 2016-05-30
-time: 21:26:51+0000
+date: 2016-05-30T21:26:51+0000
 tweet: 737394866859151360
 %%%
 

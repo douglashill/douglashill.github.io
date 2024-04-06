@@ -2,8 +2,7 @@ title: Grounded adventures
 subtitle: Four years without flying
 description: My journey from flying around the world as a digital nomad to not flying at all.
 micro: Today marks four years since I went on a plane. I wrote about my journey from flying around the world as a digital nomad to not flying at all.
-date: 2024-01-20
-time: 23:58:33+0000
+date: 2024-01-20T23:58:33+0000
 %%%
 
 Last week I felt a mix of emotions hearing about [great](https://mastodon.social/@twostraws/111776455481166071) [talks](https://mastodon.social/@designatednerd/111781457905013226) [and fun](https://iosdev.space/@Amy/111783282008531062) at [iOS Conf SG][]. Four years ago in 2020, flying back from Singapore to London after [speaking at the conference](/keyboard-control/) was the last time I went on a plane.

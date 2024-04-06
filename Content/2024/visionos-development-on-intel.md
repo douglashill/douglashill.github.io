@@ -1,5 +1,4 @@
-date: 2024-01-10
-time: 15:42:14+0000
+date: 2024-01-10T15:42:14+0000
 %%%
 
 - Xcode 15.0 betas: visionOS development fully possible on Intel Macs (our CI machines)

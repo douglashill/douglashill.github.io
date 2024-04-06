@@ -1,8 +1,7 @@
 title: `NSPredicate`: an old API with new surprises
 description: Discovering an inconsistency in how `NSPredicate` handles matching inequality with nil values, and implementing something better.
 micro: Recently I was working with `NSPredicate`, and a situation that looked fairly basic wasn’t working as I expected. I wrote about a new surprise with this old API.
-date: 2023-01-18
-time: 07:40:00+00:00
+date: 2023-01-18T07:40:00+00:00
 %%%
 
 Recently I was working with [`NSPredicate`](https://developer.apple.com/documentation/foundation/nspredicate) — an API that’s been around since Mac OS X Tiger was released in 2005 — and a situation that looked fairly basic wasn’t working as I expected.

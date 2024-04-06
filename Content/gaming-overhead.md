@@ -1,6 +1,5 @@
 title: Gaming overhead
-date: 2013-11-11
-time: 16:00:32+0000
+date: 2013-11-11T16:00:32+0000
 tumblr: 66681988696
 %%%
 

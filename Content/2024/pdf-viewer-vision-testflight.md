@@ -1,5 +1,4 @@
-date: 2024-01-24
-time: 10:05:32+0000
+date: 2024-01-24T10:05:32+0000
 %%%
 
 Just in case anyone happens to have an Apple Vision Pro, you can now [download PDF Viewer from TestFlight](https://testflight.apple.com/join/6IMUtZ8n)!

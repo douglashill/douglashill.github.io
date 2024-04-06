@@ -1,5 +1,4 @@
-date: 2024-01-22
-time: 18:11:27+0000
+date: 2024-01-22T18:11:27+0000
 %%%
 
 Submitted PDF Viewer for Apple Vision Pro for app review, complete with upscaled and cropped screenshots. Hopefully it works!

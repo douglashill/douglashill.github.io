@@ -1,7 +1,6 @@
 title: Using JavaScript in a Swift app
 description: How I used JavaScriptCore to add a JavaScript dependency to my iOS app to remove tracking parameters from URLs.
-date: 2023-01-12
-time: 09:20:00+00:00
+date: 2023-01-12T09:20:00+00:00
 %%%
 
 If you’re writing an iOS app using Swift and trying to solve a problem you’re sure has been solved before, you may look for existing code that solves that problem. It’s likely you’ll first think of looking for open source code written in Swift that you can integrate into your project using Swift Package Manager. For example, by searching the the [Swift Package Index](https://swiftpackageindex.com). However, we don’t need to limit ourselves to Swift.

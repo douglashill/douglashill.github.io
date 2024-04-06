@@ -1,7 +1,6 @@
 title: FB6185896
 subtitle: App unexpectedly terminates instead of receiving `application:didDiscardSceneSessions:`
-date: 2019-06-20
-time: 12:00:00+0000
+date: 2019-06-20T12:00:00+0000
 %%%
 
 Copy of feedback filed with Apple.

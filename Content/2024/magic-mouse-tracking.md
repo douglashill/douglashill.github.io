@@ -1,5 +1,4 @@
-date: 2024-03-29
-time: 10:53:16+0000
+date: 2024-03-29T10:53:16+0000
 %%%
 
 One of my two Apple Magic Mice started only tracking well on harder/shinier surfaces. [Cleaning the sensor](https://support.apple.com/105045) didn’t help.

@@ -1,7 +1,6 @@
 title: Unspecified PDF page labels
 description: We had a report of a fun bug today with a situation the PDF reference doesn’t specify how to handle.
-date: 2024-01-18
-time: 16:21:23+0000
+date: 2024-01-18T16:21:23+0000
 %%%
 
 We had a report of a fun bug today with a situation the PDF reference doesn’t specify how to handle.

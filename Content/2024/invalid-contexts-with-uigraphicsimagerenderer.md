@@ -1,7 +1,6 @@
 title: Invalid contexts with `UIGraphicsImageRenderer`
 description: Graphics contexts created by `UIGraphicsImageRenderer` are somehow invalid for reading the width and height.
-date: 2024-01-11
-time: 16:33:21+0000
+date: 2024-01-11T16:33:21+0000
 %%%
 
 Graphics contexts created by `UIGraphicsImageRenderer` are somehow invalid for reading the width and height. This code:

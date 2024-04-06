@@ -1,7 +1,6 @@
 title: Greg Joswiak at SVC2UK
 description: I attended Silicon Valley comes to the UK, where Greg Joswiak from Apple gave a talk.
-date: 2011-11-28
-time: 16:08:00+0000
+date: 2011-11-28T16:08:00+0000
 tumblr: 13456040932
 %%%
 

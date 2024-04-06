@@ -1,5 +1,4 @@
-date: 2024-01-04
-time: 23:17:00+0000
+date: 2024-01-04T23:17:00+0000
 %%%
 
 I cleaned up my [follow](/follow/) page. It’s now in line with my vision: I post on my own site, and my posts can be followed in various ways.

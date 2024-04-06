@@ -1,5 +1,4 @@
-date: 2023-12-02
-time: 22:41:00+00:00
+date: 2023-12-02T22:41:00+00:00
 %%%
 
 ![Photo from hilltop with trees in foreground and mist illuminated by the sunset covering the distance. The sun is low and orange on the right.](sun.jpg)

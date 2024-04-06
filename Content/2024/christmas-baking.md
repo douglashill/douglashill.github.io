@@ -1,5 +1,4 @@
-date: 2024-01-10
-time: 21:39:00+0000
+date: 2024-01-10T21:39:00+0000
 %%%
 
 Some of my Christmas baking. Not-quite Linzer Augen:

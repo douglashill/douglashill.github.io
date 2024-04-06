@@ -1,8 +1,7 @@
 title: iPad-focused WWDC 2020 wish list
 description: New stuff I’d like to see on iPad.
 micro: With just a few days to go, here’s my iPad-focused WWDC 2020 wish list. It’s the only wish list with things like improving the feel of `UINavigationController`.
-date: 2020-06-18
-time: 22:21:07+0000
+date: 2020-06-18T22:21:07+0000
 tweet: 1273742566173835266
 %%%
 

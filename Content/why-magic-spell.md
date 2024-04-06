@@ -1,8 +1,7 @@
 title: Why I made Magic Spell
 description: I found myself fixing a lot of spelling errors in source code, so I made a Mac app to check spelling in many files at once.
 micro: I wrote about why I made Magic Spell.
-date: 2016-02-05
-time: 09:52:54+0000
+date: 2016-02-05T09:52:54+0000
 tweet: 695545626982019072
 %%%
 

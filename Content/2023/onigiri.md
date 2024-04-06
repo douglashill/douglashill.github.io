@@ -1,5 +1,4 @@
-date: 2023-12-31
-time: 19:47:00+00:00
+date: 2023-12-31T19:47:00+00:00
 %%%
 
 With instructions for the party tonight of “most surprising party snack”, I made miso-walnut onigiri.

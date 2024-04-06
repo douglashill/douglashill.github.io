@@ -1,6 +1,5 @@
 title: iPad and engineering textbooks
-date: 2010-04-24
-time: 21:41:00+0000
+date: 2010-04-24T21:41:00+0000
 tumblr: 546397842
 %%%
 

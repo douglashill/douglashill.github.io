@@ -1,6 +1,5 @@
 title: Concrete, tarmac and asphalt
-date: 2012-06-12
-time: 17:29:00+0000
+date: 2012-06-12T17:29:00+0000
 tumblr: 24962217303
 %%%
 

@@ -1,5 +1,4 @@
-date: 2023-02-28
-time: 23:50:00+01:00
+date: 2023-02-28T23:50:00+01:00
 %%%
 
 Skiing last Sunday in Kitzbühel. Discovered the delightful run 55.

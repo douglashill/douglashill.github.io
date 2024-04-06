@@ -1,5 +1,4 @@
-date: 2024-02-02
-time: 13:51:21+0000
+date: 2024-02-02T13:51:21+0000
 %%%
 
 And… PDF Viewer for Apple Vision Pro is out. The highlights are in the [announcement post](https://pdfviewer.io/blog/2024/pdf-viewer-for-apple-vision-pro/).

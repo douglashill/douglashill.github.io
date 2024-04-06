@@ -1,6 +1,5 @@
 title: System Preferences iOSification
-date: 2010-12-30
-time: 11:39:00+0000
+date: 2010-12-30T11:39:00+0000
 tumblr: 2526305526
 %%%
 

@@ -1,6 +1,5 @@
 title: Keyboard control in UIKit apps
-date: 2020-02-04
-time: 12:13:31+0000
+date: 2020-02-04T12:13:31+0000
 %%%
 
 Talk at [iOS Conf SG](https://iosconf.sg/) 2020.

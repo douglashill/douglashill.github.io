@@ -1,7 +1,6 @@
 title: Weak linking crash
 micro: Imagine if you were having a quiet Friday at work just before Christmas… and then at 6pm you discover the live version of [your app](https://apps.apple.com/app/id1120099014) is crashing at launch on older iOS versions.
-date: 2023-12-22
-time: 22:17:00+00:00
+date: 2023-12-22T22:17:00+00:00
 %%%
 
 Imagine if you were having a quiet Friday afternoon at work just before Christmas with nobody else in the team around… and then at 6pm you discover the live version of [your app](https://apps.apple.com/app/id1120099014) is crashing at launch on older iOS versions.

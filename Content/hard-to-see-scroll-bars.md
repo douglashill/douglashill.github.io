@@ -1,6 +1,5 @@
 title: Hard-to-see scroll bars
-date: 2012-01-29
-time: 19:28:00+0000
+date: 2012-01-29T19:28:00+0000
 tumblr: 16710526470
 %%%
 

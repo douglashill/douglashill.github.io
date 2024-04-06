@@ -1,5 +1,4 @@
-date: 2023-11-25
-time: 10:00:00+00:00
+date: 2023-11-25T10:00:00+00:00
 %%%
 
 Link to Bluesky profile in Bluesky app => Potentially Misleading Link. You couldn’t make this up.

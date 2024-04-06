@@ -1,6 +1,5 @@
 title: Designing notifications
-date: 2011-03-01
-time: 21:30:00+0000
+date: 2011-03-01T21:30:00+0000
 tumblr: 3587705237
 %%%
 
