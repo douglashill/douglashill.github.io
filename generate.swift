@@ -609,7 +609,7 @@ struct Article {
 			return nil
 		}
 
-        let rawDateWithoutTime = rawDate[..<(rawDate.firstIndex(of: "T") ?? rawDate.endIndex)]
+        let rawDateWithoutTime = rawDate[..<rawDate.firstIndex(of: "T")!]
 		let dateComponentsArray = rawDateWithoutTime.components(separatedBy: "-")
 		precondition(dateComponentsArray.count == 3, "Bad date format \(rawDate)")
 
