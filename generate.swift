@@ -589,8 +589,10 @@ struct Article {
 
         if let rawDate {
             date = iso8601DateFormatter.date(from: rawDate)!
+            rawDateWithoutTime = rawDate[..<rawDate.firstIndex(of: "T")!]
         } else {
             date = nil
+            rawDateWithoutTime = nil
         }
 	}
 
@@ -603,15 +605,15 @@ struct Article {
 	}
 
     var date: Date?
+    var rawDateWithoutTime: Substring?
 
 	var dateComponents: DateComponents? {
-		guard let rawDate = rawDate else {
+		guard let rawDateWithoutTime else {
 			return nil
 		}
 
-        let rawDateWithoutTime = rawDate[..<rawDate.firstIndex(of: "T")!]
 		let dateComponentsArray = rawDateWithoutTime.components(separatedBy: "-")
-		precondition(dateComponentsArray.count == 3, "Bad date format \(rawDate)")
+		precondition(dateComponentsArray.count == 3, "Bad date format \(rawDateWithoutTime)")
 
 		var dateComponents = DateComponents()
 		dateComponents.year = Int(dateComponentsArray[0])
@@ -628,7 +630,7 @@ struct Article {
 	private var dateHTML: String {
 		// Avoid using a span here because if there is a span in the byline then Safari Reader adds a bullet after this span.
 		formattedDate == nil ? "" : """
-		 • <time datetime="\(rawDate!)">\(formattedDate!)</time>
+		 • <time datetime="\(rawDateWithoutTime!)">\(formattedDate!)</time>
 		"""
 	}
 
