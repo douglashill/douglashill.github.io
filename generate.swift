@@ -84,6 +84,8 @@ func autocompletion() {
 	/// Track files we generate so other files can be deleted at the end.
 	var outputFiles: Set<URL> = []
 
+	var allTweetIDs: Set<String> = []
+
 	for untypedFileURL in enumerator! {
 		let fileURL = untypedFileURL as! URL
 
@@ -106,6 +108,13 @@ func autocompletion() {
 
 			if article.rawDate != nil {
 				articlesWithDates.append(article)
+			}
+
+			if let tweetIDs = article.tweetIDs {
+				for tweetID in tweetIDs {
+					precondition(allTweetIDs.contains(tweetID) == false, "Duplicate tweet ID: \(tweetID)")
+					allTweetIDs.insert(tweetID)
+				}
 			}
 
 			if article.externalURL == nil {
