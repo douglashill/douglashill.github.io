@@ -36,6 +36,15 @@ jobs:
           key: ${{ runner.os }}-swiftpm-build-${{ hashFiles('Package.resolved') }}
           restore-keys: |
             ${{ runner.os }}-swiftpm-build-
+      # Always try to restore the Output directory and keep it updated.
+      # https://github.com/actions/cache/blob/main/tips-and-workarounds.md#update-a-cache
+      - name: Cache built site
+        uses: actions/cache@v4
+        with:
+          path: Output
+          key: output-${{ github.run_id }}
+          restore-keys: |
+            output-
       - name: Build site
         run: swift run
       - name: Upload artefact
