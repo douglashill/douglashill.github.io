@@ -29,6 +29,13 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup pages
         uses: actions/configure-pages@v4
+      - name: Cache Swift packages
+        uses: actions/cache@v3
+        with:
+          path: .build
+          key: ${{ runner.os }}-swiftpm-build-${{ hashFiles('Package.resolved') }}
+          restore-keys: |
+            ${{ runner.os }}-swiftpm-build-
       - name: Build site
         run: swift run
       - name: Upload artefact

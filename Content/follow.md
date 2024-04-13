@@ -15,3 +15,5 @@ For all my posts, follow any one of these:
 Or if you prefer a lower volume, follow the [feed for longer, more considered articles](/feed.json) as seen on the [archive page](/archive/).
 
 All feeds use [JSON feed](https://www.jsonfeed.org/).
+
+(Testing GitHub actions cache)
