@@ -1,5 +1,6 @@
 // Douglas Hill, January 2018
 
+import CoreFoundation
 import Foundation
 import Markdown
 
@@ -62,10 +63,7 @@ let author = "Douglas Hill"
 let iso8601DateFormatter = ISO8601DateFormatter()
 
 func autocompletion() {
-
-#if ENABLE_PERFORMANCE_LOGGING
 	let startTime = CFAbsoluteTimeGetCurrent()
-#endif
 
 	let fileManager = FileManager.default
 
@@ -152,9 +150,7 @@ func autocompletion() {
 		outputFiles.insert(destination)
 	}
 
-#if ENABLE_PERFORMANCE_LOGGING
 	print("Enumerated files in \(CFAbsoluteTimeGetCurrent() - startTime)s.")
-#endif
 
 	articlesWithDates.sort {
 		if $0.date! == $1.date! {
@@ -252,9 +248,7 @@ func autocompletion() {
 	// Articles-only feed
 	try! outputFiles.insert(writeFeed(fromSortedArticles: articlesWithDates.filter { $0.type == .long }.prefix(3), isMicro: false, toDestinationDirectory: destinationDirectory, filename: "feed.json"))
 
-#if ENABLE_PERFORMANCE_LOGGING
 	print("Wrote files after \(CFAbsoluteTimeGetCurrent() - startTime)s.")
-#endif
 
 	let outputEnumerator = fileManager.enumerator(at: destinationDirectory, includingPropertiesForKeys: [.isDirectoryKey], options: []) { fileURL, error -> Bool in
 		fatalError("Enumerator had trouble with \(fileURL): \(error)")
@@ -271,9 +265,7 @@ func autocompletion() {
 		print("Deleted item at \(fileURL)")
 	}
 
-#if ENABLE_PERFORMANCE_LOGGING
 	print("Finished after \(CFAbsoluteTimeGetCurrent() - startTime)s.")
-#endif
 }
 
 func writeFeed(fromSortedArticles articles: ArraySlice<Article>, isMicro isMicroFeed: Bool, toDestinationDirectory destinationDirectory: URL, filename: String) throws -> URL {
