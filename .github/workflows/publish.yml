@@ -30,7 +30,7 @@ jobs:
       - name: Setup pages
         uses: actions/configure-pages@v4
       - name: Cache Swift packages
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: .build
           key: ${{ runner.os }}-swiftpm-build-${{ hashFiles('Package.resolved') }}
