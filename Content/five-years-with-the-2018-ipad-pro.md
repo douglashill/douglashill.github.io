@@ -1,13 +1,12 @@
 title: Five years with the 2018 iPad Pro
-subtitle: Looking for a computer to take me to 2030
-description: Reflecting on many thousands of hours using the 2018 iPad Pro as my main computer and considering what hardware a new iPad should have to last for a similar duration.
+description: Reflecting on many thousands of hours using the 2018 iPad Pro and considering what hardware a new iPad should have to last until 2030.
 micro: It’s iPad hype day, so after many thousands of hours using the 2018 iPad Pro as my main computer, I wanted to consider what hardware a new iPad should have to last as my main computer from now until 2030.
 date: 2024-05-06T21:22:05+01:00
 %%%
 
 I’ve used my 13-inch iPad Pro from 2018 for many thousands of hours for work, recreation, and everything in between. While I have various other devices, this iPad is my go-to gadget for most tasks.
 
-Apple has [expressed their goal of creating sustainable products](https://www.apple.com/environment/). A great way to move towards sustainability is for products to last a long time before being replaced. I’ve used this iPad for 5.5 years; I hope a replacement device would stay excellent for a similar duration, if not longer. It’s possible that tomorrow Apple will announce the iPad I’ll upgrade to.
+Apple has [expressed its goal of creating sustainable products](https://www.apple.com/environment/). A great way to move towards sustainability is for products to last a long time before being replaced. I’ve used this iPad for 5.5 years; I hope a replacement device would stay excellent for a similar duration, if not longer. It’s possible that tomorrow Apple will announce the iPad I’ll upgrade to.
 
 I wanted to reflect on using the 2018 iPad Pro as my main computer and consider what hardware a new iPad should have to last as my computer from now until 2030.
 
@@ -25,7 +24,7 @@ While my iPad Pro is my go-to device, I also have a 2021 14-inch MacBook Pro, wh
 
 ### For iOS
 
-The 2018 iPad Pros were considered ludicrously fast when they came out. I sometimes hear people say iPads are fast enough for what they need to do. No, no no! Please keep making these faster. Especially with a keyboard, I can navigate around iOS very quickly, and it’s not uncommon that I’m waiting for the device for small amounts of time (e.g. Spotlight). These little slowdowns have been a problem for years, and while they may often be software inefficiencies, faster hardware would still help. I hope the new iPads may be considered ludicrously fast again, so they remain fast enough for years to come.
+The 2018 iPad Pros were considered _ludicrously fast_ when they came out. I sometimes hear people say iPads are fast enough for what they need to do. No, no no! Please keep making these faster. Especially with a keyboard, I can navigate around iOS very quickly, and it’s not uncommon that I’m waiting for the device for small amounts of time (e.g. Spotlight). These little slowdowns have been a problem for years, and while they may often be software inefficiencies, faster hardware would still help. I hope the new iPads may be considered _ludicrously fast_ again, so they remain fast enough for years to come.
 
 It might surprise some people that my main computer (which I used professionally) only has 4 GB of memory. This is an absurdly tight limit by modern standards, yet the 2018 iPad Pro works within this constraint admirably. Still it’s not magic, so more RAM would help reduce how often apps need to relaunch, leading to increased speed. The 2022 iPad Pros have 8 GB (or 16 GB at huge additional cost) so the trajectory is promising.
 
@@ -39,7 +38,7 @@ Making everything possible on a Mac also possible _directly_ on iOS seems like a
 
 (I don’t want to use macOS primarily. If that was the case, I’d just use my Mac. I much prefer iOS.)
 
-Running macOS would incur heavy demands on the hardware though. The iPad needs to have all the hardware specs of a Mac and more. My ideal case would be an iPad that:
+Running macOS would incur heavy demands on the hardware though. The iPad would need to have _all the hardware specs of a Mac and more_. My ideal case would be an iPad that:
 
 - Can compile code faster than my M1 Pro MacBook Pro.
 - Has at a _minimum_ 24 GB memory (8 for iOS, 16 for macOS).
@@ -67,7 +66,7 @@ Stage Manager and other software improvements have made the iPad a much more via
 
 The single biggest flaw in the design of the 2018 iPad Pros is the position of the front-facing camera on the short edge, which is almost always the (left) side because the iPad is in landscape orientation in the Magic Keyboard for iPad. When the camera is on the side of the device, the impression of eye contact is weakened on video calls, and the lower angle isn’t so flattering.
 
-It’s bizarre that since 2010, iPad hardware has clearly been designed for portrait, while for all that time the software has been neutral at best, if not favouring landscape. Most accessories I see favour landscape too, including the iPad Smart Cover which came out alongside the iPad 2 in 2011 — the same iPad that introduced the front-facing camera… on the short edge!
+It’s bizarre that since 2010, iPad hardware has clearly been designed for portrait, while for all that time the software has been neutral at best, if not favouring landscape. Most accessories I see favour landscape too, including the iPad Smart Cover which came out alongside the iPad 2 in 2011: the same iPad that introduced the front-facing camera… on the short edge!
 
 Given the 10th-generation iPad from 2022 moved the front-facing camera to the long edge, it would be extremely odd and disappointing if tomorrow’s iPad Pros didn’t do the same.
 
