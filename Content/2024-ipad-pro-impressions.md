@@ -47,6 +47,8 @@ One thing I was specifically hoping for:
 
 The OLED screen should be great for watching movies in dim lighting, but I couldn’t appreciate this in the brightly-lit Apple store. Backlight bleed on other displays is hard to see where there is lots of ambient light.
 
+From what I read, I thought the nano-texture display would diffuse reflected light. However on seeing it, my impression was more that the reflections were just as sharp but were reduced in intensity and slightly more yellow.
+
 ## Cameras
 
 I’m really pleased that the front-facing camera is now on the top when the iPad is in landscape orientation. This will be more pleasant for people on the other end of video calls.
@@ -69,6 +71,10 @@ I’m delighted by how thin the new 13-inch iPad Pro is. It’s not such a signi
 - 5.1 mm: 2024
 
 I was on board for the rumours that the new Magic Keyboard for iPad would have a built-in battery, which would both extend battery life and distribute the weight such that the device was more stable. This didn’t happen. Apple instead chose to reduce the weight of both the iPad and the keyboard, resulting in a laptop that’s similarly unstable but lighter than before. I think it’s a reasonable path to have taken, but for me the reduction in weight in my bag will be negligible considering I’m often also carrying around a 14-inch MacBook Pro (hence the importance of Xcode or virtualised macOS).
+
+## Apple Pencil Pro
+
+I use the Apple Pencil mostly for testing our support in [PSPDFKit](https://pspdfkit.com/pdf-sdk/ios/)/[PDF Viewer](https://apps.apple.com/app/id1120099014). I also use it to draw diagrams to solve problems, for which a uniform thickness line is adequate and desirable. The Apple Pencil Pro felt magical with the hover and rotation support. The haptic feedback and radial menu seem great. I don’t think I’ll make much use of the finesse this new Pencil provides, but it will be useful for testing as a developer.
 
 ## Non-matching non-colours
 
@@ -112,4 +118,4 @@ I can’t shake the feeling of buying the same things from Apple I already bough
 
 ## Purchase decision?
 
-I’ll be travelling from London to Athens and back until early June. Just in case WWDC software announcements might impact the best hardware for my needs, I’ll defer making a purchase decision until after then.
+I’ll be travelling from London to Athens and back by train and ferry until early June. Just in case WWDC software announcements might impact the best hardware for my needs, I’ll defer making a purchase decision until after then.
