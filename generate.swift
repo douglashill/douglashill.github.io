@@ -563,7 +563,8 @@ struct Article {
 		title = Title(title: MarkdownText(info["title"]), subtitle: MarkdownText(info["subtitle"]))
 		description = MarkdownText(info["description"])
 		microPost = MarkdownText(info["micro"])
-		rawDate = info["date"]
+		// ‘auto’ should only be left here in local builds, not for publishing, but nothing is checking that currently.
+		rawDate = info["date"] == "auto" ? iso8601DateFormatter.string(from: Date()) : info["date"]
 		skipByline = info["skipByline"] == "true"
 		externalURL = info["externalURL"]
 		partialHTML = markdownDocument.html.appending("\n")

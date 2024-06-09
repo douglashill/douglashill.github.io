@@ -4,7 +4,7 @@ skipByline: true
 
 I make apps to help people learn and achieve more. I’m the iOS team lead at [PSPDFKit](https://pspdfkit.com/) and an organiser of the [NSLondon meetup](https://nslondon.com/).
 
-I’ve worked fully remotely since 2015 and [spent time as a digital nomad](https://pspdfkit.com/blog/2017/remote-work/), but these days I [don’t fly](/four-years-without-flying/) and instead base myself where I can go skiing, ice skating or wakeboarding.
+I’ve worked fully remotely since 2015 and [spent time as a digital nomad](https://pspdfkit.com/blog/2017/remote-work/), but these days [I don’t fly](/four-years-without-flying/) and instead base myself where I can go skiing, ice skating or wakeboarding.
 
 If you like, you can [follow me](/follow/).
 
