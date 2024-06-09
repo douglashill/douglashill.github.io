@@ -71,7 +71,7 @@ The one train that didn’t run smoothly on the whole trip was the one Swiss tra
     <figcaption>The Swiss alps near Sion</figcaption>
 </figure>
 
-Milan has big city vibes. I don’t recommend it as the best place to experience Italian culture.
+Milan has big city vibes. I don’t recommend it as the best place to experience Italian culture. I took the opportunity to [drop by the Piazza Liberty Apple store to try the new iPad Pro](/2024-ipad-pro-impressions/).
 
 As a side note, you can [enter and exit public transport in Milan with any standard contactless payment card](https://www.atm.it/en/ViaggiaConNoi/Pages/contactless_cards_metro.aspx). No tickets or separate card needed. This isn’t [Apple’s Express Mode](https://support.apple.com/105123), so you still need to authenticate with FaceID or TouchID. The main limitation is that not all the metro access and exit gates have the necessary hardware. In a row of six gates, two might show the contactless payment symbol.
 

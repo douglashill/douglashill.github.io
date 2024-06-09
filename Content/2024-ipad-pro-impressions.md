@@ -53,7 +53,7 @@ From what I read, I thought the nano-texture display would diffuse reflected lig
 
 I’m really pleased that the front-facing camera is now on the top when the iPad is in landscape orientation. This will be more pleasant for people on the other end of video calls.
 
-As far as video quality, it doesn’t look like the front-facing camera is advancing much. The specs are the same as the last couple of generations of 13-inch iPad Pro from 2021 and 2022. This camera has a higher resolution than the one on my 2018 model, but Centre Stage means not all of those pixels are used. However sensor size is probably a more important metric than resolution for video calls, which Apple isn’t talking about so this probably isn’t improved. 
+As far as video quality, it doesn’t look like the front-facing camera is advancing much. The specs are the same as the last couple of generations of 13-inch iPad Pro from 2021 and 2022. This camera has a higher resolution than the one on my 2018 model, but Centre Stage means not all of those pixels are used. However sensor size is probably a more important metric than resolution for video calls, which Apple isn’t talking about so this probably isn’t improved.
 
 For my needs doing plenty of video calls but not doing much photography or scanning, it seems like the bump is still allocated to the wrong camera.
 
@@ -118,4 +118,4 @@ I can’t shake the feeling of buying the same things from Apple I already bough
 
 ## Purchase decision?
 
-I’ll be travelling from London to Athens and back by train and ferry until early June. Just in case WWDC software announcements might impact the best hardware for my needs, I’ll defer making a purchase decision until after then.
+I’ll be travelling from [London to Athens and back by train and ferry](/london-to-athens/) until early June. Just in case WWDC software announcements might impact the best hardware for my needs, I’ll defer making a purchase decision until after then.
