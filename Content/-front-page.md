@@ -26,6 +26,7 @@ If you like, you can [follow me](/follow/).
 
 ## Articles
 
+- [Zoom transitions](zoom-transitions/)
 - [Conditional compilation for Apple’s yearly updates](https://pspdfkit.com/blog/2023/conditional-compilation-apple-yearly-updates/)
 - [NSPredicate: an old API with new surprises](nspredicate-null-inequality/)
 - [Using JavaScript in a Swift app](javascript-in-swift/)

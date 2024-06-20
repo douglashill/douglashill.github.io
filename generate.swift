@@ -399,7 +399,7 @@ extension String {
 		mustBeAbsolute ? publishedSiteRoot : "/"
 	}
 
-	private static let shCharacterSet = CharacterSet(["s", "h"])
+	private static let shpCharacterSet = CharacterSet(["s", "h", "p"])
 
 	func htmlWithLinksRelativeTo(_ path: String, mustBeAbsolute: Bool) -> String {
 		var output = ""
@@ -411,7 +411,7 @@ extension String {
 		// This would be a lot nicer with a proper HTML parser like HTML Tidy.
 
 		while true {
-			if let scanned = scanner.scanUpToCharacters(from: Self.shCharacterSet) {
+			if let scanned = scanner.scanUpToCharacters(from: Self.shpCharacterSet) {
 				output.append(scanned)
 			}
 
@@ -419,7 +419,7 @@ extension String {
 				break
 			}
 
-			if let scanned = scanner.scanString("src") ?? scanner.scanString("href") {
+			if let scanned = scanner.scanString("src") ?? scanner.scanString("href") ??  scanner.scanString("poster") {
 				output.append(scanned)
 				if let scanned = scanner.scanString("=") {
 					output.append(scanned)
@@ -458,8 +458,11 @@ extension String {
 			} else if scanner.scanString("h") != nil {
 				// An s that’s not the start of src. Just continue.
 				output.append("h")
+			} else if scanner.scanString("p") != nil {
+				// A p that’s not the start of poster. Just continue.
+				output.append("p")
 			} else {
-				fatalError("Scanned up to an s or h but then couldn’t scan either an s or h.")
+				fatalError("Scanned up to an s, h or p but then couldn’t scan either an s, h or p.")
 			}
 		}
 
