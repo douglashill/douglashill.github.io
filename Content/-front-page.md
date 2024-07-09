@@ -26,14 +26,13 @@ If you like, you can [follow me](/follow/).
 
 ## Articles
 
+- [NSCopying in a Swift World](https://pspdfkit.com/blog/2024/nscopying-in-a-swift-world/)
 - [Zoom transitions](zoom-transitions/)
 - [Conditional compilation for Apple’s yearly updates](https://pspdfkit.com/blog/2023/conditional-compilation-apple-yearly-updates/)
-- [NSPredicate: an old API with new surprises](nspredicate-null-inequality/)
 - [Using JavaScript in a Swift app](javascript-in-swift/)
 - [The case for lists in `UICollectionView`](https://pspdfkit.com/blog/2020/the-case-for-lists-in-uicollectionview/)
 - [Level up your trackpad support using `UIInteraction`](https://pspdfkit.com/blog/2020/level-up-your-trackpad-support-using-uiinteraction/)
 - [Localisation using Apple’s glossaries](localisation-using-apples-glossaries/)
-- [Page Up, Page Down, Home and End in Catalyst apps](page-up-page-down-home-end-catalyst/)
 - [Open links in Safari, not Safari view controller](https://pspdfkit.com/blog/2019/open-links-in-safari-not-safari-view-controller/)
 - [Presentation controllers and adaptive presentations](https://pspdfkit.com/blog/2015/presentation-controllers/)
 
