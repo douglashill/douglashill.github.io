@@ -40,7 +40,7 @@ See all articles in the [archive](/archive/).
 
 ## Talks
 
-- [Keyboard control in UIKit apps](keyboard-control/) ([NSLondon Q1 2019](https://nslondon.com/#douglas-hill-full-keyboard-control-in-ios-apps), AltConf San Jose 2019, [iOS Conf SG 2020](https://www.youtube.com/watch?v=gFnhvZIoTLc) and the [iPhreaks podcast](https://devchat.tv/iphreaks/ips-297-keyboard-controls-with-douglas-hill/))
+- [Keyboard control in UIKit apps](keyboard-control/) ([NSLondon Q1 2019](https://nslondon.com/#douglas-hill-full-keyboard-control-in-ios-apps), AltConf San Jose 2019, [iOS Conf SG 2020](https://www.youtube.com/watch?v=gFnhvZIoTLc) and the [iPhreaks podcast](https://topenddevs.com/podcasts/iphreaks/episodes/ips-297-keyboard-controls-with-douglas-hill))
 - [Beyond size classes: Making better use of large screens](large-screens/) (iOSDevUK 2019)
 - [Improving user experience with Apple Pencil](apple-pencil/) (AltConf San Jose 2018)
 
