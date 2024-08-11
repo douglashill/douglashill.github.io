@@ -8,9 +8,11 @@ Over the weekend, I updated [KeyboardKit](https://github.com/douglashill/Keyboar
 
 This is a great test case because KeyboardKit is a small UI framework that doesn’t perform any slow operations, so all its code is intended to be run on the main thread. It should be trivial to opt into strict concurrency. I didn’t want to spent more than about an hour on this.
 
-Many issues were resolved simply by annotating types with `@MainActor`, but I wanted to share three interesting situations that came up in the migration, two of which seem like issues on Apple’s side.
+Many issues were resolved simply by annotating types with `@MainActor`, but I wanted to share three interesting situations that came up in the migration, two of which seem like issues on Apple’s side. I used Xcode 16.0 beta 5.
 
 ## `UIView` and `UIViewController` subclasses can’t have a parameterless `init`
+
+**Update:** This issue was [reported by Nacho Soto](https://github.com/swiftlang/swift/issues/75732) and [Holly Borla had a fix ready](https://github.com/swiftlang/swift/pull/75749) the same day. Thanks to [James Savage for bringing this to my attention](https://social.axiixc.com/@axiixc/112945383778325026).
 
 I don’t use Interface Builder, so in my `UIViewController` subclasses I always want to change the designated initialisers away from `init(nibName:bundle:)` and `init(coder:)`. The KeyboardKit demo app had a couple of view controllers that reset the designated initialiser to a parameterless `init`. One of these is an abstract class where I reset the initialiser to avoid repeating this boilerplate in every subclass. However there was a concurrency warning:
 
