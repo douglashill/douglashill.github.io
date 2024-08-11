@@ -12,7 +12,7 @@ Many issues were resolved simply by annotating types with `@MainActor`, but I wa
 
 ## `UIView` and `UIViewController` subclasses can’t have a parameterless `init`
 
-**Update:** This issue was [reported by Nacho Soto](https://github.com/swiftlang/swift/issues/75732) and [Holly Borla had a fix ready](https://github.com/swiftlang/swift/pull/75749) the same day. Thanks to [James Savage for bringing this to my attention](https://social.axiixc.com/@axiixc/112945383778325026).
+**Update:** This issue was [reported by Nacho Soto](https://github.com/swiftlang/swift/issues/75732) five days ago and [Holly Borla had a fix ready](https://github.com/swiftlang/swift/pull/75749) the same day. Thanks to [James Savage for bringing this to my attention](https://social.axiixc.com/@axiixc/112945383778325026).
 
 I don’t use Interface Builder, so in my `UIViewController` subclasses I always want to change the designated initialisers away from `init(nibName:bundle:)` and `init(coder:)`. The KeyboardKit demo app had a couple of view controllers that reset the designated initialiser to a parameterless `init`. One of these is an abstract class where I reset the initialiser to avoid repeating this boilerplate in every subclass. However there was a concurrency warning:
 
