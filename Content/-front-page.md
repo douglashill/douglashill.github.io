@@ -20,7 +20,7 @@ If you like, you can [follow me](/follow/).
 
 ## Code
 
-- [KeyboardKit](https://github.com/douglashill/KeyboardKit): The easiest way to add comprehensive hardware keyboard control to an iPad or Mac Catalyst app. Read more: [The creation of KeyboardKit](status/1201265719788392448/) and [What’s new in KeyboardKit for iOS 14?](whats-new-in-keyboardkit-for-ios-14/)
+- [KeyboardKit](https://github.com/douglashill/KeyboardKit): The easiest way to add comprehensive hardware keyboard control to an iPad or Mac Catalyst app. Read more: [The creation of KeyboardKit](status/1201265719788392448/), [What’s new in KeyboardKit for iOS 14?](whats-new-in-keyboardkit-for-ios-14/) and [Migrating KeyboardKit to Swift 6 language mode](keyboardkit-swift-6/).
 
 - [DynamicButtonStack](https://github.com/douglashill/DynamicButtonStack): A UIKit view that lays out buttons in either a column or a row to suit the available space. Read more: [Motivation and design details](dynamic-button-stack/).
 
