@@ -20,7 +20,7 @@ The first Gunman Clive was decent, but the sequel blew through my expectations: 
 
 ## 2. Bayonetta (Wii U)
 
-I finally picked up a Wii U at the beginning of December. I had heard Bayonetta 2 was fantastic, and if you’re going to play both start with the first because going back to it after 2 may be rough. This may be the worst of the two, but it’s nevertheless really, really excellent. It’s utterly ridiculous in the best possible way, from high heels guns attached to riding a motorbike up a launching space rocket. Hideki Kamiya and team picked their themes and stuck with them all the way.
+I finally picked up a Wii U at the beginning of December. I had heard Bayonetta 2 was fantastic, and if you’re going to play both start with the first because going back to it after 2 may be rough. This may be the worst of the two, but it’s nevertheless really, really excellent. It’s utterly ridiculous in the best possible way, from high heels with guns attached to riding a motorbike up a launching space rocket. Hideki Kamiya and team picked their themes and stuck with them all the way.
 
 And to think Bayonetta 2 is going to be even better.
 
