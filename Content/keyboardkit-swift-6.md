@@ -111,7 +111,7 @@ class ScrollViewKeyHandler: InjectableResponder, UIScrollViewDelegate {
 }
 ```
 
-The Swift compiler doesn’t know these methods simply forward the method call. The isolation exceptions are hidden in the `Selector` (basically a string).
+The Swift compiler doesn’t know these methods simply forward the method call. The isolation expectations are hidden in the `Selector` (basically a string).
 
 The solution I went for to opt out of strict concurrency here:
 
@@ -125,4 +125,4 @@ I’m not sure. No data race safety issues were exposed. Overall it *was* fairly
 
 Strict concurrency is complicated, as you can see by the number of issues that came up even with a small codebase that runs entirely on the main thread.
 
-These changes have no impact on developers using KeyboardKit, but if you want to try it anyway these internal changes are available in [KeyboardKit](https://github.com/douglashill/KeyboardKit) 9.0.1, which also adds support for iOS 18 and Xcode 16. You can also see the [pull request implement these changes](https://github.com/douglashill/KeyboardKit/pull/26).
+These changes have no impact on developers using KeyboardKit, but if you want to try it anyway these internal changes are available in [KeyboardKit](https://github.com/douglashill/KeyboardKit) 9.0.1, which also adds support for iOS 18 and Xcode 16. You can also see the [pull request implementing these changes](https://github.com/douglashill/KeyboardKit/pull/26).
