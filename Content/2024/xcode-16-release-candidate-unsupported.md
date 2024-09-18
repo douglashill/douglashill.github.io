@@ -1,5 +1,5 @@
 title: Xcode 16 RC uploads unsupported
-description: We’re seeing app *uploads* built with Xcode 16 RC being blocked now Xcode 16 final is out. Is there something terribly wrong with the RC we should know about? The error message says *submissions* are unsupported using *beta* versions, neither of which is the case.
+description: We’re seeing app *uploads* built with Xcode 16 RC being blocked now Xcode 16 final is out. Is there something terribly wrong with the RC we should know about? The error message says *submissions* are unsupported using *beta* versions.
 date: 2024-09-18T09:51:12+0100
 %%%
 
