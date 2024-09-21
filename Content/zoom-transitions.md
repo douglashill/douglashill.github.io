@@ -19,7 +19,6 @@ I ended up trying out almost everything you can do with the zoom transition API,
 - [Zoom transitions in UIKit](#Zoom-transitions-in-UIKit)
   - [Using navigation push](#Using-navigation-push)
   - [Using full screen presentation](#Using-full-screen-presentation)
-  - [Capturing an appropriate identifier](#Capturing-an-appropriate-identifier)
 - [Platform availability](#Platform-availability)
 - [Fine-tuning the source view](#Fine-tuning-the-source-view)
   - [Filling an entire row/cell](#Filling-an-entire-row-cell)
@@ -113,18 +112,31 @@ The examples below show exactly where to apply these modifiers. I’m using a pl
 
 <h2 id="Zoom-transitions-in-UIKit">Zoom transitions in UIKit</h2>
 
-Since UIKit views are reference types, the destination and source can be established in one place by setting the [`preferredTransition`](https://developer.apple.com/documentation/uikit/uiviewcontroller/4448100-preferredtransition) property of the destination view controller to [`zoom(options:sourceViewProvider:)`](https://developer.apple.com/documentation/uikit/uiviewcontroller/transition/4448132-zoom), so the implementation is arguably easier than in SwiftUI.
+Since UIKit views are reference types, the destination and source can be established in one place by setting the [`preferredTransition`](https://developer.apple.com/documentation/uikit/uiviewcontroller/4448100-preferredtransition) property of the destination view controller to [`zoom(options:sourceViewProvider:)`](https://developer.apple.com/documentation/uikit/uiviewcontroller/transition/4448132-zoom).
 
 <h3 id="Using-navigation-push">Using navigation push</h3>
 
 <pre><code class="hljs"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">collectionView</span><span class="hljs-params">(<span class="hljs-number">_</span> collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)</span></span> {
     collectionView.<span class="hljs-attribute">deselectItem</span>(at: indexPath, animated: <span class="hljs-literal">true</span>)
 
-    <span class="hljs-keyword">let</span> detailViewController =<span class="hljs-type"> DetailViewController</span>()
-<strong class="hljs-addition">    detailViewController.<span class="hljs-attribute">preferredTransition</span> = .<span class="hljs-attribute">zoom</span>(sourceViewProvider: { context <span class="hljs-keyword">in</span>
-        <span class="hljs-comment">//  Warning: This assumes indexPath will always refer to the same item later.</span>
-        collectionView.<span class="hljs-attribute">cellForItem</span>(at: indexPath)?.<span class="hljs-attribute">contentView</span>
-    })</strong>
+    <span class="hljs-keyword">let</span> item = dataSource.itemIdentifier(for: indexPath)
+    <span class="hljs-keyword">let</span> detailViewController =<span class="hljs-type"> DetailViewController</span>(item: item)
+
+    detailViewController.<span class="hljs-attribute">preferredTransition</span> = .<span class="hljs-attribute">zoom</span>(sourceViewProvider: { context <span class="hljs-keyword">in</span>
+        <span class="hljs-comment">// Use the context instead of capturing to avoid needing to make a weak reference.</span>
+        <span class="hljs-keyword">let</span> detailViewController = context.zoomedViewController as! DetailViewController
+        <span class="hljs-comment">// Fetch this instead of capturing in case the item shown by the destination view can change while the destination view is visible.</span>
+        <span class="hljs-keyword">let</span> item = detailViewController.item
+        <span class="hljs-comment">// Look up the index path in case the items in the collection view can change.</span>
+        <span class="hljs-keyword">guard let</span> indexPath = <span class="hljs-keyword">self</span>.dataSource.indexPath(for: item) <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">return nil</span>
+        }
+        <span class="hljs-comment">// Always fetch the cell again because even if the data never changes, cell reuse might occur. E.g if the device rotates.</span>
+        <span class="hljs-keyword">guard let</span> cell = <span class="hljs-keyword">self</span>.collectionView.cellForItem(at: indexPath) <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">return nil</span>
+        }
+        <span class="hljs-keyword">return</span> cell.contentView
+    })
 
     navigationController!.<span class="hljs-attribute">pushViewController</span>(detailViewController, animated: <span class="hljs-literal">true</span>)
 }</code></pre>
@@ -135,29 +147,33 @@ Since UIKit views are reference types, the destination and source can be establi
     collectionView.<span class="hljs-attribute">deselectItem</span>(at: indexPath, animated: <span class="hljs-literal">true</span>)
 
     <span class="hljs-keyword">let</span> detailNavigationController =<span class="hljs-attribute"> UINavigationController</span>(rootViewController:<span class="hljs-type"> DetailViewController</span>())
-<strong class="hljs-addition">    detailNavigationController.<span class="hljs-attribute">preferredTransition</span> = .<span class="hljs-attribute">zoom</span>(sourceViewProvider: { context <span class="hljs-keyword">in</span>
-        <span class="hljs-comment">//  Warning: This assumes indexPath will always refer to the same item later.</span>
-        collectionView.<span class="hljs-attribute">cellForItem</span>(at: indexPath)?.<span class="hljs-attribute">contentView</span>
-    })</strong>
+    detailNavigationController.<span class="hljs-attribute">preferredTransition</span> = .<span class="hljs-attribute">zoom</span>(sourceViewProvider: { context <span class="hljs-keyword">in</span>
+        <span class="hljs-comment">// Use the context instead of capturing to avoid needing to make a weak reference.</span>
+        <span class="hljs-keyword">let</span> detailNavigationController = context.zoomedViewController as! UINavigationController
+        <span class="hljs-keyword">let</span> detailViewController = detailNavigationController.viewControllers[0] as! DetailViewController
+        <span class="hljs-comment">// Fetch this instead of capturing in case the item shown by the destination view can change while the destination view is visible.</span>
+        <span class="hljs-keyword">let</span> item = detailViewController.item
+        <span class="hljs-comment">// Look up the index path in case the items in the collection view can change.</span>
+        <span class="hljs-keyword">guard let</span> indexPath = <span class="hljs-keyword">self</span>.dataSource.indexPath(for: item) <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">return nil</span>
+        }
+        <span class="hljs-comment">// Always fetch the cell again because even if the data never changes, cell reuse might occur. E.g if the device rotates.</span>
+        <span class="hljs-keyword">guard let</span> cell = <span class="hljs-keyword">self</span>.collectionView.cellForItem(at: indexPath) <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">return nil</span>
+        }
+        <span class="hljs-keyword">return</span> cell.contentView
+    })
 
    <span class="hljs-attribute"> present</span>(detailNavigationController, animated: <span class="hljs-literal">true</span>)
 }</code></pre>
-
-<h3 id="Capturing-an-appropriate-identifier">Capturing an appropriate identifier</h3>
-
-The simple examples above assume the index path is a stable identifier and that the item shown by the destination view can’t change while the destination view is visible. To handle more realistic cases:
-
-- If the items in the collection view might change, capture a stable identifier you define for your model objects in the `sourceViewProvider` and use that identifier to look up the index path and then the cell.
-
-- If the item shown by the destination view might change while the destination view is visible, either weakly capture `detailViewController` or use the `sourceViewProvider`’s `context` argument to get the `zoomedViewController` and cast that to the type of your view controller subclass. Then make sure you have a way to look up the current item displayed by the destination view.
 
 <h2 id="Platform-availability">Platform availability</h2>
 
 - **iOS:** Zoom transitions are implemented.
 
-- **visionOS, tvOS and watchOS:** The zoom transition APIs are available but appear to have no effect.
+- **visionOS, tvOS and watchOS:** The zoom transition APIs are available but have no effect.
 
-- **Mac Catalyst:** The zoom transition APIs are available. I haven’t yet installed macOS 15 to test if the transition has an effect on Mac. (Wouldn’t a macOS simulator be handy?) Please let me know if you’ve tested this.
+- **Mac Catalyst:** The zoom transition APIs are available, but only have an effect when using the *Scaled to Match iPad* setting. When using *Optimize for Mac*, the traditional iOS-style navigation push and full screen cover vertical transitions will be used instead, which is ironic because a zoom transition would be more Mac-like.
 
 - **macOS:** The SwiftUI zoom transition APIs are unavailable. It’s unclear why we need to write conditionally compiled SwiftUI code to accommodate macOS, while on all other platforms the API exists even if it’s ignored. I presume this is related to how SwiftUI is internally backed by UIKit on all other platforms, but this feels like an implementation detail that shouldn’t leak into the API.
 
@@ -257,15 +273,15 @@ The forwards transition (push/present) is always triggered by our code in respon
 
 Interactive gestures for the reverse transition (pop/dismiss) are available automatically:
 
-- **Pinch:** For both navigation and presentation, users can use a two finger pinch gesture to interactively reverse the zoom transition. This is intuitive but can be inconvenient because it requires two fingers. If the destination view is itself zoomable using a scroll view, the system will give that scroll view precedence, so the scroll view must be fully zoomed out before the user can pinch to pop/dismiss.
+- **Pinch:** Users can use a two finger pinch gesture to interactively reverse the zoom transition. This is intuitive but can be inconvenient because it requires two fingers. If the destination view is itself zoomable using a scroll view, the system will give that scroll view precedence, so the scroll view must be fully zoomed out before the user can pinch to pop/dismiss.
 
-- **Swipe vertically:** In addition, users can interactively reverse the zoom transition by swiping down with one finger anywhere in the destination view. If the destination view scrolls vertically, dismissal is only possible when scrolled to the top. In beta 1, this was only available for full screen present/dismiss, but beta 2 enables this for navigation push/pop as well.
+- **Scroll vertically:** Users can interactively reverse the zoom transition by swiping down with one finger anywhere in the destination view. If the destination view scrolls vertically, dismissal is only possible when scrolled to the top. In iOS 18.0 beta 1, this was only available for full screen present/dismiss, but beta 2 enabled this for navigation push/pop as well.
 
-- **Swipe horizontally:** With a navigation push/pop zoom transition users can also go back interactively by swiping with a direct touch (a finger) from near the leading edge of the container. (This is the left edge with English.) If the destination view scrolls horizontally, users must scroll from away from the leading edge of the container. When scrolling with a trackpad/mouse, the back gesture always takes precedence. To scroll left, users must scroll right slightly then scroll left in one gesture. When using the default slide transition, you can only go back with a horizontal swipe if the content is fully scrolled to the start. Therefore this looks like a bug with the zoom transition (FB14083432). Last tested with iOS 18 developer beta 2.
+- **Scroll horizontally:** Users can go back interactively by swiping with a direct touch (a finger) from near the leading edge of the container. (This is the left edge with English.) If the destination view scrolls horizontally, users must scroll from away from the leading edge of the container. With a trackpad or mouse, users can go back by scrolling in the leading direction from anywhere in the destination view. If the destination view scrolls vertically, dismissal with trackpad/mouse scrolling is only possible when fully scrolled to the start. In some iOS 18.0 betas, these gestures were only available for navigation push/pop, but they were later enabled for full screen present/dismiss as well.
 
 I don’t know any API to access the gesture recognisers driving all these interactive transitions. This might be useful if you wanted to set up custom failure requirements with your own gesture recognisers, although I didn’t see any situation so far where the behaviour wasn’t already as I would expect.
 
-With a full screen presentation, while the pinch and swipe down gestures mean that a user will be able to ‘escape’ from the destination view automatically, you should also add a close/done button for better discoverability and accessibility. I’ve shown this in the basic SwiftUI code sample near the top of this article. Adding a button isn’t necessary for a navigation push/pop because there will be a back button in the navigation bar by default.
+With a full screen presentation, while the gestures mean that a user will be able to ‘escape’ from the destination view, you should also add a close/done button for better discoverability and accessibility. I’ve shown this in the basic SwiftUI code sample near the top of this article. Adding a button isn’t necessary for a navigation push/pop because there will be a back button in the navigation bar by default.
 
 <h2 id="Can-you-spin-items-around-as-you-pinch-to-close">Can you spin items around as you pinch to close?</h2>
 
