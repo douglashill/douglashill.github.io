@@ -2,7 +2,7 @@ title: Douglas Hill
 skipByline: true
 %%%
 
-I make apps to help people learn and achieve more. I’m the iOS team lead at [PSPDFKit](https://pspdfkit.com/) and an organiser of [NSLondon](https://nslondon.com/).
+I make apps to help people learn and achieve more. I’m the iOS team lead at [Nutrient](https://www.nutrient.io/) (previously known as PSPDFKit) and an organiser of [NSLondon](https://nslondon.com/).
 
 I’ve worked fully remotely since 2015 and [spent time as a digital nomad](https://pspdfkit.com/blog/2017/remote-work/), but these days [I don’t fly](/four-years-without-flying/) and instead base myself where I can go skiing, ice skating or wakeboarding.
 
@@ -12,7 +12,7 @@ If you like, you can [follow me](/follow/).
 
 - [Reading app](reading-app/): My simple app to save webpages to read later. The comfortable reading experience is paramount. This is my main side project.
 
-- [PDF Viewer](https://itunes.apple.com/app/pdf-viewer-by-pspdfkit/id1120099014?mt=8): A powerful app to read, search, and annotate PDF documents. I make this with my teammates at [PSPDFKit](https://pspdfkit.com/).
+- [PDF Viewer](https://apps.apple.com/app/id1120099014): A powerful app to read, search, and annotate PDF documents, made with my teammates at [Nutrient](https://www.nutrient.io/).
 
 - [Magic Spell](magicspell/): My handy Mac app to check spelling in many files at once. Not actively maintained.
 
