@@ -179,7 +179,7 @@ func autocompletion() {
 	if let firstYear = articlesWithDates.last?.dateComponents!.year!, let lastYear = articlesWithDates.first?.dateComponents!.year! {
 		let allYears = firstYear...lastYear
 
-		// Generate archive page.
+		// Generate long articles archive page.
 		let archiveOutputFileURL = try! writeArchive(fromSortedArticles: articlesWithDates.filter { $0.type != .short }, years: allYears, title: "[\(author)](/)’s archive", toDestinationDirectory: destinationDirectory, filename: "archive", fileManager: fileManager) {
 			// This will break if the title Markdown has a link in it, but long articles should not be link posts.
 			var string = "[\($0.title!.markdown)](\($0.relativeURL))"
@@ -195,6 +195,40 @@ func autocompletion() {
 		}
 		outputFiles.insert(archiveOutputFileURL)
 
+		let microArticleFormatter: (Article) -> String = {
+			// TODO: Maybe share with micro feed by adding a method on Article.
+			let explicitShortText = $0.microPost?.markdown ?? $0.description?.markdown
+			if explicitShortText != nil || ($0.title != nil && $0.characterCount + ($0.title?.plainText.count ?? 0) > 290) {
+				let microPost = (explicitShortText ?? $0.title!.markdown).markdownWithLinksRelativeTo($0.relativeURL, mustBeAbsolute: false)
+				return "\(microPost) <a href=\"\($0.relativeURL)\" title=\"\($0.title?.plainText ?? "")\">Read more »</a>"
+			} else {
+				var partialHTML = $0.partialHTML.htmlWithLinksRelativeTo($0.relativeURL, mustBeAbsolute: false)
+				if let title = $0.title {
+					partialHTML = "\(title.markdown.markdownWithLinksRelativeTo($0.relativeURL, mustBeAbsolute: false))\n\n\(partialHTML)"
+				}
+				let endingsWithInlinePermalinks = ["</p>\n", "</li>\n</ul>\n", "</li>\n</ol>\n", "</p>\n</blockquote>\n"]
+				for ending in endingsWithInlinePermalinks {
+					// Hacky way to not put the permalink inline after a video (which would make it not be visible).
+					if partialHTML.hasSuffix(ending) && partialHTML.hasSuffix("controls preload=\"none\" /></p>\n") == false && partialHTML.hasSuffix("controls width=\"100%\" /></p>\n") == false {
+						partialHTML = String(partialHTML.dropLast(ending.count))
+						// The newline before the a was to minimise the diff when adding this. It’s not needed.
+						return """
+				  \(partialHTML)
+				  <a href="\($0.relativeURL)" title="Permanent link to this post">»</a>\(ending)
+				  """
+					}
+				}
+				return """
+				\(partialHTML)
+				<p><a href="\($0.relativeURL)" title="Permanent link to this post">»</a></p>
+				"""
+			}
+		}
+
+		// Generate micro archive page for recent posts.
+        let recentOutputFileURL = try! writeMicroArchive(fromSortedArticles: articlesWithDates.prefix(20), sectionGranularity: [.year, .month, .day], title: "[\(author)](/)’s recent posts", toDestinationDirectory: destinationDirectory, filename: "recent", fileManager: fileManager, articleFormatter: microArticleFormatter)
+        outputFiles.insert(recentOutputFileURL)
+
 		// Generate micro archive pages for each year.
 		var articlesByYear: [Int: [Article]] = [:]
 		for article in articlesWithDates {
@@ -205,35 +239,7 @@ func autocompletion() {
 		}
 		for year in allYears {
 			logDebug("Number of posts in \(year): \(articlesByYear[year]!.count)")
-			let outputFileURL = try! writeMicroArchive(fromSortedArticles: articlesByYear[year]!.reversed(), sectionGranularity: [.year, .month, .day], title: "[\(author)](/)’s posts in \(year)", toDestinationDirectory: destinationDirectory, filename: "\(year)", fileManager: fileManager) {
-				// TODO: Maybe share with micro feed by adding a method on Article.
-				let explicitShortText = $0.microPost?.markdown ?? $0.description?.markdown
-				if explicitShortText != nil || ($0.title != nil && $0.characterCount + ($0.title?.plainText.count ?? 0) > 290) {
-					let microPost = (explicitShortText ?? $0.title!.markdown).markdownWithLinksRelativeTo($0.relativeURL, mustBeAbsolute: false)
-					return "\(microPost) <a href=\"\($0.relativeURL)\" title=\"\($0.title?.plainText ?? "")\">Read more »</a>"
-				} else {
-					var partialHTML = $0.partialHTML.htmlWithLinksRelativeTo($0.relativeURL, mustBeAbsolute: false)
-					if let title = $0.title {
-						partialHTML = "\(title.markdown.markdownWithLinksRelativeTo($0.relativeURL, mustBeAbsolute: false))\n\n\(partialHTML)"
-					}
-					let endingsWithInlinePermalinks = ["</p>\n", "</li>\n</ul>\n", "</li>\n</ol>\n", "</p>\n</blockquote>\n"]
-					for ending in endingsWithInlinePermalinks {
-						// Hacky way to not put the permalink inline after a video (which would make it not be visible).
-						if partialHTML.hasSuffix(ending) && partialHTML.hasSuffix("controls preload=\"none\" /></p>\n") == false && partialHTML.hasSuffix("controls width=\"100%\" /></p>\n") == false {
-							partialHTML = String(partialHTML.dropLast(ending.count))
-							// The newline before the a was to minimise the diff when adding this. It’s not needed.
-							return """
-	  \(partialHTML)
-	  <a href="\($0.relativeURL)" title="Permanent link to this post">»</a>\(ending)
-	  """
-						}
-					}
-					return """
-	\(partialHTML)
-	<p><a href="\($0.relativeURL)" title="Permanent link to this post">»</a></p>
-	"""
-				}
-			}
+            let outputFileURL = try! writeMicroArchive(fromSortedArticles: articlesByYear[year]!.reversed(), sectionGranularity: [.year, .month, .day], title: "[\(author)](/)’s posts in \(year)", toDestinationDirectory: destinationDirectory, filename: "\(year)", fileManager: fileManager, articleFormatter: microArticleFormatter)
 			outputFiles.insert(outputFileURL)
 		}
 	}
@@ -346,7 +352,7 @@ func writeArchive(fromSortedArticles articles: [Article], years: ClosedRange<Int
 	skipByline: true
 	%%%
 
-	This page lists my longer, more considered articles. Use the year heading links to see all posts in each year.
+	This page lists longer, more considered articles. You can also see [recent posts](/recent/) or use the year heading links to see all posts in each year. [Follow/subscribe for updates](/follow/).
 	"""
 
 	for year in years.reversed() {
@@ -361,7 +367,7 @@ func writeArchive(fromSortedArticles articles: [Article], years: ClosedRange<Int
 	return try archiveArticle.writeAsIndexFile(inDirectory: destinationDirectory.appendingPathComponent(filename, isDirectory: true), fileManager: fileManager)
 }
 
-func writeMicroArchive(fromSortedArticles articles: [Article], sectionGranularity: Set<Calendar.Component>, title: String, toDestinationDirectory destinationDirectory: URL, filename: String, fileManager: FileManager, articleFormatter: (Article) -> String) throws -> URL {
+func writeMicroArchive(fromSortedArticles articles: any RandomAccessCollection<Article>, sectionGranularity: Set<Calendar.Component>, title: String, toDestinationDirectory destinationDirectory: URL, filename: String, fileManager: FileManager, articleFormatter: (Article) -> String) throws -> URL {
 	var archiveBody = """
 	title: \(title)
 	skipByline: true

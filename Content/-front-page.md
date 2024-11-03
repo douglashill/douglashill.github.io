@@ -4,9 +4,28 @@ skipByline: true
 
 I make apps to help people learn and achieve more. I’m the iOS team lead at [Nutrient](https://www.nutrient.io/) (previously known as PSPDFKit) and an organiser of [NSLondon](https://nslondon.com/).
 
-I’ve worked fully remotely since 2015 and [spent time as a digital nomad](https://pspdfkit.com/blog/2017/remote-work/), but these days [I don’t fly](/four-years-without-flying/) and instead base myself where I can go skiing, ice skating or wakeboarding.
+I’ve worked fully remotely since 2015 and [spent time as a digital nomad](https://pspdfkit.com/blog/2017/remote-work/), but these days [I don’t fly](four-years-without-flying/) and instead base myself where I can go skiing, ice skating or wakeboarding.
 
-If you like, you can [follow me](/follow/).
+I mostly post about iOS development and working on iPad, which you can see in my [recent posts](recent/) and [archive](archive/). If you like, you can [follow me](follow/).
+
+## Featured articles
+
+- [NSCopying in a Swift World](https://pspdfkit.com/blog/2024/nscopying-in-a-swift-world/)
+- [Zoom transitions](zoom-transitions/)
+- [Conditional compilation for Apple’s yearly updates](https://pspdfkit.com/blog/2023/conditional-compilation-apple-yearly-updates/)
+- [Using JavaScript in a Swift app](javascript-in-swift/)
+- [The case for lists in `UICollectionView`](https://pspdfkit.com/blog/2020/the-case-for-lists-in-uicollectionview/)
+- [Level up your trackpad support using `UIInteraction`](https://pspdfkit.com/blog/2020/level-up-your-trackpad-support-using-uiinteraction/)
+- [Localisation using Apple’s glossaries](localisation-using-apples-glossaries/)
+- [Open links in Safari, not Safari view controller](https://pspdfkit.com/blog/2019/open-links-in-safari-not-safari-view-controller/)
+- [Presentation controllers and adaptive presentations](https://pspdfkit.com/blog/2015/presentation-controllers/)
+
+## Talks
+
+- [Zoom transitions](2024/zoom-transitions-at-iosdevuk/) (iOSDevUK 2024)
+- [Keyboard control in UIKit apps](keyboard-control/) ([NSLondon Q1 2019](https://nslondon.com/#douglas-hill-full-keyboard-control-in-ios-apps), AltConf San Jose 2019, [iOS Conf SG 2020](https://www.youtube.com/watch?v=gFnhvZIoTLc) and the [iPhreaks podcast](https://topenddevs.com/podcasts/iphreaks/episodes/ips-297-keyboard-controls-with-douglas-hill))
+- [Beyond size classes: Making better use of large screens](large-screens/) (iOSDevUK 2019)
+- [Improving user experience with Apple Pencil](apple-pencil/) (AltConf San Jose 2018)
 
 ## Apps
 
@@ -24,31 +43,10 @@ If you like, you can [follow me](/follow/).
 
 - [DynamicButtonStack](https://github.com/douglashill/DynamicButtonStack): A UIKit view that lays out buttons in either a column or a row to suit the available space. Read more: [Motivation and design details](dynamic-button-stack/).
 
-## Articles
-
-- [NSCopying in a Swift World](https://pspdfkit.com/blog/2024/nscopying-in-a-swift-world/)
-- [Zoom transitions](zoom-transitions/)
-- [Conditional compilation for Apple’s yearly updates](https://pspdfkit.com/blog/2023/conditional-compilation-apple-yearly-updates/)
-- [Using JavaScript in a Swift app](javascript-in-swift/)
-- [The case for lists in `UICollectionView`](https://pspdfkit.com/blog/2020/the-case-for-lists-in-uicollectionview/)
-- [Level up your trackpad support using `UIInteraction`](https://pspdfkit.com/blog/2020/level-up-your-trackpad-support-using-uiinteraction/)
-- [Localisation using Apple’s glossaries](localisation-using-apples-glossaries/)
-- [Open links in Safari, not Safari view controller](https://pspdfkit.com/blog/2019/open-links-in-safari-not-safari-view-controller/)
-- [Presentation controllers and adaptive presentations](https://pspdfkit.com/blog/2015/presentation-controllers/)
-
-See all articles in the [archive](/archive/).
-
-## Talks
-
-- [Zoom transitions](2024/zoom-transitions-at-iosdevuk/) (iOSDevUK 2024)
-- [Keyboard control in UIKit apps](keyboard-control/) ([NSLondon Q1 2019](https://nslondon.com/#douglas-hill-full-keyboard-control-in-ios-apps), AltConf San Jose 2019, [iOS Conf SG 2020](https://www.youtube.com/watch?v=gFnhvZIoTLc) and the [iPhreaks podcast](https://topenddevs.com/podcasts/iphreaks/episodes/ips-297-keyboard-controls-with-douglas-hill))
-- [Beyond size classes: Making better use of large screens](large-screens/) (iOSDevUK 2019)
-- [Improving user experience with Apple Pencil](apple-pencil/) (AltConf San Jose 2018)
-
 ## Updates and contact
 
 <ul>
-<li><a href="/follow/">Follow/subscribe</a></li>
+<li><a href="follow/">Follow/subscribe</a></li>
 <script type="text/javascript">
 //<![CDATA[
 <!--
