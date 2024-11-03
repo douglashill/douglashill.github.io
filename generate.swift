@@ -225,9 +225,11 @@ func autocompletion() {
 			}
 		}
 
+		let followHTML = "<a href=\"/follow/\">Follow/subscribe</a> for updates"
+
 		// Generate micro archive page for recent posts.
-        let recentOutputFileURL = try! writeMicroArchive(fromSortedArticles: articlesWithDates.prefix(20), sectionGranularity: [.year, .month, .day], title: "[\(author)](/)’s recent posts", toDestinationDirectory: destinationDirectory, filename: "recent", fileManager: fileManager, articleFormatter: microArticleFormatter)
-        outputFiles.insert(recentOutputFileURL)
+		let recentOutputFileURL = try! writeMicroArchive(fromSortedArticles: articlesWithDates.prefix(20), sectionGranularity: [.year, .month, .day], title: "[\(author)](/)’s recent posts", toDestinationDirectory: destinationDirectory, filename: "recent", htmlPrefix: followHTML, htmlSuffix: "More in the <a href=\"/archive/\">archive</a>", fileManager: fileManager, articleFormatter: microArticleFormatter)
+		outputFiles.insert(recentOutputFileURL)
 
 		// Generate micro archive pages for each year.
 		var articlesByYear: [Int: [Article]] = [:]
@@ -239,7 +241,13 @@ func autocompletion() {
 		}
 		for year in allYears {
 			logDebug("Number of posts in \(year): \(articlesByYear[year]!.count)")
-            let outputFileURL = try! writeMicroArchive(fromSortedArticles: articlesByYear[year]!.reversed(), sectionGranularity: [.year, .month, .day], title: "[\(author)](/)’s posts in \(year)", toDestinationDirectory: destinationDirectory, filename: "\(year)", fileManager: fileManager, articleFormatter: microArticleFormatter)
+
+			let previousYear = year - 1
+			let followingYear = year + 1
+			let prefix = allYears.contains(previousYear) ? "<a href=\"/\(previousYear)/\">↑ \(previousYear)</a>" : ""
+			let suffix = allYears.contains(followingYear) ? "<a href=\"/\(followingYear)/\">↓ \(followingYear)</a>" : followHTML
+
+			let outputFileURL = try! writeMicroArchive(fromSortedArticles: articlesByYear[year]!.reversed(), sectionGranularity: [.year, .month, .day], title: "[\(author)](/)’s posts in \(year)", toDestinationDirectory: destinationDirectory, filename: "\(year)", htmlPrefix: prefix, htmlSuffix: suffix, fileManager: fileManager, articleFormatter: microArticleFormatter)
 			outputFiles.insert(outputFileURL)
 		}
 	}
@@ -352,7 +360,7 @@ func writeArchive(fromSortedArticles articles: [Article], years: ClosedRange<Int
 	skipByline: true
 	%%%
 
-	This page lists longer, more considered articles. You can also see [recent posts](/recent/) or use the year heading links to see all posts in each year. [Follow/subscribe for updates](/follow/).
+	This page lists longer, more considered articles. You can also see [recent posts](/recent/) or use the year heading links to see all posts in each year. [Follow/subscribe](/follow/) for updates.
 	"""
 
 	for year in years.reversed() {
@@ -367,13 +375,14 @@ func writeArchive(fromSortedArticles articles: [Article], years: ClosedRange<Int
 	return try archiveArticle.writeAsIndexFile(inDirectory: destinationDirectory.appendingPathComponent(filename, isDirectory: true), fileManager: fileManager)
 }
 
-func writeMicroArchive(fromSortedArticles articles: any RandomAccessCollection<Article>, sectionGranularity: Set<Calendar.Component>, title: String, toDestinationDirectory destinationDirectory: URL, filename: String, fileManager: FileManager, articleFormatter: (Article) -> String) throws -> URL {
+func writeMicroArchive(fromSortedArticles articles: any RandomAccessCollection<Article>, sectionGranularity: Set<Calendar.Component>, title: String, toDestinationDirectory destinationDirectory: URL, filename: String, htmlPrefix: String, htmlSuffix: String, fileManager: FileManager, articleFormatter: (Article) -> String) throws -> URL {
 	var archiveBody = """
 	title: \(title)
 	skipByline: true
 	%%%
-	"""
 
+	<p class="centred">\(htmlPrefix)</p>
+	"""
 	var sectionDate: DateComponents?
 
 	for article in articles {
@@ -395,6 +404,12 @@ func writeMicroArchive(fromSortedArticles articles: any RandomAccessCollection<A
 
 		archiveBody.append("\n\n\(articleFormatter(article))")
 	}
+
+	archiveBody.append("""
+
+
+<p class="centred">\(htmlSuffix)</p>
+""")
 
 	let archiveArticle = Article(relativePath: filename, fileContents: archiveBody)
 	return try archiveArticle.writeAsIndexFile(inDirectory: destinationDirectory.appendingPathComponent(filename, isDirectory: true), fileManager: fileManager)

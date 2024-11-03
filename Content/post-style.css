@@ -193,7 +193,7 @@ span.left {
 span.right {
 	float: right;
 }
-span.centre {
+span.centre, p.centred {
 	text-align: center;
 }
 nav { /* match line height (which is specified above) */
