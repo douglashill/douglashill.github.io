@@ -154,7 +154,7 @@ func autocompletion() {
 
 	articlesWithDates.sort {
 		if $0.date! == $1.date! {
-            fatalError("Articles have same date/time: \($0.relativePath) and \($1.relativePath)")
+			fatalError("Articles have same date/time: \($0.relativePath) and \($1.relativePath)")
 		} else {
 			return $0.date! > $1.date!
 		}
@@ -598,13 +598,13 @@ struct Article {
 			type = .short
 		}
 
-        if let rawDate {
-            date = iso8601DateFormatter.date(from: rawDate)!
-            rawDateWithoutTime = rawDate[..<rawDate.firstIndex(of: "T")!]
-        } else {
-            date = nil
-            rawDateWithoutTime = nil
-        }
+		if let rawDate {
+			date = iso8601DateFormatter.date(from: rawDate)!
+			rawDateWithoutTime = rawDate[..<rawDate.firstIndex(of: "T")!]
+		} else {
+			date = nil
+			rawDateWithoutTime = nil
+		}
 	}
 
 	var relativeURL: String {
@@ -615,8 +615,8 @@ struct Article {
 		externalURL ?? (relativePath.isEmpty ? publishedSiteRoot : "\(publishedSiteRoot)\(relativePath)/")
 	}
 
-    var date: Date?
-    var rawDateWithoutTime: Substring?
+	var date: Date?
+	var rawDateWithoutTime: Substring?
 
 	var dateComponents: DateComponents? {
 		guard let rawDateWithoutTime else {
