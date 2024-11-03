@@ -1,6 +1,5 @@
 title: Reading app
 description: An iPad and iPhone app for saving webpages to read. Saved articles are shown beautifully for a comfortable reading experience.
-skipByline: true
 %%%
 
 <img src="reading-composite.png" alt="Image of a list of articles on an iPhone, in front of an article shown on an iPad in landscape. On the iPhone, each article shows the title, a summary, and the website the article is from. On the iPad, the article text is shown in a simple two column layout with no distractions. The article title is ‘I Accidentally Uncovered a Nationwide Scam on Airbnb and the website it’s from is vice.com.’" />

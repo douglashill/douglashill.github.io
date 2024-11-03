@@ -357,7 +357,6 @@ func writeArchive(fromSortedArticles articles: [Article], years: ClosedRange<Int
 
 	var archiveBody = """
 	title: \(title)
-	skipByline: true
 	%%%
 
 	This page lists longer, more considered articles. You can also see [recent posts](/recent/) or use the year heading links to see all posts in each year. [Follow/subscribe](/follow/) for updates.
@@ -378,7 +377,6 @@ func writeArchive(fromSortedArticles articles: [Article], years: ClosedRange<Int
 func writeMicroArchive(fromSortedArticles articles: any RandomAccessCollection<Article>, sectionGranularity: Set<Calendar.Component>, title: String, toDestinationDirectory destinationDirectory: URL, filename: String, htmlPrefix: String, htmlSuffix: String, fileManager: FileManager, articleFormatter: (Article) -> String) throws -> URL {
 	var archiveBody = """
 	title: \(title)
-	skipByline: true
 	%%%
 
 	<p class="centred">\(htmlPrefix)</p>
@@ -553,7 +551,6 @@ struct Article {
 	let description: MarkdownText?
 	let microPost: MarkdownText?
 	let rawDate: String?
-	let skipByline: Bool
 	let externalURL: String?
 	let partialHTML: String
 	let characterCount: Int
@@ -589,7 +586,6 @@ struct Article {
 		microPost = MarkdownText(info["micro"])
 		// ‘auto’ should only be left here in local builds, not for publishing, but nothing is checking that currently.
 		rawDate = info["date"] == "auto" ? iso8601DateFormatter.string(from: Date()) : info["date"]
-		skipByline = info["skipByline"] == "true"
 		externalURL = info["externalURL"]
 		partialHTML = markdownDocument.html.appending("\n")
 		// TODO: Skip calculating this if not needed (archive page articles and ones without dates).
@@ -649,21 +645,15 @@ struct Article {
 		return dateComponents
 	}
 
-	private var formattedDate: String? {
-		dateComponents?.formattedHowILike
-	}
-
-	private var dateHTML: String {
-		// Avoid using a span here because if there is a span in the byline then Safari Reader adds a bullet after this span.
-		formattedDate == nil ? "" : """
-		 • <time datetime="\(rawDateWithoutTime!)">\(formattedDate!)</time>
-		"""
-	}
-
 	private var bylineHTML: String {
-		skipByline ? "" : """
-		<p class="byline"><a href="/">\(author)</a>\(dateHTML)</p>
-		"""
+		if let formattedDate = dateComponents?.formattedHowILike {
+			// Avoid using a span here because if there is a span in the byline then Safari Reader adds a bullet after this span.
+			"""
+			<p class="byline"><a href="/">\(author)</a> • <time datetime="\(rawDateWithoutTime!)">\(formattedDate)</time></p>
+			"""
+		} else {
+			""
+		}
 	}
 
 	// TODO: Use a nicer title for short posts that don’t have their own title.

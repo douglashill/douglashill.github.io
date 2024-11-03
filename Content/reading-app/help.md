@@ -1,6 +1,5 @@
 title: [Reading app](/reading-app/) help
 description: Frequently asked questions (FAQ) about Reading.
-skipByline: true
 %%%
 
 This page answers some frequently asked questions (FAQ) about [Reading](../).

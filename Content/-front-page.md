@@ -1,5 +1,4 @@
 title: Douglas Hill
-skipByline: true
 %%%
 
 I make apps to help people learn and achieve more. I’m the iOS team lead at [Nutrient](https://www.nutrient.io/) (previously known as PSPDFKit) and an organiser of [NSLondon](https://nslondon.com/).

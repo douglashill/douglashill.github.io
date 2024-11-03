@@ -1,5 +1,4 @@
 title: Follow [Douglas Hill](/)
-skipByline: true
 %%%
 
 For all my [posts](/recent/), follow any one of these:

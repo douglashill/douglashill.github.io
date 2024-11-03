@@ -1,5 +1,4 @@
 title: [Reading app](/reading-app/) support
-skipByline: true
 %%%
 
 ## Help
