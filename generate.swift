@@ -661,11 +661,12 @@ struct Article {
 
 		""")
 		+ """
+			<meta name="fediverse:creator" content="@douglas@pub.douglashill.co" />
 			<meta name="twitter:creator" content="@qdoug" />
 			<meta name="author" content="\(author)">
 			<meta property="og:site_name" content="\(author)" />
 			<meta name="viewport" content="width=device-width, maximum-scale=1.0" />
-			<link href="https://micro.blog/douglas" rel="me" />
+			<link rel="me" href="https://micro.blog/douglas" />
 			<link rel="stylesheet" type="text/css" href="/post-style.css" />
 			<link rel="alternate" type="application/json" href="/feed.json" />
 			<link rel="canonical" href="\(publishedURLString)">
