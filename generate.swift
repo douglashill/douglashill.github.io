@@ -35,7 +35,7 @@ extension DateComponents {
 		if let year {
 			components.append("\(year)")
 		}
-		return components.joined(separator: " ")
+		return components.joined(separator: " ")
 	}
 
 	private func monthString(_ month: Int) -> String {
@@ -190,6 +190,12 @@ func autocompletion() {
 				}
 				string.append(" \(description.markdown)")
 			}
+
+			// This is mostly included because the Nutrient website doesn’t show publication dates.
+			// TODO: Make these dates look better. Maybe hang in the margin.
+			var dateComponents = $0.dateComponents!
+			dateComponents.year = nil
+			string.append(" <time class=\"tertiary\" datetime=\"\($0.rawDateWithoutTime!)\">\(dateComponents.formattedHowILike)</time>")
 
 			return string
 		}

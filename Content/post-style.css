@@ -25,7 +25,7 @@ a:hover {
 	background-color: #EEEEEE;
 }
 /* Make the bullet separator in the byline slightly faded. The obvious way to do this would be to put the bullet in a span. However, if there is a span in the byline then Safari Reader adds an additional bullet after this span. To work around this a span is not used, and the colour of the bullet is set as the overall byline colour and then the name and date override this colour. */
-p.byline {
+p.byline, .tertiary {
 	color: #a6a6a6;
 }
 p.byline a, p.byline time {
@@ -45,7 +45,7 @@ table.lightweight td {
 	a:hover {
 		background-color: #767676;
 	}
-	p.byline {
+	p.byline, .tertiary {
 		color: #696969;
 	}
 	p.byline a, p.byline time {
