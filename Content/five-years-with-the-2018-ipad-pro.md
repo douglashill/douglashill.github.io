@@ -1,6 +1,6 @@
 title: Five years with the 2018 iPad Pro
 description: Reflecting on many thousands of hours using the 2018 iPad Pro and considering what hardware a new iPad should have to last until 2030.
-micro: It’s iPad hype day, so after many thousands of hours using the 2018 iPad Pro as my main computer, I wanted to consider what hardware a new iPad should have to last as my main computer from now until 2030.
+micro: It’s iPad hype day, so after many thousands of hours using the 2018 iPad Pro as my main computer, I wanted to [consider what hardware a new iPad should have to last as my main computer from now until 2030]().
 date: 2024-05-06T21:22:05+01:00
 %%%
 

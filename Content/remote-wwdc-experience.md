@@ -1,6 +1,6 @@
 title: Breaking down the remote WWDC experience
 description: A breakdown of how well WWDC 2020 went compared to previous in-person editions.
-micro: 👍/👎 I posted my review of various aspects of the remote WWDC experience. Spoiler: It was a great success!
+micro: 👍/👎 I posted my [review of various aspects of the remote WWDC experience](). Spoiler: It was a great success!
 date: 2020-07-01T21:08:42+0000
 tweet: 1278435386398773257
 %%%

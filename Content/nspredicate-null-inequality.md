@@ -1,6 +1,6 @@
 title: `NSPredicate`: an old API with new surprises
 description: Discovering an inconsistency in how `NSPredicate` handles matching inequality with nil values, and implementing something better.
-micro: Recently I was working with `NSPredicate`, and a situation that looked fairly basic wasn’t working as I expected. I wrote about a new surprise with this old API.
+micro: Recently I was working with `NSPredicate`, and a situation that looked fairly basic wasn’t working as I expected. I wrote about a [new surprise with this old API]().
 date: 2023-01-18T07:40:00+00:00
 tweet: 1615641575157108736
 %%%

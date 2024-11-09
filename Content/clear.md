@@ -1,6 +1,6 @@
 title: Clear
 description: Clear is exciting. It pushes the boundaries of how we think software interfaces work and is full to the brim with delightful interactions. Here are some thoughts on the app.
-micro: I posted my thoughts on Clear.
+micro: I posted my [thoughts on Clear]().
 date: 2012-05-03T18:04:00+0000
 tumblr: 22328730161
 tweet: 198137712946057216

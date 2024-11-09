@@ -1,6 +1,6 @@
 title: Zoom transitions
 description: A detailed, illustrated guide to my favourite addition in the iOS 18 SDK.
-micro: Zoom transitions are my favourite addition in the iOS 18 SDK. I tried out almost everything you can do with this new API and wrote a detailed, illustrated guide.
+micro: Zoom transitions are my favourite addition in the iOS 18 SDK. I tried out almost everything you can do with this new API and wrote a [detailed, illustrated guide]().
 date: 2024-06-27T09:35:00+0100
 %%%
 

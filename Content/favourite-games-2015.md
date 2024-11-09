@@ -1,5 +1,5 @@
 title: My favourite games of 2015
-micro: I wrote up my favourite video games of 2015.
+micro: I wrote up my [favourite video games of 2015]().
 date: 2016-01-03T22:44:34+0000
 tweet: 683781022404722690
 %%%

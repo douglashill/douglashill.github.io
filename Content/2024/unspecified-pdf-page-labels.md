@@ -1,5 +1,5 @@
 title: Unspecified PDF page labels
-description: We had a report of a fun bug today with a situation the PDF reference doesn’t specify how to handle.
+description: We had a report of a fun bug today with a [situation the PDF reference doesn’t specify how to handle]().
 date: 2024-01-18T16:21:23+0000
 %%%
 

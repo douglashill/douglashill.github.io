@@ -1,6 +1,6 @@
 title: London to Athens by train and ferry
 description: Photos and notes from my three-week trip to Greece to attend a wedding without flying.
-micro: A few photos and notes from my three-week trip from London to Athens by train and ferry.
+micro: A few [photos and notes from my three-week trip from London to Athens by train and ferry]().
 date: 2024-06-09T22:13:03+0100
 %%%
 

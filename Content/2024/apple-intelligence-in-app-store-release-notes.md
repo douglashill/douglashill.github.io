@@ -1,6 +1,6 @@
 title: Don’t mention Apple Intelligence in App Store release notes
 description: Our Mac app was rejected because the reviewer couldn’t work out how to use Writing Tools.
-micro: Don’t mention Apple Intelligence in App Store release notes. Our Mac app was rejected because the reviewer couldn’t work out how to use Writing Tools.
+micro: [Don’t mention Apple Intelligence in App Store release notes](). Our Mac app was rejected because the reviewer couldn’t work out how to use Writing Tools.
 date: 2024-11-07T10:20:02+0000
 %%%
 

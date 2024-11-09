@@ -1,5 +1,5 @@
 title: Localisation using Apple’s glossaries
-description: How I localised KeyboardKit into 39 languages without needing translators.
+description: How I [localised KeyboardKit into 39 languages without needing translators]().
 date: 2020-03-28T21:10:48+0000
 %%%
 

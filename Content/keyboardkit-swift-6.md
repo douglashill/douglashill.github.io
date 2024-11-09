@@ -1,6 +1,6 @@
 title: Migrating KeyboardKit to Swift 6 language mode
 description: [KeyboardKit](https://github.com/douglashill/KeyboardKit) is a small UI framework that runs only on the main thread, so was a simple test case to try out strict concurrency. I wanted to share three interesting situations that came up in the migration.
-micro: Here are three interesting situations that came up migrating KeyboardKit to Swift 6 strict concurrency. It’s a small UI framework that runs only on the main thread, so was a great test case.
+micro: Here are [three interesting situations that came up migrating KeyboardKit to Swift 6 strict concurrency](). It’s a small UI framework that runs only on the main thread, so was a great test case.
 date: 2024-08-11T11:59:25+0100
 %%%
 
