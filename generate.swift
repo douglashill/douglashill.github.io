@@ -188,7 +188,7 @@ func autocompletion() {
 				if CharacterSet.punctuationCharacters.contains($0.title!.plainText.unicodeScalars.last!) == false {
 					string.append(":")
 				}
-				string.append(" \(description.markdown)")
+				string.append(" \(description.markdown.markdownWithLinksRelativeTo($0.relativeURL, mustBeAbsolute: false))")
 			}
 
 			// This is mostly included because the Nutrient website doesn’t show publication dates.
