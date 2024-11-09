@@ -205,8 +205,20 @@ func autocompletion() {
 			// TODO: Maybe share with micro feed by adding a method on Article.
 			let explicitShortText = $0.microPost?.markdown ?? $0.description?.markdown
 			if explicitShortText != nil || ($0.title != nil && $0.characterCount + ($0.title?.plainText.count ?? 0) > 290) {
-				let microPost = (explicitShortText ?? $0.title!.markdown).markdownWithLinksRelativeTo($0.relativeURL, mustBeAbsolute: false)
-				return "\(microPost) <a href=\"\($0.relativeURL)\" title=\"\($0.title?.plainText ?? "")\">Read more »</a>"
+				let microPost: String
+				if let explicitShortText {
+					// Add a link to self at the end, but if there is already one somewhere in the text then just make it » without the Read more.
+					let maybeReadMore = explicitShortText.contains("]()") ? "" : "Read more "
+					microPost = "\(explicitShortText) <a href=\"\" title=\"\($0.title?.plainText ?? "")\">\(maybeReadMore)»</a>"
+				} else {
+					// Just a title. Make the whole thing a link to self.
+					// If the title contains a link. Fall back to the plain text of the title.
+					// Technically Markdown allows whitespace between the ] and ( but just don’t do that.
+					let title = $0.title!
+					let titleMarkdown = title.markdown.contains("](") ? title.plainText : title.markdown
+					microPost = "[\(titleMarkdown) »]()"
+				}
+				return microPost.markdownWithLinksRelativeTo($0.relativeURL, mustBeAbsolute: false)
 			} else {
 				var partialHTML = $0.partialHTML.htmlWithLinksRelativeTo($0.relativeURL, mustBeAbsolute: false)
 				if let title = $0.title {
@@ -299,20 +311,26 @@ func writeFeed(fromSortedArticles articles: ArraySlice<Article>, isMicro isMicro
 		// TODO: Support link posts in feeds. That is, where the title contains a Markdown link. It might be better to have a separate field for the link.
 
 		if isMicroFeed {
-			// let characterLimit = 260 // Limit is 280 for Twitter, which is only plain text, but links are special. Limit is 300 visible characters for Micro.blog.
-			if let microPost = article.microPost?.markdown ?? article.description?.markdown ?? article.title?.markdown {
-				let url = article.publishedURLString
-
-				// precondition(microPost.count + 1 + url.count <= characterLimit, "Micro post is longer than \(characterLimit) characters: \(microPost) \(url)")
-
-				let displayURL = url[url.range(of: "://")!.upperBound...].trimmingCharacters(in: .init(charactersIn: "/"))
-				item["content_html"] = Document(parsing: "\(microPost) [\(displayURL)](\(url))", options: [.disableSmartOpts]).html
+			let contentHTML: String
+			if let microPost = article.microPost?.markdown ?? article.description?.markdown {
+				if microPost.contains("]()") {
+					// Already has a link to self.
+					contentHTML = Document(parsing: microPost, options: [.disableSmartOpts]).html
+				} else {
+					// No link to self. Add one at the end.
+					contentHTML = Document(parsing: "\(microPost) [Read more »]()", options: [.disableSmartOpts]).html
+				}
+			} else if let title = article.title {
+				// Just a title. Make the whole thing a link to self.
+				// If the title contains a link. Fall back to the plain text of the title.
+				// Technically Markdown allows whitespace between the ] and ( but just don’t do that.
+				let titleMarkdown = title.markdown.contains("](") ? title.plainText : title.markdown
+				contentHTML = Document(parsing: "[\(titleMarkdown)]()", options: [.disableSmartOpts]).html
 			} else {
-				// TODO: I think this needs to count the plain characters after processing into HTML.
-				// precondition(article.markdownLength <= characterLimit, "Article without microPost or title is longer than \(characterLimit) characters. HTML is: \(article.partialHTML)")
-				// Micro.blog doesn’t work with relative image URLs, so make them absolute.
-				item["content_html"] = article.partialHTML.htmlWithLinksRelativeTo(article.relativeURL, mustBeAbsolute: true)
+				contentHTML = article.partialHTML
 			}
+			// Micro.blog doesn’t work with relative URLs, so make them absolute.
+			item["content_html"] = contentHTML.htmlWithLinksRelativeTo(article.relativeURL, mustBeAbsolute: true)
 		} else {
 			// TODO: Include a `summary` from the `description` if one is set on the article.
 			if let externalURL = article.externalURL {
@@ -450,38 +468,36 @@ extension String {
 					output.append(scanned)
 					if let scanned = scanner.scanString("\"") {
 						output.append(scanned)
+						// Fallback to empty string if the URL is empty (so we get nil). That means this is a link to ‘self’.
 						// TODO: Handle escaped quotation marks, which would be treated as quotation marks as part of the URL.
-						if let url = scanner.scanUpToString("\"") {
-							if scanner.isAtEnd {
-								fatalError("Found end of string in middle of URL.")
-							}
-							if url.hasPrefix("/") {
-								if mustBeAbsolute {
-									output.append("\(publishedSiteDomain)\(url)")
-								} else {
-									output.append(url)
-								}
-							} else if url.hasPrefix("http") {
-								// TODO: This will break if a path component starts with http so it’s really a relative URL.
-								output.append(url)
+						let url = scanner.scanUpToString("\"") ?? ""
+						if scanner.isAtEnd {
+							fatalError("Found end of string in middle of URL.")
+						}
+						if url.hasPrefix("/") {
+							if mustBeAbsolute {
+								output.append("\(publishedSiteDomain)\(url)")
 							} else {
-								if mustBeAbsolute {
-									output.append(publishedSiteDomain)
-								}
-								output.append(path)
 								output.append(url)
 							}
+						} else if url.hasPrefix("http") {
+							// TODO: This will break if a path component starts with http so it’s really a relative URL.
+							output.append(url)
 						} else {
-							fatalError("URL is empty.")
+							if mustBeAbsolute {
+								output.append(publishedSiteDomain)
+							}
+							output.append(path)
+							output.append(url)
 						}
 						output.append(scanner.scanString("\"")!)
 					}
 				}
 			} else if scanner.scanString("s") != nil {
-				// An h that’s not the start of href. Just continue.
+				// An s that’s not the start of src. Just continue.
 				output.append("s")
 			} else if scanner.scanString("h") != nil {
-				// An s that’s not the start of src. Just continue.
+				// An h that’s not the start of href. Just continue.
 				output.append("h")
 			} else if scanner.scanString("p") != nil {
 				// A p that’s not the start of poster. Just continue.
