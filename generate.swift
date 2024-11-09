@@ -62,6 +62,11 @@ let publishedSiteRoot = "\(publishedSiteDomain)/"
 let author = "Douglas Hill"
 let iso8601DateFormatter = ISO8601DateFormatter()
 
+// Creating this Regex once instead of every time we need it cut the time spent creating and using it from 900 ms to 300 ms.
+let htmlEntityRegex = try! Regex("&\\w+;")
+// First find [. Then capture at least one of any characters except ] so the matching is not greedy. Then find ]().
+let selfLinkRegex = try! Regex("\\[([^\\]]+)\\]\\(\\)")
+
 func autocompletion() {
 	let startTime = CFAbsoluteTimeGetCurrent()
 
@@ -188,7 +193,13 @@ func autocompletion() {
 				if CharacterSet.punctuationCharacters.contains($0.title!.plainText.unicodeScalars.last!) == false {
 					string.append(":")
 				}
-				string.append(" \(description.markdown.markdownWithLinksRelativeTo($0.relativeURL, mustBeAbsolute: false))")
+
+				// Remove self links (which are used for the micro archive and feed) because the title will already be a link to this article.
+				let descriptionMarkdown = description.markdown.replacing(selfLinkRegex) { match in
+					match.output[1].substring!
+				}
+
+				string.append(" \(descriptionMarkdown.markdownWithLinksRelativeTo($0.relativeURL, mustBeAbsolute: false))")
 			}
 
 			// This is mostly included because the Nutrient website doesn’t show publication dates.
@@ -768,9 +779,6 @@ private func writeIndexHTML(_ htmlString: String, inDirectory dir: URL, fileMana
 
 	return indexFileURL
 }
-
-// Creating this Regex once instead of every time we need it cut the time spent creating and using it from 900 ms to 300 ms.
-let htmlEntityRegex = try! Regex("&\\w+;")
 
 /// Basic count of user-facing text. HTML collapses whitespace into a single space except in pre tags. That’s not implemented.
 private func numberOfTextCharactersInHTMLString(_ htmlString: String) -> Int {
