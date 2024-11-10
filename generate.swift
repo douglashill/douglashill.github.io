@@ -213,23 +213,21 @@ func autocompletion() {
 		outputFiles.insert(archiveOutputFileURL)
 
 		let microArticleFormatter: (Article) -> String = {
-			// TODO: Maybe share with micro feed by adding a method on Article.
-			let explicitShortText = $0.microPost?.markdown ?? $0.description?.markdown
+			let explicitShortText: (any Article.MarkdownTextRepresentation)? = $0.microPost ?? $0.description
 			if explicitShortText != nil || ($0.title != nil && $0.characterCount + ($0.title?.plainText.count ?? 0) > 290) {
-				let microPost: String
-				if let explicitShortText {
-					// Add a link to self at the end, but if there is already one somewhere in the text then just make it » without the Read more.
-					let maybeReadMore = explicitShortText.contains("]()") ? "" : "Read more "
-					microPost = "\(explicitShortText) <a href=\"\" title=\"\($0.title?.plainText ?? "")\">\(maybeReadMore)»</a>"
+				let microPost = explicitShortText ?? $0.title!
+				let microPostWithPostLink: String
+				// Technically Markdown allows whitespace between the ] and ( but just don’t do that.
+				if microPost.markdown.contains("]()") {
+					// The text already contains a link to the post, but for consistency with short posts also add a » link at the end.
+					microPostWithPostLink = "\(microPost.markdown) <a href=\"\" title=\"\($0.title?.plainText ?? "")\">»</a>"
 				} else {
-					// Just a title. Make the whole thing a link to self.
-					// If the title contains a link. Fall back to the plain text of the title.
-					// Technically Markdown allows whitespace between the ] and ( but just don’t do that.
-					let title = $0.title!
-					let titleMarkdown = title.markdown.contains("](") ? title.plainText : title.markdown
-					microPost = "[\(titleMarkdown) »]()"
+					// Make the entire text a link to the post. If there are some other links in the text, fall back to the plain text.
+					// TODO: Remove just the links rather than all formatting. However, in general it’s preferred for the content to include an explicit link to the post.
+					let microPostWithoutLinks = microPost.markdown.contains("](") ? microPost.plainText : microPost.markdown
+					microPostWithPostLink = "[\(microPostWithoutLinks) »]()"
 				}
-				return microPost.markdownWithLinksRelativeTo($0.relativeURL, mustBeAbsolute: false)
+				return microPostWithPostLink.markdownWithLinksRelativeTo($0.relativeURL, mustBeAbsolute: false)
 			} else {
 				var partialHTML = $0.partialHTML.htmlWithLinksRelativeTo($0.relativeURL, mustBeAbsolute: false)
 				if let title = $0.title {
@@ -319,24 +317,19 @@ func writeFeed(fromSortedArticles articles: ArraySlice<Article>, isMicro isMicro
 			"date_published": article.rawDate!,
 		]
 
-		// TODO: Support link posts in feeds. That is, where the title contains a Markdown link. It might be better to have a separate field for the link.
-
 		if isMicroFeed {
 			let contentHTML: String
-			if let microPost = article.microPost?.markdown ?? article.description?.markdown {
-				if microPost.contains("]()") {
-					// Already has a link to self.
-					contentHTML = Document(parsing: microPost, options: [.disableSmartOpts]).html
-				} else {
-					// No link to self. Add one at the end.
-					contentHTML = Document(parsing: "\(microPost) [Read more »]()", options: [.disableSmartOpts]).html
-				}
-			} else if let title = article.title {
-				// Just a title. Make the whole thing a link to self.
-				// If the title contains a link. Fall back to the plain text of the title.
+			if let microPost: Article.MarkdownTextRepresentation = article.microPost ?? article.description ?? article.title {
 				// Technically Markdown allows whitespace between the ] and ( but just don’t do that.
-				let titleMarkdown = title.markdown.contains("](") ? title.plainText : title.markdown
-				contentHTML = Document(parsing: "[\(titleMarkdown)]()", options: [.disableSmartOpts]).html
+				if microPost.markdown.contains("]()") {
+					// The text already contains a link to the post.
+					contentHTML = Document(parsing: microPost.markdown, options: [.disableSmartOpts]).html
+				} else {
+					// Make the entire text a link to the post. If there are some other links in the text, fall back to the plain text.
+					// TODO: Remove just the links rather than all formatting. However, in general it’s preferred for the content to include an explicit link to the post.
+					let microPostWithoutLinks = microPost.markdown.contains("](") ? microPost.plainText : microPost.markdown
+					contentHTML = Document(parsing: "[\(microPostWithoutLinks)]()", options: [.disableSmartOpts]).html
+				}
 			} else {
 				contentHTML = article.partialHTML
 			}
@@ -534,7 +527,12 @@ extension String {
 
 struct Article {
 
-	struct Title {
+	protocol MarkdownTextRepresentation {
+		var plainText: String { get }
+		var markdown: String { get }
+	}
+
+	struct Title: MarkdownTextRepresentation {
 		let plainText: String
 		let markdown: String
 		let html: String
@@ -560,7 +558,7 @@ struct Article {
 		}
 	}
 
-	struct MarkdownText {
+	struct MarkdownText: MarkdownTextRepresentation {
 		let plainText: String
 		let markdown: String
 
