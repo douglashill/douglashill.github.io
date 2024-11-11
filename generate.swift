@@ -591,24 +591,26 @@ struct Article {
 
 	init(relativePath: String, fileContents: String) {
 		let components = fileContents.components(separatedBy: "%%%")
-		precondition(components.count == 2)
+		precondition(components.count <= 2)
 
 		var info: [String: String] = [:]
-		for line in components[0].components(separatedBy: .newlines) {
-			if line.trimmingCharacters(in: .whitespaces).isEmpty {
-				continue
-			}
+		if components.count == 2 {
+			for line in components[0].components(separatedBy: .newlines) {
+				if line.trimmingCharacters(in: .whitespaces).isEmpty {
+					continue
+				}
 
-			guard let separatorRange = line.range(of: ":") else {
-				preconditionFailure("Separator “:” not found in \(line)")
-			}
-			let key = line[..<separatorRange.lowerBound]
-			let value = line[separatorRange.upperBound...]
+				guard let separatorRange = line.range(of: ":") else {
+					preconditionFailure("Separator “:” not found in \(line)")
+				}
+				let key = line[..<separatorRange.lowerBound]
+				let value = line[separatorRange.upperBound...]
 
-			info[key.trimmingCharacters(in: .whitespaces)] = value.trimmingCharacters(in: .whitespaces)
+				info[key.trimmingCharacters(in: .whitespaces)] = value.trimmingCharacters(in: .whitespaces)
+			}
 		}
 
-		let markdownString = components[1].trimmingCharacters(in: .whitespacesAndNewlines)
+		let markdownString = components.last!.trimmingCharacters(in: .whitespacesAndNewlines)
 		let markdownDocument = Markdown.Document(parsing: markdownString, options: [.disableSmartOpts])
 
 		self.relativePath = relativePath
