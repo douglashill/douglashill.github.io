@@ -1,4 +1,5 @@
 title: Nutrient iOS SDK 14.2
+description: A new name, system text selection and a big clean up. This was an ambitious release for our three-person iOS team.
 micro: We recently released Nutrient iOS SDK 14.2. This was an ambitious release for our three-person iOS team, and it was exciting seeing this all come together! [Here are a few interesting details from the technical side]().
 date: 2024-12-02T18:29:58Z
 %%%
