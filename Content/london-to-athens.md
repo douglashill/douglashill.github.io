@@ -50,7 +50,7 @@ Since I mostly took the same route out and back, below I’ve combined photos an
 
 ## Trains between London and Bari
 
-I spent the entire first week making my way slowly from London to Bari. I stayed two nights in each each of Paris, Milan, Termoli and Bari — so I had five moderate travel days and four stationary days. This was an excellent pace, as I made steady progress without rushing.
+I spent the entire first week making my way slowly from London to Bari. I stayed two nights in each of Paris, Milan, Termoli and Bari — so I had five moderate travel days and four stationary days. This was an excellent pace, as I made steady progress without rushing.
 
 I specifically wanted a day in Paris to visit the Louvre, but my day was a Tuesday, which is when the museum is closed. I suppose I’ll just have to go to Paris again sometime. Instead I went to the [Institut du Monde Arabe](http://imarabe.org/), which was generally very interesting and in particular had a good mini-exhibition from Ubisoft about the efforts that went into making Assassin's Creed Mirage historically plausible.
 
