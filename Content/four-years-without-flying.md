@@ -18,7 +18,7 @@ From 2016, I flew around the world [as a digital nomad](https://pspdfkit.com/blo
 
 I had a great time during my ‘digital nomad years’ from 2016 until early 2020. I mostly travelled within Europe, but I was also fortunate to have trips to Japan, Korea, Singapore, Hong Kong, India and Thailand. I loved exploring the world and experiencing the diverse cultures.
 
-If often found it hard to stay any one place for long time, partly because of things like Christmas and weddings and company retreats, and partly because I had no strong reason to be anywhere in particular for a long time.
+I often found it hard to stay any one place for long time, partly because of things like Christmas and weddings and company retreats, and partly because I had no strong reason to be anywhere in particular for a long time.
 
 Following digital nomad communities like [Nomad List](https://nomadlist.com/), there seems to be a consensus that most people gradually shift from ‘nomads’ to ‘slowmads’. The novelty of moving often wears off, and instead it’s more appealing to go back to the same places you’ve been before and stay for several months at a time. This is essentially having two or three homes. A key benefit is you can build a social circle in each place and strengthen it with each visit.
 
