@@ -488,7 +488,8 @@ extension String {
 							// TODO: This will break if a path component starts with http so it’s really a relative URL.
 							output.append(url)
 						} else {
-							if mustBeAbsolute {
+							// Check for path being an external URL.
+							if mustBeAbsolute && path.hasPrefix("https://") == false {
 								output.append(publishedSiteDomain)
 							}
 							output.append(path)
