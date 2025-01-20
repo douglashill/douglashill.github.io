@@ -317,31 +317,25 @@ func writeFeed(fromSortedArticles articles: ArraySlice<Article>, isMicro isMicro
 			"date_published": article.rawDate!,
 		]
 
-		if isMicroFeed {
-			let contentHTML: String
-			if let microPost: Article.MarkdownTextRepresentation = article.microPost ?? article.description ?? article.title {
-				// Technically Markdown allows whitespace between the ] and ( but just don’t do that.
-				if microPost.markdown.contains("]()") {
-					// The text already contains a link to the post.
-					contentHTML = Document(parsing: microPost.markdown, options: [.disableSmartOpts]).html
-				} else {
-					// Make the entire text a link to the post. If there are some other links in the text, fall back to the plain text.
-					// TODO: Remove just the links rather than all formatting. However, in general it’s preferred for the content to include an explicit link to the post.
-					let microPostWithoutLinks = microPost.markdown.contains("](") ? microPost.plainText : microPost.markdown
-					contentHTML = Document(parsing: "[\(microPostWithoutLinks)]()", options: [.disableSmartOpts]).html
-				}
+		let contentHTML: String
+		if isMicroFeed || article.externalURL != nil, let microPost: Article.MarkdownTextRepresentation = article.microPost ?? article.description ?? article.title {
+			// Technically Markdown allows whitespace between the ] and ( but just don’t do that.
+			if microPost.markdown.contains("]()") {
+				// The text already contains a link to the post.
+				contentHTML = Document(parsing: microPost.markdown, options: [.disableSmartOpts]).html
 			} else {
-				contentHTML = article.partialHTML
+				// Make the entire text a link to the post. If there are some other links in the text, fall back to the plain text.
+				// TODO: Remove just the links rather than all formatting. However, in general it’s preferred for the content to include an explicit link to the post.
+				let microPostWithoutLinks = microPost.markdown.contains("](") ? microPost.plainText : microPost.markdown
+				contentHTML = Document(parsing: "[\(microPostWithoutLinks)]()", options: [.disableSmartOpts]).html
 			}
-			// Micro.blog doesn’t work with relative URLs, so make them absolute.
-			item["content_html"] = contentHTML.htmlWithLinksRelativeTo(article.relativeURL, mustBeAbsolute: true)
 		} else {
-			// TODO: Include a `summary` from the `description` if one is set on the article.
-			if let externalURL = article.externalURL {
-				item["content_html"] = Document(parsing: "\(article.microPost?.markdown ?? article.description!.markdown) [Read more »](\(externalURL))", options: [.disableSmartOpts]).html
-			} else {
-				item["content_html"] = article.partialHTML
-			}
+			contentHTML = article.partialHTML
+		}
+		// Micro.blog doesn’t work with relative URLs, so make them absolute. Also Unread doesn’t work with empty URLs (links to self).
+		item["content_html"] = contentHTML.htmlWithLinksRelativeTo(article.relativeURL, mustBeAbsolute: true)
+
+		if isMicroFeed == false {
 			item["title"] = article.title?.plainText
 		}
 
