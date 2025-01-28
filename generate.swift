@@ -202,12 +202,6 @@ func autocompletion() {
 				string.append(" \(descriptionMarkdown.markdownWithLinksRelativeTo($0.relativeURL, mustBeAbsolute: false))")
 			}
 
-			// This is mostly included because the Nutrient website doesn’t show publication dates.
-			// TODO: Make these dates look better. Maybe hang in the margin.
-			var dateComponents = $0.dateComponents!
-			dateComponents.year = nil
-			string.append(" <time class=\"tertiary\" datetime=\"\($0.rawDateWithoutTime!)\">\(dateComponents.formattedHowILike)</time>")
-
 			return string
 		}
 		outputFiles.insert(archiveOutputFileURL)
