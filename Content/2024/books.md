@@ -60,7 +60,7 @@ Moving on to the more fun stuff. Here are seven books I particularly enjoyed in 
 
 - ***The Ministry for the Future* by Kim Stanley Robinson**: This unconventional novel is packed full of intriguing and/or terrifying ideas relating to the climate crisis/catastrophe. It’s worryingly relatable to the point of sometimes not feeling like fiction.
 
-- **[*Jinx*](https://mattgemmell.scot/books/jinx/) by [Matt Gemmell](https://mattgemmell.scot/)**: An exciting book that I raced through faster than any other last year. It’s relevant to current hot topics in software and fits right in with my reading trends by being sold DMR-free directly from the author. This sits similarly to *The Ministry for the Future* as a warning to humanity packaged as a near-future novel, but *Jinx* is more fantastical in order to tell a more gripping story.
+- **[*Jinx*](https://mattgemmell.scot/books/jinx/) by [Matt Gemmell](https://mattgemmell.scot/)**: An exciting book that I raced through faster than any other last year. It’s relevant to current hot topics in software and fits right in with my reading trends by being sold DRM-free directly from the author. This sits similarly to *The Ministry for the Future* as a warning to humanity packaged as a near-future novel, but *Jinx* is more fantastical in order to tell a more gripping story.
 
 - ***Pride and Prejudice* by Jane Austen**: This probably shouldn’t be eligible for a top list for 2024 because I’ve read this so many times before, but hey. It’s still the funniest book.
 
