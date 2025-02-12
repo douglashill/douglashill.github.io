@@ -8,6 +8,7 @@ For all my [posts](/recent/), follow any one of these:
     <tr><td class="tablekey">Micro.blog</td><td class="tablevalue"><a href="https://micro.blog/douglas" rel="me">@douglas</a></td></tr>
     <tr><td class="tablekey">Bluesky</td><td class="tablevalue"><a href="https://bsky.app/profile/douglashill.co" rel="me">@douglashill.co</a></td></tr>
     <tr><td class="tablekey">Tumblr</td><td class="tablevalue"><a href="https://douglashill.tumblr.com/">douglashill</a></td></tr>
+    <tr><td class="tablekey">LinkedIn</td><td class="tablevalue"><a href="https://www.linkedin.com/in/douglashill-co">douglashill-co</a></td></tr>
     <tr><td class="tablekey">Feed</td><td class="tablevalue"><a href="/micro-feed.json">short format</a>, <a href="/full-feed.json">full text</a></td></tr>
 </table>
 
