@@ -1,4 +1,6 @@
 title: Improving user experience with Apple Pencil
+description: Talk at AltConf San Jose 2018.
+micro: [Resources for my talk on Apple Pencil]() at AltConf San Jose 2018.
 date: 2018-06-07T18:03:54+0000
 %%%
 

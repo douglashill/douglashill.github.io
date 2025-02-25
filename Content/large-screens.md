@@ -1,5 +1,7 @@
 title: Beyond size classes
 subtitle: Making better use of large screens
+description: Talk at iOSDevUK 2019.
+micro: [Resources for my talk on large screens]() at iOSDevUK 2019.
 date: 2019-09-01T12:00:00+00:00
 %%%
 

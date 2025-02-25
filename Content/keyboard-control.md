@@ -1,14 +1,17 @@
 title: Keyboard control in UIKit apps
+description: Talk at iOS Conf SG 2020.
+micro: [Resources for my talk on keyboard control]() at iOS Conf SG 2020.
 date: 2020-02-04T12:13:31+0000
 %%%
 
+![Photo of Douglas on stage at the start of the talk](photo.jpg)
+
 Talk at [iOS Conf SG](https://iosconf.sg/) 2020.
 
-[Video on YouTube](https://www.youtube.com/watch?v=gFnhvZIoTLc)
+- [Video](https://www.youtube.com/watch?v=gFnhvZIoTLc)
+- [Slides](https://files.douglashill.co/keyboard-control-in-uikit-apps-ios-conf-sg-2020.pdf) (31 MB, PDF)
 
-[Slides](https://files.douglashill.co/keyboard-control-in-uikit-apps-ios-conf-sg-2020.pdf) (31 MB, PDF)
-
-I gave earlier versions of this talk at [NSLondon Q1 2019](https://nslondon.com/#douglas-hill-full-keyboard-control-in-ios-apps) and AltConf San Jose 2019. I also spoke about this topic on the [iPhreaks podcast](https://devchat.tv/iphreaks/ips-297-keyboard-controls-with-douglas-hill/) in April 2020.
+I gave earlier versions of [this talk at NSLondon Q1 2019](https://nslondon.com/#douglas-hill-full-keyboard-control-in-ios-apps) and AltConf San Jose 2019. I also [spoke about this topic on the iPhreaks podcast](https://topenddevs.com/podcasts/iphreaks/episodes/ips-297-keyboard-controls-with-douglas-hill) in April 2020.
 
 ## References
 

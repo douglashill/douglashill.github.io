@@ -21,8 +21,8 @@ I mostly post about iOS development and working on iPad, which you can see in my
 
 ## Talks
 
-- [Zoom transitions](2024/zoom-transitions-at-iosdevuk/) (iOSDevUK 2024)
-- [Keyboard control in UIKit apps](keyboard-control/) ([NSLondon Q1 2019](https://nslondon.com/#douglas-hill-full-keyboard-control-in-ios-apps), AltConf San Jose 2019, [iOS Conf SG 2020](https://www.youtube.com/watch?v=gFnhvZIoTLc) and the [iPhreaks podcast](https://topenddevs.com/podcasts/iphreaks/episodes/ips-297-keyboard-controls-with-douglas-hill))
+- [Zoom transitions: A comprehensive guide](/zoom-transitions-talk/) (iOSDevUK 2024 and Swift Connection 2024)
+- [Keyboard control in UIKit apps](keyboard-control/) (NSLondon Q1 2019, AltConf San Jose 2019 and iOS Conf SG 2020)
 - [Beyond size classes: Making better use of large screens](large-screens/) (iOSDevUK 2019)
 - [Improving user experience with Apple Pencil](apple-pencil/) (AltConf San Jose 2018)
 
