@@ -42,13 +42,28 @@ Drag and drop is easiest when viewing multiple apps at once on iPad, but it is a
 
 This is a more advanced option if you’re interested in integrating with other apps or creating automated workflows. Pass a URL or some text to the “Add Article” action. Shortcuts actions are available on iOS 16 or later.
 
-### Websites that require signing in
+<h3 id="websites-that-require-signing-in">Websites that require signing in</h3>
 
-When saving using the share sheet in Safari, the webpage will be saved as you see it. This means you can save the full text for websites that have a paywall or otherwise require signing in to see the content by following these steps:
+By default, no saved data (cookies) are sent to websites when saving articles. This is similar to private browsing in Safari, and makes it more difficult for website owners to track you. With version 8 of the app, signing into websites removes this privacy protection in Reading when saving articles from those specific websites, but is necessary for websites with paywalls.
+
+When saving using the share sheet in Safari, the webpage will be saved as you see it without loading the text again. This means you can save the full text for websites that have a paywall or otherwise require signing in to see the content by following these steps:
 
 1. Open the article webpage in Safari and make sure you’re signed in
 2. Tap the share button in Safari’s toolbar
 3. Tap Reading in the row of app icons in the share sheet
+
+With version 8 of the app, when saving articles in any other way, you can sign into websites in Reading like this:
+
+1. On iPad, tap Settings in the sidebar. On iPhone, tap the back button from the list of articles and then tap Settings.
+2. Tap Sign in to Websites
+3. Tap +
+4. Enter the website address (URL)
+5. Sign into the website
+6. Tap Done
+
+The list of Saved Websites in Reading shows all websites with saved cookies. This may include subdomains. For example, if you sign into website.com, cookies may also be saved for myaccount.website.com.
+
+You can remove saved cookies with swipe-to-delete in the Saved Websites list.
 
 <h2 id="delete">Deleting articles</h2>
 
