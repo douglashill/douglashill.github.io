@@ -44,7 +44,7 @@ This is a more advanced option if you’re interested in integrating with other 
 
 <h3 id="websites-that-require-signing-in">Websites that require signing in</h3>
 
-By default, no saved data (cookies) are sent to websites when saving articles. This is similar to private browsing in Safari, and makes it more difficult for website owners to track you. With version 8 of the app, signing into websites removes this privacy protection in Reading when saving articles from those specific websites, but is necessary for websites with paywalls.
+By default, no saved data (cookies) are sent to websites when saving articles. This is similar to private browsing in Safari, and makes it more difficult for website owners to track you. Signing into websites removes this privacy protection in Reading when saving articles from those specific websites, but is necessary for websites with paywalls.
 
 When saving using the share sheet in Safari, the webpage will be saved as you see it without loading the text again. This means you can save the full text for websites that have a paywall or otherwise require signing in to see the content by following these steps:
 
@@ -52,7 +52,7 @@ When saving using the share sheet in Safari, the webpage will be saved as you se
 2. Tap the share button in Safari’s toolbar
 3. Tap Reading in the row of app icons in the share sheet
 
-With version 8 of the app, when saving articles in any other way, you can sign into websites in Reading like this:
+When saving articles in any other way, you can sign into websites in Reading like this:
 
 1. On iPad, tap Settings in the sidebar. On iPhone, tap the back button from the list of articles and then tap Settings.
 2. Tap Sign in to Websites
