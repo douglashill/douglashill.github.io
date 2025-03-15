@@ -4,7 +4,7 @@ description: An iPad and iPhone app for saving webpages to read. Saved articles 
 
 <img src="reading-composite.png" alt="Image of a list of articles on an iPhone, in front of an article shown on an iPad in landscape. On the iPhone, each article shows the title, a summary, and the website the article is from. On the iPad, the article text is shown in a simple two column layout with no distractions. The article title is ‘I Accidentally Uncovered a Nationwide Scam on Airbnb and the website it’s from is vice.com.’" />
 
-<p style="text-align: center"><a href="https://apps.apple.com/app/id1341378303"><img src="app-store-badge.svg" alt="Download on the App Store" width="180px" /></a></p>
+<p style="text-align: center"><a href="https://apps.apple.com/app/id1341378303">Download from Apple</a></p>
 
 Save webpages and text snippets to read in this fast and graceful iPad and iPhone app by [Douglas Hill](/). When you find an article on the web you’d like to read without being sidetracked from whatever you’re doing, save it in the app and come back to it at a better time. There’s no need to make an account because everything happens right on your device.
 
