@@ -94,7 +94,7 @@ The iPhone was released in 2007, and was unlike what everyone else had. The one 
 
 > Our killer ingredient was software. I like to say: in some ways hardware is like a science. People can figure out how to do science. Software is like art.
 
-Since then, we have also seen the introduction of the App Store and the iPad.
+Since then, we have also seen the introduction of Apple’s app store and the iPad.
 
 ## Results ##
 

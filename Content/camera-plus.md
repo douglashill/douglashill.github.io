@@ -6,7 +6,7 @@ tumblr: 5164323921
 
 ## History ##
 
-Back in the day, when I used the iPhone 3G, I tried a few camera applications from the App Store. There were two major problems.
+Back in the day, when I used the iPhone 3G, I tried a few camera applications from Apple’s app store. There were two major problems.
 
 Firstly, no software application can make good photos from a poor quality camera. Even if an app helps me take the best photos possible — such as by providing a stabiliser — the results are still lacking.
 
