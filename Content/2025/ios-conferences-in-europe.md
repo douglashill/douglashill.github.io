@@ -15,5 +15,5 @@ In the autumn (I’m hoping to go to at least one of these):
 
 - [Swift Connection](https://swiftconnection.io/) in Paris. This was great last year. No talk submissions yet.
 - [SwiftLeeds](https://swiftleeds.co.uk/) in Leeds. [Talk submissions](https://swiftleeds.co.uk/cfp) are open for 2 more days.
-- [Pragma](https://www.pragmaconference.com/) in Bologna. No details or talk submissions. Super early bird tickets available, and I checked by email that these are refundable until at least August.
+- [Pragma](https://www.pragmaconference.com/) in Bologna. No details yet. Super early bird tickets available, and I checked by email that these are refundable until at least August. [Talk submissions](https://docs.google.com/forms/d/e/1FAIpQLSdfqCRaIFLSFthBoaii92pStWueUFy-yHlgVySapLaew6h3Yg/viewform) are open until the end of June.
 - [NSSpain](https://nsspain.com/) hasn’t been announced yet, but [sounds like](https://mastodon.social/@nsspain/114225388991317226) this will happen! A very sociable conference.
