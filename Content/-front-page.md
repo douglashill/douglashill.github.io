@@ -1,11 +1,11 @@
 title: Douglas Hill
 %%%
 
-I make apps to help people learn and achieve more. I’m the iOS team lead at [Nutrient](https://www.nutrient.io/) (previously known as PSPDFKit) and an organiser of [NSLondon](https://nslondon.com/).
+I make software to help people learn and achieve more. I’m the iOS team lead at [Nutrient](https://www.nutrient.io/) (previously known as PSPDFKit) and an organiser of [NSLondon](https://nslondon.com/).
 
 I’ve worked fully remotely since 2015 and [spent time as a digital nomad](https://pspdfkit.com/blog/2017/remote-work/), but these days [I don’t fly](four-years-without-flying/) and instead base myself where I can go skiing, ice skating or wakeboarding.
 
-I mostly post about iOS development and working on iPad, which you can see in my [recent posts](recent/) and [archive](archive/). If you like, you can [follow me](follow/).
+You can see my [recent posts](recent/) and [archive](archive/). If you like, you can [follow me](follow/).
 
 ## Featured articles
 
@@ -28,13 +28,13 @@ I mostly post about iOS development and working on iPad, which you can see in my
 
 ## Apps
 
-- [Reading app](reading-app/): My simple app to save webpages to read later. The comfortable reading experience is paramount. This is my main side project.
-
 - [PDF Viewer](https://apps.apple.com/app/id1120099014): A powerful app to read, search, and annotate PDF documents, made with my teammates at [Nutrient](https://www.nutrient.io/).
+
+- [Reading app](reading-app/): This was my simple iPad and iPhone app for reading web articles, text snippets and ebooks.
 
 - [Magic Spell](magicspell/): My handy Mac app to check spelling in many files at once. Not actively maintained.
 
-- [Cambugs](https://itunes.apple.com/app/cambugs-letter-sounds/id574190228?mt=8): A suite of apps developed with educational psychologists to help teach children to become fluent readers.
+- [Cambugs](https://apps.apple.com/app/cambugs-letter-sounds/id574190228): When I was fresh out of university, I worked with educational psychologists  to develop this suite of apps to help teach children to become fluent readers.
 
 ## Code
 
