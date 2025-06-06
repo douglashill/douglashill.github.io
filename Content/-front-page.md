@@ -21,6 +21,7 @@ You can see my [recent posts](recent/) and [archive](archive/). If you like, you
 
 ## Talks
 
+- [Beyond iPhone: Developing across Apple platforms](https://www.nutrient.io/blog/developing-across-apple-platforms/) (Swift Craft 2025)
 - [Zoom transitions: A comprehensive guide](/zoom-transitions-talk/) (iOSDevUK 2024 and Swift Connection 2024)
 - [Keyboard control in UIKit apps](keyboard-control/) (NSLondon Q1 2019, AltConf San Jose 2019 and iOS Conf SG 2020)
 - [Beyond size classes: Making better use of large screens](large-screens/) (iOSDevUK 2019)
