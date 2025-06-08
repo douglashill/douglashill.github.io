@@ -94,7 +94,7 @@ func autocompletion() {
 
 		let value = try! fileURL.resourceValues(forKeys: [URLResourceKey.isDirectoryKey])
 		if value.isDirectory! {
-			logDebug("Skipping directory \(fileURL.path)")
+			logDebug("Skipping directory \(fileURL.path(percentEncoded: false))")
 			continue
 		}
 
@@ -138,7 +138,7 @@ func autocompletion() {
 		// It’s not that efficient reading both these files (which might be large images) to compare them, especially
 		// since copying a file with APFS should be efficient. However avoiding disk writes seems like a good thing.
 		if (try? Data(contentsOf: destination)) != (try? Data(contentsOf: fileURL)) {
-			print("Copying to \(destination.path)")
+			print("Copying to \(destination.path(percentEncoded: false))")
 			do {
 				try fileManager.removeItem(at: destination)
 			} catch {
@@ -149,7 +149,7 @@ func autocompletion() {
 			}
 			try! fileManager.copyItem(at: fileURL, to: destination)
 		} else {
-			logDebug("Unchanged. Skipping copying to \(destination.path)")
+			logDebug("Unchanged. Skipping copying to \(destination.path(percentEncoded: false))")
 		}
 
 		outputFiles.insert(destination)
@@ -297,7 +297,7 @@ func autocompletion() {
 			continue
 		}
 		try! fileManager.removeItem(at: fileURL)
-		print("Deleted item at \(fileURL)")
+		print("Deleted item at \(fileURL.path(percentEncoded: false))")
 	}
 
 	print("Finished after \(CFAbsoluteTimeGetCurrent() - startTime)s.")
@@ -354,10 +354,10 @@ func writeFeed(fromSortedArticles articles: ArraySlice<Article>, isMicro isMicro
 	let outputFileURL = destinationDirectory.appendingPathComponent(filename, isDirectory: false)
 	let oldData = try? Data(contentsOf: outputFileURL)
 	if feedData != oldData {
-		print("Writing to \(outputFileURL.path)")
+		print("Writing to \(outputFileURL.path(percentEncoded: false))")
 		try feedData.write(to: outputFileURL)
 	} else {
-		logDebug("Unchanged so skipping writing to \(outputFileURL.path)")
+		logDebug("Unchanged so skipping writing to \(outputFileURL.path(percentEncoded: false))")
 	}
 	return outputFileURL
 }
@@ -760,10 +760,10 @@ private func writeIndexHTML(_ htmlString: String, inDirectory dir: URL, fileMana
 	let newData = htmlString.data(using: .utf8)!
 
 	if newData != oldData {
-		print("Writing to \(indexFileURL.path)")
+		print("Writing to \(indexFileURL.path(percentEncoded: false))")
 		try newData.write(to: indexFileURL)
 	} else {
-		logDebug("Unchanged so skipping writing to \(indexFileURL.path)")
+		logDebug("Unchanged so skipping writing to \(indexFileURL.path(percentEncoded: false))")
 	}
 
 	return indexFileURL
