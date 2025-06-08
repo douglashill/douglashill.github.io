@@ -1,17 +1,20 @@
 title: Follow [Douglas Hill](/)
 %%%
 
-For all my [posts](/recent/), follow any one of these:
+Everything I post online starts on this website and flows into to various services. Follow whichever one you prefer.
 
-<table class="lightweight">
-    <tr><td class="tablekey">ActivityPub (Mastodon)</td><td class="tablevalue"><a href="https://micro.blog/douglas?remote_follow=1">@douglas<wbr/>@pub.douglashill.co</a></td></tr>
-    <tr><td class="tablekey">Micro.blog</td><td class="tablevalue"><a href="https://micro.blog/douglas" rel="me">@douglas</a></td></tr>
-    <tr><td class="tablekey">Bluesky</td><td class="tablevalue"><a href="https://bsky.app/profile/douglashill.co" rel="me">@douglashill.co</a></td></tr>
-    <tr><td class="tablekey">Tumblr</td><td class="tablevalue"><a href="https://douglashill.tumblr.com/">douglashill</a></td></tr>
-    <tr><td class="tablekey">LinkedIn</td><td class="tablevalue"><a href="https://www.linkedin.com/in/douglashill-co">douglashill-co</a></td></tr>
-    <tr><td class="tablekey">Feed</td><td class="tablevalue"><a href="/micro-feed.json">short format</a>, <a href="/full-feed.json">full text</a></td></tr>
-</table>
+## Social
 
-Or for a lower volume, subscribe to the [feed for longer, more considered articles](/feed.json) as seen on the [archive page](/archive/).
+- [ActivityPub (Mastodon)](https://micro.blog/douglas?remote_follow=1">) <code>@douglas<wbr/>@pub.douglashill.co</code>
+- [Micro.blog](https://micro.blog/douglas)
+- [Bluesky](https://bsky.app/profile/douglashill.co)
+- [Tumblr](https://douglashill.tumblr.com/)
+- [LinkedIn](https://www.linkedin.com/in/douglashill-co)
+
+## Feeds
+
+- [Short format](/micro-feed.json): All posts, but longer articles are just a summary and link. This feed is the data source for the social sites above. See a preview on my [recent posts page](/recent/).
+- [Articles](/feed.json): Only longer, more considered posts as seen on my [archive page](/archive/). Choose this if you prefer a lower volume.
+- [Everything](/full-feed.json): All the short posts and the full text of longer posts.
 
 All feeds use [JSON feed](https://www.jsonfeed.org/).

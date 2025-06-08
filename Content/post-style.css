@@ -34,9 +34,6 @@ p.byline a, p.byline time {
 code, pre, th, td {
 	background-color: rgb(240, 240, 250);
 }
-table.lightweight td {
-	border-color: lightgray;
-}
 @media (prefers-color-scheme: dark) {
 	body {
 		background-color: #101010;
@@ -53,9 +50,6 @@ table.lightweight td {
 	}
 	code, pre, th, td {
 		background-color: rgb(44, 44, 52);
-	}
-	table.lightweight td {
-		border-color: darkgray;
 	}
 }
 blockquote, h1, h2, h3, h4, h5, h6, input, p, small {
@@ -164,28 +158,6 @@ th, td {
 	padding: 1em;
 	text-align: center;
 	vertical-align: center;
-}
-table.lightweight {
-	width: inherit;
-}
-table.lightweight td {
-	background-color: inherit;
-	border-left: none;
-	border-right: none;
-	padding: 0.35em;
-	width: 50%;
-}
-table.lightweight tr:first-child td {
-	border-top: none;
-}
-table.lightweight tr:last-child td {
-	border-bottom: none;
-}
-td.tablekey {
-	text-align: right;
-}
-td.tablevalue {
-	text-align: left;
 }
 span.left {
 	float: left;
