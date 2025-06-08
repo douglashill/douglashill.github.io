@@ -34,15 +34,6 @@ jobs:
         with:
           path: generate
           key: executable-${{ runner.os }}-${{ hashFiles('Package.resolved') }}-${{ hashFiles('generate.swift') }}-${{ hashFiles('markdown.swift') }}
-      # Always try to restore the Output directory and keep it updated.
-      # https://github.com/actions/cache/blob/main/tips-and-workarounds.md#update-a-cache
-      - name: Cache built site
-        uses: actions/cache@v4
-        with:
-          path: Output
-          key: output-${{ github.run_id }}
-          restore-keys: |
-            output-
       - name: Build site
         run: ./cached-build.sh
       - name: Upload artefact
