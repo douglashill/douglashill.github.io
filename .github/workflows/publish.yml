@@ -38,13 +38,13 @@ jobs:
       # to load and save but the build takes a few seconds more without this.
       # Use unique cache key and a restore key to always try to restore the Output directory and keep it updated.
       # https://github.com/actions/cache/blob/main/tips-and-workarounds.md#update-a-cache
-      - name: Cache built site
-        uses: actions/cache@v4
-        with:
-          path: Output
-          key: output-${{ github.run_id }}
-          restore-keys: |
-            output-
+      # - name: Cache built site
+      #   uses: actions/cache@v4
+      #   with:
+      #     path: Output
+      #     key: output-${{ github.run_id }}
+      #     restore-keys: |
+      #       output-
       - name: Build site
         run: ./cached-build.sh
       - name: Upload artefact
@@ -63,5 +63,5 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-#      - name: Ping Micro.blog
-#        run: curl -X POST "https://micro.blog/ping?url=https://douglashill.co/micro-feed.json"
+      - name: Ping Micro.blog
+        run: curl -X POST "https://micro.blog/ping?url=https://douglashill.co/micro-feed.json"
