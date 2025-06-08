@@ -1,12 +1,13 @@
 #! /bin/bash
 
-GENERATE_PATH="$(swift build --show-bin-path)/generate"
+EXECUTABLE="./generate"
 
-if [ ! -f "$GENERATE_PATH" ]; then
+if [ ! -f "$EXECUTABLE" ]; then
     echo "Cached executable not found. Building it."
     swift build
+    cp "$(swift build --show-bin-path)/generate" "$EXECUTABLE"
 else
     echo "Using cached executable."
 fi
 
-"$GENERATE_PATH"
+"$EXECUTABLE"
