@@ -29,11 +29,14 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup pages
         uses: actions/configure-pages@v4
+      - name: Get Swift version
+        id: swift_version
+        run: echo "version=$(swift --version | head -n 1)" >> $GITHUB_OUTPUT
       - name: Cache Swift build artefacts
         uses: actions/cache@v4
         with:
           path: .build
-          key: swift-build-${{ runner.os }}-${{ hashFiles('Package.resolved') }}-${{ hashFiles('generate.swift') }}-${{ hashFiles('markdown.swift') }}
+          key: swift-build-${{ runner.os }}-${{ steps.swift_version.outputs.version }}-${{ hashFiles('Package.resolved') }}-${{ hashFiles('generate.swift') }}-${{ hashFiles('markdown.swift') }}
       # Always try to restore the Output directory and keep it updated.
       # https://github.com/actions/cache/blob/main/tips-and-workarounds.md#update-a-cache
       - name: Cache built site
