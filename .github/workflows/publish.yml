@@ -29,15 +29,13 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup pages
         uses: actions/configure-pages@v4
-      # Always load from cache and keep it updated by using a unique key and a restore key.
-      # https://github.com/actions/cache/blob/main/tips-and-workarounds.md#update-a-cache
       - name: Cache Swift build artefacts
         uses: actions/cache@v4
         with:
           path: .build
-          key: ${{ runner.os }}-swiftpm-${{ github.run_id }}
-          restore-keys: |
-            ${{ runner.os }}-swiftpm-
+          key: swift-build-${{ runner.os }}-${{ hashFiles('Package.resolved') }}-${{ hashFiles('generate.swift') }}-${{ hashFiles('markdown.swift') }}
+      # Always try to restore the Output directory and keep it updated.
+      # https://github.com/actions/cache/blob/main/tips-and-workarounds.md#update-a-cache
       - name: Cache built site
         uses: actions/cache@v4
         with:
