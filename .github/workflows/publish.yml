@@ -48,7 +48,7 @@ jobs:
           restore-keys: |
             output-
       - name: Build site
-        run: swift build -v && `swift build --show-bin-path`/generate
+        run: ./build.sh
       - name: Upload artefact
         uses: actions/upload-pages-artifact@v3
         with:

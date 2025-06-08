@@ -2,7 +2,7 @@
   "actions" : {
     "build" : {
       "enabled" : true,
-      "script" : "swift run"
+      "script" : ".\/build.sh"
     }
   },
   "openLogOnRun" : "fail"

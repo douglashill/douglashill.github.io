@@ -10,14 +10,14 @@ let package = Package(
 		.macOS(.v13),
 	]
 	, dependencies: [
-		.package(url: "https://github.com/apple/swift-markdown.git", branch: "main"),
+		.package(path: "markdown"),
 	]
 	, targets: [
 		.executableTarget(
 			name: "generate"
-			, dependencies: [.product(name: "Markdown", package: "swift-markdown")]
+			, dependencies: [.product(name: "Markdown", package: "markdown")]
 			, path: ""
-			, exclude: ["Content", "Output"]
+			, exclude: ["Content", "Output", "markdown", "cmark"]
 		),
 	]
 )
