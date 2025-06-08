@@ -27,8 +27,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          submodules: true
       - name: Setup pages
         uses: actions/configure-pages@v4
       # Always load from cache and keep it updated by using a unique key and a restore key.

@@ -1,6 +1,0 @@
-[submodule "swift-markdown"]
-	path = markdown
-	url = https://github.com/swiftlang/swift-markdown.git
-[submodule "swift-cmark"]
-	path = cmark
-	url = https://github.com/apple/swift-cmark.git
