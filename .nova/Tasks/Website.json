@@ -2,7 +2,11 @@
   "actions" : {
     "build" : {
       "enabled" : true,
-      "script" : ".\/cached-build.sh"
+      "script" : "# Build the Swift executable **and run it**. Use this when changing Swift code.\nswift build\ncp \"$(swift build --show-bin-path)\/generate\" .\/generate\n.\/generate"
+    },
+    "run" : {
+      "enabled" : true,
+      "script" : "# Skip building the Swift executable. Fast. Use this when just changing content.\n.\/generate"
     }
   },
   "openLogOnRun" : "fail"
