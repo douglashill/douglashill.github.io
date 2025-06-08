@@ -34,6 +34,17 @@ jobs:
         with:
           path: generate
           key: executable-${{ runner.os }}-${{ hashFiles('Package.resolved') }}-${{ hashFiles('generate.swift') }}-${{ hashFiles('markdown.swift') }}
+      # Unclear if this cache is helpful or not since it takes a few seconds
+      # to load and save but the build takes a few seconds more without this.
+      # Always try to restore the Output directory and keep it updated.
+      # https://github.com/actions/cache/blob/main/tips-and-workarounds.md#update-a-cache
+      # - name: Cache built site
+      #   uses: actions/cache@v4
+      #   with:
+      #     path: Output
+      #     key: output-${{ github.run_id }}
+      #     restore-keys: |
+      #       output-
       - name: Build site
         run: ./cached-build.sh
       - name: Upload artefact
