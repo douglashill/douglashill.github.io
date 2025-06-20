@@ -30,7 +30,7 @@ It might surprise some people that my main computer (which I used professionally
 
 ### But is iOS enough?
 
-To date, I’ve not been trying to replace my Mac with my iPad. Using Xcode is a hard requirement for my profession, and Xcode is only available on a Mac. Therefore, I’ve accepted that I’d need a Mac as well, and then given I have both, if something if very awkward on the iPad, I can use the Mac instead.
+To date, I’ve not been trying to replace my Mac with my iPad. Using Xcode is a hard requirement for my profession, and Xcode is only available on a Mac. Therefore, I’ve accepted that I’d need a Mac as well, and then given I have both, if something is very awkward on the iPad, I can use the Mac instead.
 
 However, looking ahead as far as 2030, it seems ridiculous and poor from a sustainability perspective that I’d still need two computers with similar hardware so that I can run two software stacks. On my desk, I also have two identical keyboards and two identical mice. There’s a risk I end up with a pair of external screens too if I buy one for a new iPad. Ridiculous!
 
