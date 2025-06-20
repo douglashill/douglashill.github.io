@@ -50,7 +50,7 @@ All that said, unless virtualised macOS as an iPad app is announced on Tuesday, 
 
 The 13-inch screen on my current iPad is excellent for laptop mode and decent for tablet mode. (Although for reading I prefer my 2019 iPad mini.) For me, I think making the iPad any bigger would be detrimental for these two modes and also when carrying the device around. The slight increase in size of the 2021 MacBook Pros is the one downside I see compared to the (otherwise abysmal) 2016–2020 models.
 
-However for an iPad in desktop mode, a larger screen would be much appreciated. So I’d be intrigued by a bigger iPad, but using a 13-inch iPad with an external display (added in iOS 16) is probably a better option. I haven‘t been able to try this because I’d need to buy both a new iPad and a new screen. Stage Manager works very well for me, so I have no concerns about scaling the iPad UI up to a larger screen.
+However, for an iPad in desktop mode, a larger screen would be much appreciated. So I’d be intrigued by a bigger iPad, but using a 13-inch iPad with an external display (added in iOS 16) is probably a better option. I haven‘t been able to try this because I’d need to buy both a new iPad and a new screen. Stage Manager works very well for me, so I have no concerns about scaling the iPad UI up to a larger screen.
 
 The 2022 iPad Pros have dynamic backlighting to increase contrast (XDR in Apple-speak), and it sounds like tomorrow’s iPads might be going a step beyond that with OLED displays. I don’t think a higher contrast screen provides that much benefit for reading and writing text, which is what I spend most of my time doing, but it would be lovely for watching movies.
 
@@ -58,7 +58,7 @@ The 2022 iPad Pros have dynamic backlighting to increase contrast (XDR in Apple-
 
 ### Bumps
 
-Camera bumps help create higher quality images. I’m unconvinced if the bump for the backwards-facing camera is worthwhile for me. I see the value some people would get from a better camera, but I don’t usually use a 13-inch iPad as a camera and it’s nice having a tablet that lies flat. However since I mostly use my iPad Pro in laptop or desktop mode, it’s not a big deal.
+Camera bumps help create higher quality images. I’m unconvinced if the bump for the backwards-facing camera is worthwhile for me. I see the value some people would get from a better camera, but I don’t usually use a 13-inch iPad as a camera, and it’s nice having a tablet that lies flat. However, since I mostly use my iPad Pro in laptop or desktop mode, it’s not a big deal.
 
 Stage Manager and other software improvements have made the iPad a much more viable device for video meetings. I use the front-facing camera vastly more than the backwards-facing one. If Apple had a budget of one camera bump, they put it on the wrong camera on the 2018 models. (A bump for the front-facing cameras should still be on the back of the device; a front bump would not be nice.)
 
@@ -74,7 +74,7 @@ Given the 10th-generation iPad from 2022 moved the front-facing camera to the lo
 
 Following on about designing the hardware for landscape orientation primarily, all iPads to date are just big iPhones with regard to connector position. Since my iPad is usually in landscape, the USB-C port is usually in the middle on the right-hand side. It looks out of place. Note how the ports on laptops are almost always at the far ends of the sides, not in the middle.
 
-I would make use of a headphone jack, but it’s not a huge deal. I also use wired headphone with my Nintendo Switch, so I have to attach and detect the adapter to move between devices, which is OK, but not very elegant. I acknowledge the thinness of the device might preclude this connector from being viable.
+I would make use of a headphone jack, but it’s not a huge deal. I also use wired headphone with my Nintendo Switch, so I have to attach and detach the adapter to move between devices, which is OK, but not very elegant. I acknowledge the thinness of the device might preclude this connector from being viable.
 
 More USB ports would be nice, but not essential. I use my Mac for power distribution to charge various smaller devices. Maybe a couple of fully featured ports on the keyboard attachment would be a good compromise.
 
@@ -88,7 +88,7 @@ I’m intrigued by rumours about a keyboard including a battery. If some battery
 
 ## Durability
 
-My iPad itself is in excellent condition. Sure, the screen has finger marks and the aluminium back has tiny scratches you can’t feel but can see in the right light, but otherwise this thing looks good as new. I’ve also had no issues with the reliability of connectors and buttons.
+My iPad itself is in excellent condition. Sure, the screen has finger marks and the aluminium back has tiny scratches you can’t feel but can see in the right light, but otherwise this thing looks as good as new. I’ve also had no issues with the reliability of connectors and buttons.
 
 While the iPad remains a beautiful object, the same can’t be said of the Magic Keyboard for iPad. Functionally it’s fine, but it looks a little shabby with worn corners and shiny keys. That’s even though the Magic Keyboard for iPad is only four years old, compared to 5.5 years for the iPad. That said, I appreciate the soft feel of this case compared to the cold, hard MacBook Pro.
 
