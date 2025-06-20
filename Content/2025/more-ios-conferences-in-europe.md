@@ -3,7 +3,7 @@ description: Here’s another [roundup of Swift/iOS conferences in Europe later 
 date: 2025-06-20T16:08:22+01:00
 %%%
 
-Here’s another roundup of upcoming Swift/iOS conferences in Europe later this year:
+Here’s another roundup of Swift/iOS conferences in Europe later this year:
 
 - 18–19 September: [NSSpain](https://2025.nsspain.com/) in Logroño A very fun and sociable conference. [Talk submissions](https://docs.google.com/forms/d/e/1FAIpQLSeR9Lg_1gH-ONusOKIQRKQzXy8JKi1mYdiLIpfFkC8OAEN3Xw/viewform) just opened yesterday until the end of the month.
 - 2–3 October: [Server-Side.swift](https://www.serversideswift.info/) in London. This is a lot about the language itself so is relevant to iOS developers. We’ll have an [NSLondon](https://nslondon.com/) pub evening nearby on the evening between the conference days. [Talk submissions](https://www.papercall.io/serversideswift-2025) are open until the end of the month.
