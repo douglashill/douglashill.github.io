@@ -42,7 +42,7 @@ Running macOS would incur heavy demands on the hardware though. The iPad would n
 
 - Can compile code faster than my M1 Pro MacBook Pro.
 - Has at a _minimum_ 24 GB memory (8 for iOS, 16 for macOS).
-- Has 2 TB of storage, which would be nearly all for the Mac. My entire iPad is using 80 GB, which is basically size of temporary files Xcode puts in `DerivedData`. My Mac needs much more space because of all the developer tools and to have a full copy of my Photos library for backup using Arq.
+- Has 2 TB of storage, which would be nearly all for the Mac. My entire iPad is using 80 GB, which is basically the size of temporary files Xcode puts in `DerivedData`. My Mac needs much more space because of all the developer tools and to have a full copy of my Photos library for backup using Arq.
 
 All that said, unless virtualised macOS as an iPad app is announced on Tuesday, there’s no chance I’d pay for an iPad spec’ed so high. Apple charges so much for iPad storage increases, and my hardware requirements to just use iOS on the iPad are so much lower.
 
