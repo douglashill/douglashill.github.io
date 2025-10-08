@@ -4,7 +4,7 @@ description: Talk at SwiftLeeds 2025.
 
 Talk at SwiftLeeds 2025.
 
-Slides to follow.
+- [Slides](https://files.douglashill.co/pencilkit-swiftleeds-2025.pdf)
 
 ## References
 
