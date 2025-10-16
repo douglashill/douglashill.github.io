@@ -1,5 +1,5 @@
 title: AI Assistant beta in PDF Viewer
-description: We’ve [released an early preview of our new AI Assistant](), which uses Apple Intelligence to answer questions about PDF documents. This is using Apple’s Foundation Models, so documents and questions are processed on the device without being sent anywhere. [Try it on TestFlight](https://testflight.apple.com/join/6IMUtZ8n/).
+description: We’ve [released an early preview of our new AI Assistant](), which uses Apple Intelligence to answer questions about PDF documents. This is using Apple’s Foundation Models, so documents and questions are processed on the device without being sent anywhere. [Try it on TestFlight](https://testflight.apple.com/join/6IMUtZ8n/) (iPad/iPhone only).
 date: 2025-10-16T16:43:36+01:00
 %%%
 
