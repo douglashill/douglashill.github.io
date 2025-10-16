@@ -3,9 +3,9 @@ description: We’ve [released an early preview of our new AI Assistant](), whic
 date: 2025-10-16T16:43:36+01:00
 %%%
 
-We’ve released an early preview of our new AI Assistant, which uses Apple Intelligence to answer questions about PDF documents.
+At [Nutrient](https://www.nutrient.io/), we’ve released an early preview of our new AI Assistant, which uses Apple Intelligence to answer questions about PDF documents.
 
-This is using Apple’s Foundation Models, so documents and questions are processed on the device without being sent anywhere. It’s designed to handle large documents, and a lot of engineering effort has gone into handling the context window of the on-device model.
+This is using Apple’s [Foundation Models](https://developer.apple.com/documentation/foundationmodels), so documents and questions are processed on the device without being sent anywhere. It’s designed to handle large documents, and a lot of engineering effort has gone into [handling the context window](https://developer.apple.com/documentation/Technotes/tn3193-managing-the-on-device-foundation-model-s-context-window) of the on-device model.
 
 How to try AI Assistant:
 
@@ -22,3 +22,4 @@ Known limitations:
 - Document processing happens each time AI Assistant is opened. This feature is designed to handle large documents, and we’re working to speed this up.
 - Question and answer history are not saved after the AI Assistant screen is hidden. We'll add this soon.
 - Follow up questions aren’t supported. Each question is answered separately without referring to previous messages.
+- The feature is not available on Mac.
