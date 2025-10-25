@@ -87,7 +87,7 @@ The Italian Frecciarossa train service is so good! Buying tickets well in advanc
 
 <figure>
     <img src="frecciarossa2.jpg" alt="Seats in an empty train carriage.">
-    <figcaption>Spacious and comfy seats in business claass on the Frecciarossa train</figcaption>
+    <figcaption>Spacious and comfy seats in business class on the Frecciarossa train</figcaption>
 </figure>
 
 As the train races down the Adriatic coast of Italy, you can see hundreds of kilometres of sandy beaches.
