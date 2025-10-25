@@ -1,4 +1,5 @@
 title: PencilKit
+subtitle: From simple drawings to custom creative tools
 description: Talk at SwiftLeeds 2025.
 %%%
 
@@ -27,38 +28,32 @@ Talk at SwiftLeeds 2025.
 
 Basic use of `PKCanvasView`:
 
-```
-import PlaygroundSupport
-import PencilKit
+<pre><code class="hljs"><span class="hljs-keyword">import</span> PlaygroundSupport
+<span class="hljs-keyword">import</span> PencilKit
 
-let canvasView = PKCanvasView()
-canvasView.tool = PKInkingTool(.crayon, color: .purple, width: 10)
+<span class="hljs-keyword">let</span> canvasView =<span class="hljs-attribute"> PKCanvasView</span>()
+canvasView.<span class="hljs-attribute">tool</span> =<span class="hljs-attribute"> PKInkingTool</span>(.<span class="hljs-attribute">crayon</span>, color: .<span class="hljs-literal">purple</span>, width: <span class="hljs-number">10</span>)
 
-PlaygroundPage.current.liveView = canvasView
-```
+<span class="hljs-type">PlaygroundPage</span>.<span class="hljs-attribute">current</span>.<span class="hljs-attribute">liveView</span> = canvasView</code></pre>
 
 Programmatically modifying a drawing to make all stokes red (mentioned, but not shown in talk):
 
-```
-canvasView.drawing.strokes = canvasView.drawing.strokes.map {
-    var stroke = $0
-    stroke.ink.color = .red
-    return stroke
-}
-```
+<pre><code class="hljs">canvasView.<span class="hljs-attribute">drawing</span>.<span class="hljs-attribute">strokes</span> = canvasView.<span class="hljs-attribute">drawing</span>.<span class="hljs-attribute">strokes</span>.<span class="hljs-attribute">map</span> {
+    <span class="hljs-keyword">var</span> stroke = $<span class="hljs-number">0</span>
+    stroke.<span class="hljs-attribute">ink</span>.<span class="hljs-attribute">color</span> = .<span class="hljs-literal">red</span>
+    <span class="hljs-keyword">return</span> stroke
+}</code></pre>
 
 Using `PKToolPicker` with `PKCanvasView`:
 
-```
-import PlaygroundSupport
-import PencilKit
+<pre><code class="hljs"><span class="hljs-keyword">import</span> PlaygroundSupport
+<span class="hljs-keyword">import</span> PencilKit
 
-let canvasView = PKCanvasView()
-let toolPicker = PKToolPicker()
-toolPicker.setVisible(true, forFirstResponder: canvasView)
-toolPicker.addObserver(canvasView)
+<span class="hljs-keyword">let</span> canvasView =<span class="hljs-attribute"> PKCanvasView</span>()
+<span class="hljs-keyword">let</span> toolPicker =<span class="hljs-attribute"> PKToolPicker</span>()
+toolPicker.<span class="hljs-attribute">setVisible</span>(<span class="hljs-literal">true</span>, forFirstResponder: canvasView)
+toolPicker.<span class="hljs-attribute">addObserver</span>(canvasView)
 
-canvasView.becomeFirstResponder()
+canvasView.<span class="hljs-attribute">becomeFirstResponder</span>()
 
-PlaygroundPage.current.liveView = canvasView
-```
+<span class="hljs-type">PlaygroundPage</span>.<span class="hljs-attribute">current</span>.<span class="hljs-attribute">liveView</span> = canvasView</code></pre>

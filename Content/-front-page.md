@@ -21,6 +21,7 @@ You can see my [recent posts](recent/) and [archive](archive/). If you like, you
 
 ## Talks
 
+- [PencilKit: From simple drawings to custom creative tools](pencilkit/)<br>SwiftLeeds 2025
 - [Beyond iPhone: Developing across Apple platforms](https://www.nutrient.io/blog/developing-across-apple-platforms/)<br>Swift Craft 2025
 - [Zoom transitions: A comprehensive guide](/zoom-transitions-talk/)<br>iOSDevUK 2024 and Swift Connection 2024
 - [Keyboard control in UIKit apps](keyboard-control/)<br>NSLondon Q1 2019, AltConf San Jose 2019 and iOS Conf SG 2020
