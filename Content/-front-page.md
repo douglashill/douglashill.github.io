@@ -9,9 +9,9 @@ You can see my [recent posts](recent/) and [archive](archive/). If you like, you
 
 ## Featured articles
 
+- [A deep dive into notifications and messages on iOS 26](https://www.nutrient.io/blog/notification-center/)
 - [NSCopying in a Swift World](https://pspdfkit.com/blog/2024/nscopying-in-a-swift-world/)
 - [Zoom transitions](zoom-transitions/)
-- [Conditional compilation for Apple’s yearly updates](https://pspdfkit.com/blog/2023/conditional-compilation-apple-yearly-updates/)
 - [Using JavaScript in a Swift app](javascript-in-swift/)
 - [The case for lists in `UICollectionView`](https://pspdfkit.com/blog/2020/the-case-for-lists-in-uicollectionview/)
 - [Level up your trackpad support using `UIInteraction`](https://pspdfkit.com/blog/2020/level-up-your-trackpad-support-using-uiinteraction/)
