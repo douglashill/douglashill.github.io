@@ -1,0 +1,41 @@
+# douglashill.co
+
+This is the source for Douglas Hill’s personal website, [douglashill.co](https://douglashill.co/). It’s a static site with a bespoke build system written in Swift. See [`generate.swift`](generate.swift).
+
+Pages are created as Markdown files in [`Content`](Content). At it‘s core, the site generator copies files in `Content` to `Output`, while processing Markdown files from `path/file.md` to `path/file/index.html`.
+
+A blog post is a page with a date in the front matter. Various index pages and feeds are generated for blog posts, including `micro-feed.json`, which is the data source for [@douglas](https://micro.blog/douglas) on [Micro.blog](https://micro.blog/), which cross-posts to various social media sites.
+
+## Requirements
+
+[Swift](https://www.swift.org/)
+
+## Build and preview
+
+Compile the executable:
+
+```sh
+swift build
+```
+
+Compile the executable and run it to generate the website:
+
+```sh
+swift run
+```
+
+Generate the website while only compiling the executable if not present:
+
+```sh
+./cached-build.sh
+```
+
+Remove the cached executable:
+
+```sh
+rm generate
+```
+
+## Deployment
+
+The site deploys to GitHub Pages on pushes to `main` using GitHub Actions. See [`publish.yml`](.github/workflows/publish.yml).
