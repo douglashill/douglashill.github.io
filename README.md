@@ -18,13 +18,13 @@ Compile the executable:
 swift build
 ```
 
-Compile the executable and run it to generate the website:
+Compile the executable and run it to generate the website (use this to check code changes):
 
 ```sh
 swift run
 ```
 
-Generate the website while only compiling the executable if not present:
+Generate the website while only compiling the executable if not cached at `generate` (fastest option for previewing content if code and dependencies haven’t changed):
 
 ```sh
 ./cached-build.sh
@@ -39,3 +39,13 @@ rm generate
 ## Deployment
 
 The site deploys to GitHub Pages on pushes to `main` using GitHub Actions. See [`publish.yml`](.github/workflows/publish.yml).
+
+## Repository guidelines
+
+The Swift package defined in `Package.swift` builds a single executable target named `generate` using Apple’s `swift-markdown`. The entry point lives in `generate.swift` with supporting Markdown formatters in `markdown.swift`. 
+
+Content authoring happens in `Content` in Markdown files with front matter separated by a line with `%%%`. The front matter only supports simple key-value pairs, not full YAML.
+
+New Markdown files go in the subfolder for the current year. Binary assets live alongside the Markdown files so paths can be written simply as `![description](image.png)`. Content files use kebab-case-filenames.
+
+Running the generator writes HTML and feeds to `Output` (ignored by Git).
