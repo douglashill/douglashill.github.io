@@ -17,7 +17,7 @@ let package = Package(
 			name: "generate"
 			, dependencies: [.product(name: "Markdown", package: "swift-markdown")]
 			, path: ""
-			, exclude: ["Content", "Output", "cached-build.sh"]
+			, exclude: ["README.md", "AGENTS.md", "Content", "Output", "cached-build.sh", "generate"]
 		),
 	]
 )
