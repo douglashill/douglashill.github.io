@@ -37,7 +37,7 @@ This seems likely to be a viable solution to my problem.
 
 ### Integrating the dependency
 
-If you have a lot of JavaScript dependencies, which in turn have their own dependences, it would probably be a good idea to use a JavaScript dependency manager, like [npm](https://www.npmjs.com). In my case I don’t have many JavaScript dependencies, so I just added this repository as a Git submodule. I’ll skip over the details of this.
+If you have a lot of JavaScript dependencies, which in turn have their own dependences, it would probably be a good idea to use a JavaScript dependency manager, like [npm](https://www.npmjs.com). In my case I don’t have many JavaScript dependencies, so I just added this repository as a Git submodule.
 
 Next I added [`trackers.js`](https://github.com/newhouse/url-tracking-stripper/blob/master/assets/js/trackers.js) to my Xcode project and added it as a resource of my target in Xcode. Swift code is compiled into machine code. On the other hand, JavaScript is an interpreted language, and the source code is shipped inside the app bundle exactly as you see it.
 
@@ -47,7 +47,7 @@ To run JavaScript from our app, we use the [JavaScriptCore](https://developer.ap
 
 <pre><code class="hljs"><span class="hljs-keyword">import</span> JavaScriptCore</code></pre>
 
-JavaScriptCore provides an environment for executing JavaScript. There is no webpage, UI or document objet model (DOM).
+JavaScriptCore provides an environment for executing JavaScript. There is no webpage, UI or document object model (DOM).
 
 The JavaScript environment is separate from the environment our Swift code runs in, so we need to explicitly move data between the Swift and JavaScript environments. In fact, you can have as many JavaScript environments are you like by creating instances of the [`JSContext`](https://developer.apple.com/documentation/javascriptcore/jscontext) class from our Swift code.
 
@@ -60,13 +60,13 @@ First we need to load [`trackers.js`](https://github.com/newhouse/url-tracking-s
 <span class="hljs-keyword">let</span> script = <span class="hljs-keyword">try</span>!<span class="hljs-attribute"> String</span>(contentsOf: scriptURL)
 context.<span class="hljs-attribute">evaluateScript</span>(script)</code></pre>
 
-That will make the `removeTrackersFromUrl` available and load in a few constants such as `ALL_TRACKERS`.
+That will make the `removeTrackersFromUrl` function available and load in a few constants such as `ALL_TRACKERS`.
 
 You may have noticed I force unwrapped the call to the initialiser of [`JSContext`](https://developer.apple.com/documentation/javascriptcore/jscontext). Most of Apple’s frameworks that have an Objective-C API have been nicely bridged to Swift by adding [nullability annotations](https://developer.apple.com/documentation/swift/designating-nullability-in-objective-c-apis) and other refinements. This hasn’t been done for JavaScriptCore, so lots of its APIs are bridged to Swift using [implicitly unwrapped optionals](https://www.hackingwithswift.com/example-code/language/what-are-implicitly-unwrapped-optionals), and we don’t really know if these APIs might return nil. In this case I don’t know any reason creating a [`JSContext`](https://developer.apple.com/documentation/javascriptcore/jscontext) might fail so I took the risk, but it might be wise to handle nil more gracefully.
 
 ### Calling a JavaScript function from Swift
 
-Now we can run the `removeTrackersFromUrl` function in the JavaScript environment like this:
+Now we can run `removeTrackersFromUrl` in the JavaScript environment like this:
 
 <pre><code class="hljs"><span class="hljs-keyword">let</span> output = context.<span class="hljs-attribute">evaluateScript</span>(<span class="hljs-string">"removeTrackersFromUrl('https://example.com/something?utm_source=whatever', ALL_TRACKERS)"</span>)</code></pre>
 
@@ -116,5 +116,3 @@ By searching for open source solutions using a wider range of programming langua
 The example I used here is simple. It wouldn’t have taken very long to manually translate the whole [`trackers.js`](https://github.com/newhouse/url-tracking-stripper/blob/master/assets/js/trackers.js) file from JavaScript into Swift. However the benefit of using the open source code directly is that if the list of trackers changes with time, I can update my project to use that just by updating the submodule. You could take this further by using a JavaScript dependency manager.
 
 Let’s celebrate diversity of programming languages rather than being fussy about striving for some kind of purity in our codebases. While I choose to use Swift — and a tiny bit of Objective-C — I’m proud that my [reading app](/reading-app/) has major dependencies in [C](https://github.com/htacg/tidy-html5) and [JavaScript](https://github.com/mozilla/readability) that do their job well.
-
-If you want to read more like this, you can [follow me](/follow/).
