@@ -3,8 +3,9 @@ subtitle: From simple drawings to custom creative tools
 description: Talk at SwiftLeeds 2025.
 %%%
 
-Talk at SwiftLeeds 2025.
+Talk at [SwiftLeeds](https://swiftleeds.co.uk/) 2025.
 
+- [Video (YouTube)](https://www.youtube.com/watch?v=v0ADKbnn_nc)
 - [Slides](https://files.douglashill.co/pencilkit-swiftleeds-2025.pdf)
 
 ## References
