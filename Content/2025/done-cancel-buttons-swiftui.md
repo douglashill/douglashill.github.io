@@ -56,3 +56,5 @@ Usage:
             }
         }
 }</code></pre>
+
+If your minimum version is iOS 26 or later, there’s no need to wrap these in `ToolbarItem`. You can use `Button` directly in your toolbar builder because the placement is implied by the role.
