@@ -10,6 +10,7 @@ You can see my [recent posts](recent/) and [archive](archive/). If you like, you
 ## Featured articles
 
 - [A deep dive into notifications and messages on iOS 26](https://www.nutrient.io/blog/notification-center/)
+- [Life on the iOS team at Nutrient: Building for the long term](https://www.nutrient.io/blog/life-on-the-ios-team/)
 - [NSCopying in a Swift World](https://pspdfkit.com/blog/2024/nscopying-in-a-swift-world/)
 - [Zoom transitions](zoom-transitions/)
 - [Using JavaScript in a Swift app](javascript-in-swift/)
@@ -17,7 +18,6 @@ You can see my [recent posts](recent/) and [archive](archive/). If you like, you
 - [Level up your trackpad support using `UIInteraction`](https://pspdfkit.com/blog/2020/level-up-your-trackpad-support-using-uiinteraction/)
 - [Localisation using Apple’s glossaries](localisation-using-apples-glossaries/)
 - [Open links in Safari, not Safari view controller](https://pspdfkit.com/blog/2019/open-links-in-safari-not-safari-view-controller/)
-- [Presentation controllers and adaptive presentations](https://pspdfkit.com/blog/2015/presentation-controllers/)
 
 ## Talks
 
