@@ -6,7 +6,7 @@ article,aside,details,figcaption,figure,
 footer,header,hgroup,menu,nav,section {
 	display:block;
 }
-body {
+html {
 	font-family: Palatino, Georgia, serif;
 	/* Haven’t managed to support Dynamic Type. None of font: -apple-system-body or font-size: 1rem or leaving font-size as the default worked. All of those are supposed to work.
 	*/
@@ -35,7 +35,7 @@ code, pre, th, td {
 	background-color: rgb(240, 240, 250);
 }
 @media (prefers-color-scheme: dark) {
-	body {
+	html {
 		background-color: #101010;
 		color: #dedede;
 	}
@@ -63,10 +63,10 @@ hr {
 	margin: 2em auto;
 }
 p, nav, div.quotebox, div.source,
-ul, ol, pre, h3, h4, h5, h6, div.videoembed, figure, div.img-group {
-	max-width: 32em;
+ul, ol, pre, h1, h2, h3, h4, h5, h6, div.videoembed, figure, div.img-group {
+	max-width: 32rem;
 }
-hr {max-width: 20em}
+hr {max-width: 20rem}
 a {
 	color: inherit;
 	text-decoration: underline;
@@ -76,12 +76,10 @@ h1.invisible {
 }
 h1 {
 	font-size: 1.8em;
-	max-width: 17.78em; /* 32/1.8 = 17.78 It’s tempting to make this less than the full width but probably better to add nonbreaking spaces near the ends of titles instead. */
 	font-weight: bold;
 }
 h2 {
 	font-size: 1.4em;
-	max-width: 22.86em; /* 32/1.4 = 22.86 */
 }
 /* I don’t use anything beyond h3 so they can all be the same. */
 h3, h4, h5, h6 {
@@ -108,7 +106,7 @@ img {
 	margin: 0px;
 }
 blockquote {
-	max-width: 28em;
+	max-width: 28rem;
 	padding: 0em 1em;
 	font-style: italic;
 }
