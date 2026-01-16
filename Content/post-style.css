@@ -71,15 +71,13 @@ a {
 	color: inherit;
 	text-decoration: underline;
 }
-h1.invisible {
-	display: none;
-}
 h1 {
 	font-size: 1.8em;
 	font-weight: bold;
 }
 h2 {
 	font-size: 1.4em;
+	font-weight: normal;
 }
 /* I don’t use anything beyond h3 so they can all be the same. */
 h3, h4, h5, h6 {
