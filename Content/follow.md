@@ -13,8 +13,8 @@ Everything I post online starts on this website and flows into to various servic
 
 ## Feeds
 
-- [Short format](/micro-feed.json): All posts, but longer articles are just a summary and link. This feed is the data source for the social sites above. See a preview on my [recent posts page](/recent/).
-- [Articles](/feed.json): Only longer, more considered posts as seen on my [archive page](/archive/). Choose this if you prefer a lower volume.
+- [Short format](/micro-feed.json): All posts, with longer articles as a summary and link. This is the data source for the social sites above. See a preview on the [recent posts page](/recent/).
+- [Articles](/feed.json): Only longer, more considered posts as seen on the [archive page](/archive/). Choose this if you prefer a lower volume.
 - [Everything](/full-feed.json): All the short posts and the full text of longer posts.
 
 All feeds use [JSON feed](https://www.jsonfeed.org/).
