@@ -9,7 +9,6 @@ Everything I post online starts on this website and flows into to various servic
 - [Micro.blog](https://micro.blog/douglas)
 - [Bluesky](https://bsky.app/profile/douglashill.co)
 - [Tumblr](https://douglashill.tumblr.com/)
-- [LinkedIn](https://www.linkedin.com/in/douglashill-co)
 
 ## Feeds
 
