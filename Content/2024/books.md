@@ -1,5 +1,5 @@
 title: 2024 in books
-description: Reflecting on trends in my reading habits and sharing some of my favourite books from last year.
+description: Reflecting on trends in my reading habits and sharing some of my favourite books from last year, featuring Katherine Addison, Chris van Tulleken, Samantha Power and more.
 micro: In 2024, I read about as many books as I read in the three preceding years combined. I wrote a post [reflecting on trends in my reading habits and sharing some of my favourite books from last year]().
 date: 2025-01-31T23:59:15+0100
 %%%
@@ -87,3 +87,5 @@ A few favourite recipes from *East* are:
 - Honey, soy and ginger braised tofu (most surprising use of a pear)
 
 Here’s to another year of good food and books!
+
+The follow up: [2025 in books](/2025/books/)

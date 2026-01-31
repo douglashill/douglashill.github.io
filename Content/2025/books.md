@@ -1,5 +1,5 @@
 title: 2025 in books
-description: Reflecting on trends in my reading habits and sharing some of my favourite books from last year.
+description: Reflecting on trends in my reading habits and sharing some of my favourite books from last year, featuring Min Jin Lee, Marjan Kamali, Sarah Wynn-Williams and more.
 micro: In 2025, I read 50% more books than in 2024, all DRM-free, mostly audiobooks. I wrote about [my reading trends and shared some book picks from the year](), featuring Min Jin Lee, Marjan Kamali, Sarah Wynn-Williams and more.
 date: 2026-01-31T22:53:49+0100
 %%%
