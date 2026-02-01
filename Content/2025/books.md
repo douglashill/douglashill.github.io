@@ -60,7 +60,7 @@ I keep the iPad mini around in case I need to do performance testing for work, b
 
 ## Book picks
 
-I’ve selected three favourite books at the bottom, but otherwise these are ordered roughly by the date I read them rather than being ranked. I’ve linked to each book where I read it: either on Standard Ebooks or Libro.fm.
+I’ve selected three favourite books at the bottom, but otherwise the order here is not a ranking. I’ve linked to each book where I read it: either on Standard Ebooks or Libro.fm.
 
 ### Honourable mentions
 
