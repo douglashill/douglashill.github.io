@@ -1,7 +1,7 @@
 title: Douglas Hill
 %%%
 
-I make software to help people learn and achieve more. I’m the iOS team lead at [Nutrient](https://www.nutrient.io/) (previously known as PSPDFKit) and an organiser of [NSLondon](https://nslondon.com/).
+I make software to help people learn and achieve more. I work at [Nutrient](https://www.nutrient.io/) (previously known as PSPDFKit) and was a long-time organiser of [NSLondon](https://nslondon.com/).
 
 I’ve worked fully remotely since 2015 and [spent time as a digital nomad](https://pspdfkit.com/blog/2017/remote-work/), but these days [I don’t fly](four-years-without-flying/) and spend most of my time near London or Innsbruck. When I’m not doing computers, you’ll find me ice skating, wakeboarding, kitesurfing, skiing or snowboarding.
 
