@@ -1,11 +1,11 @@
 title: Douglas Hill
 %%%
 
-I make software to help people learn and achieve more. I work at [Nutrient](https://www.nutrient.io/) (previously known as PSPDFKit) and was a long-time organiser of [NSLondon](https://nslondon.com/).
+I make software to help people learn and achieve more. Since 2015, I’ve worked fully remotely at [Nutrient](https://www.nutrient.io/) (previously known as PSPDFKit) and been an organiser of [NSLondon](https://nslondon.com/).
 
-I’ve worked fully remotely since 2015 and [spent time as a digital nomad](https://pspdfkit.com/blog/2017/remote-work/), but these days [I don’t fly](four-years-without-flying/) and spend most of my time near London or Innsbruck. When I’m not doing computers, you’ll find me ice skating, wakeboarding, kitesurfing, skiing or snowboarding.
+For a few years, I was a [digital nomad](https://www.nutrient.io/blog/remote-work/), but these days [I don’t fly](four-years-without-flying/) and spend my time near London or Innsbruck. When I’m not doing computers, you’ll find me ice skating, wakeboarding, skiing or snowboarding.
 
-You can see my [recent posts](recent/) and [archive](archive/). If you like, you can [follow me](follow/).
+You can see my [recent posts](recent/) and [articles archive](archive/). If you like, you can [follow me](follow/).
 
 ## Featured articles
 
@@ -37,12 +37,6 @@ You can see my [recent posts](recent/) and [archive](archive/). If you like, you
 - [Magic Spell](magicspell/): My handy Mac app to check spelling in many files at once. Not actively maintained.
 
 - [Cambugs](https://apps.apple.com/app/cambugs-letter-sounds/id574190228): When I was fresh out of university, I worked with educational psychologists  to develop this suite of apps to help teach children to become fluent readers.
-
-## Code
-
-- [KeyboardKit](https://github.com/douglashill/KeyboardKit): The easiest way to add comprehensive hardware keyboard control to an iPad or Mac Catalyst app. Read more: [The creation of KeyboardKit](status/1201265719788392448/), [What’s new in KeyboardKit for iOS 14?](whats-new-in-keyboardkit-for-ios-14/) and [Migrating KeyboardKit to Swift 6 language mode](keyboardkit-swift-6/).
-
-- [DynamicButtonStack](https://github.com/douglashill/DynamicButtonStack): A UIKit view that lays out buttons in either a column or a row to suit the available space. Read more: [Motivation and design details](dynamic-button-stack/).
 
 ## Updates and contact
 
