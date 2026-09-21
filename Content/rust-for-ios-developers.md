@@ -6,6 +6,7 @@ description: Talk at iOSDevUK 2026.
 Talk at [iOSDevUK](https://www.iosdevuk.com/) 2026.
 
 - [Slides](https://files.douglashill.co/rust-for-ios-developers-iosdevuk-2026.pdf)
+- [Slides with presenter notes](https://files.douglashill.co/rust-for-ios-developers-iosdevuk-2026-with-presenter-notes.pdf)
 
 ## References and further reading
 
