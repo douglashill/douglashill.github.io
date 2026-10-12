@@ -1,5 +1,5 @@
 title: next.app devCon 2026
-description: Notes from attending next.app devCon in Berlin, where I hosted a roundtable on Rust for mobile developers. The scale of the conference was impressive. It felt very different to iOS conferences I’ve been to.
+description: Notes from attending next.app devCon in Berlin, where I hosted a roundtable on Rust for mobile developers. The scale of the conference was impressive. It felt very different from the iOS conferences I’ve been to.
 micro: I had a fun week in Berlin for [next.app devCon](https://www.nextappcon.com/) 2026, where I hosted a roundtable on Rust for mobile developers. The scale of the conference was impressive. It felt very different from the iOS conferences I’ve been to. [Here are my notes on the event]().
 date: 2026-10-12T09:52:36+0200
 %%%
