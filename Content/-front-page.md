@@ -21,10 +21,10 @@ You can see my [recent posts](recent/) and [articles archive](archive/). If you 
 
 ## Talks
 
-- [Rust for iOS Developers: More Swifty than Swift](rust-for-ios-developers)<br>iOSDevUK 2026
+- [Rust for iOS developers: More swifty than Swift](rust-for-ios-developers)<br>iOSDevUK and Swift Connection 2026
 - [PencilKit: From simple drawings to custom creative tools](pencilkit/)<br>SwiftLeeds 2025
 - [Beyond iPhone: Developing across Apple platforms](https://www.nutrient.io/blog/developing-across-apple-platforms/)<br>Swift Craft 2025
-- [Zoom transitions: A comprehensive guide](/zoom-transitions-talk/)<br>iOSDevUK 2024 and Swift Connection 2024
+- [Zoom transitions: A comprehensive guide](/zoom-transitions-talk/)<br>iOSDevUK and Swift Connection 2024
 - [Keyboard control in UIKit apps](keyboard-control/)<br>NSLondon Q1 2019, AltConf San Jose 2019 and iOS Conf SG 2020
 - [Beyond size classes: Making better use of large screens](large-screens/)<br>iOSDevUK 2019
 - [Improving user experience with Apple Pencil](apple-pencil/)<br>AltConf San Jose 2018
