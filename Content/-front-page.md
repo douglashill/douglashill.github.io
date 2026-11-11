@@ -21,7 +21,7 @@ You can see my [recent posts](recent/) and [articles archive](archive/). If you 
 
 ## Talks
 
-- [Rust for iOS developers: More swifty than Swift](rust-for-ios-developers)<br>iOSDevUK and Swift Connection 2026
+- [Rust for iOS developers: More swifty than Swift](rust-for-ios-developers)<br>iOSDevUK, Swift Connection and Do iOS 2026
 - [PencilKit: From simple drawings to custom creative tools](pencilkit/)<br>SwiftLeeds 2025
 - [Beyond iPhone: Developing across Apple platforms](https://www.nutrient.io/blog/developing-across-apple-platforms/)<br>Swift Craft 2025
 - [Zoom transitions: A comprehensive guide](/zoom-transitions-talk/)<br>iOSDevUK and Swift Connection 2024

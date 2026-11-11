@@ -3,7 +3,7 @@ subtitle: More swifty than Swift
 description: Talk at iOSDevUK and Swift Connection 2026.
 %%%
 
-Talk at [iOSDevUK](https://www.iosdevuk.com/) and [Swift Connection](https://swiftconnection.io/) 2026.
+Talk at [iOSDevUK](https://www.iosdevuk.com/), [Swift Connection](https://swiftconnection.io/) and [Do iOS](https://www.do-ios.com/) 2026.
 
 - [iOSDevUK slides](https://files.douglashill.co/rust-for-ios-developers-iosdevuk-2026.pdf)
 - [iOSDevUK slides with presenter notes](https://files.douglashill.co/rust-for-ios-developers-iosdevuk-2026-with-presenter-notes.pdf)
