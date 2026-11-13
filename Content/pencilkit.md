@@ -1,6 +1,8 @@
 title: PencilKit
 subtitle: From simple drawings to custom creative tools
 description: Talk at SwiftLeeds 2025.
+micro: [Resources and references from my talk *PencilKit: From simple drawings to custom creative tools*]() at SwiftLeeds.
+date: 2025-10-08T16:30:00+0000
 %%%
 
 Talk at [SwiftLeeds](https://swiftleeds.co.uk/) 2025.
