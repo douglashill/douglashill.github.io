@@ -1,6 +1,8 @@
 title: Rust for iOS developers
 subtitle: More swifty than Swift
-description: Talk at iOSDevUK and Swift Connection 2026.
+description: Talk at iOSDevUK, Swift Connection and Do iOS 2026.
+micro: [Slides, references and further reading from my talk *Rust for iOS developers: More swifty than Swift*](), which I gave at [iOSDevUK](https://www.iosdevuk.com/), [Swift Connection](https://swiftconnection.io/) and [Do iOS](https://www.do-ios.com/) this year.
+date: 2026-11-13T09:06:00+0100
 %%%
 
 Talk at [iOSDevUK](https://www.iosdevuk.com/), [Swift Connection](https://swiftconnection.io/) and [Do iOS](https://www.do-ios.com/) 2026.
@@ -8,6 +10,7 @@ Talk at [iOSDevUK](https://www.iosdevuk.com/), [Swift Connection](https://swiftc
 - [iOSDevUK slides](https://files.douglashill.co/rust-for-ios-developers-iosdevuk-2026.pdf)
 - [iOSDevUK slides with presenter notes](https://files.douglashill.co/rust-for-ios-developers-iosdevuk-2026-with-presenter-notes.pdf)
 - [Swift Connection slides](https://files.douglashill.co/rust-for-ios-developers-swift-connection-2026.pdf)
+- [Do iOS slides](https://files.douglashill.co/rust-for-ios-developers-do-ios-2026.pdf)
 
 ## References and further reading
 
