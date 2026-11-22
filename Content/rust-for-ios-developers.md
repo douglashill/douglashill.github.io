@@ -7,10 +7,11 @@ date: 2026-11-13T09:06:00+0100
 
 Talk at [iOSDevUK](https://www.iosdevuk.com/), [Swift Connection](https://swiftconnection.io/) and [Do iOS](https://www.do-ios.com/) 2026.
 
+- [Do iOS video](https://www.youtube.com/watch?v=SGpPJoFrnIs&list=PLaHyz_LdtA30)
+- [Do iOS slides](https://files.douglashill.co/rust-for-ios-developers-do-ios-2026.pdf)
+- [Swift Connection slides](https://files.douglashill.co/rust-for-ios-developers-swift-connection-2026.pdf)
 - [iOSDevUK slides](https://files.douglashill.co/rust-for-ios-developers-iosdevuk-2026.pdf)
 - [iOSDevUK slides with presenter notes](https://files.douglashill.co/rust-for-ios-developers-iosdevuk-2026-with-presenter-notes.pdf)
-- [Swift Connection slides](https://files.douglashill.co/rust-for-ios-developers-swift-connection-2026.pdf)
-- [Do iOS slides](https://files.douglashill.co/rust-for-ios-developers-do-ios-2026.pdf)
 
 ## References and further reading
 
